@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, jsonify
 from flask_pymongo import PyMongo
-# import scraping .py file name here
+# Import scraping .py file name here
+# Import weather api file here
 import sys
 
 app = Flask(__name__)
