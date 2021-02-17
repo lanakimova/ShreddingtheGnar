@@ -16,7 +16,7 @@ def home():
     return render_template("index.html", resort=resort_dict)
 
 
-@app.route("/scrape")
+@app.route("/resort_scrape")
 def scrape():
     data = scraping.scrape() # Update name of the .py file here
     resort_dict = conn.db.resort_dict
