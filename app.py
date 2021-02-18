@@ -12,26 +12,26 @@ conn = PyMongo(app, uri="mongodb://localhost:27017/resort_app")
 # Set routes
 @app.route("/")
 def home():
-    resort_dict = conn.db.resort_dict.find_one() # Add the name of the dictionary created with the resort info 
-    return render_template("index.html", resort=resort_dict)
+    all_resort_info = conn.db.all_resort_info.find_one() # Add the name of the dictionary created with the resort info 
+    return render_template("index.html", resort=all_resort_info)
 
 
 @app.route("/resort_scrape")
 def scrape():
     data = scraping.scrape() # Update name of the .py file here
-    resort_dict = conn.db.resort_dict
+    all_resort_info = conn.db.all_resort_info
 
-    resort_dict.update({}, data, upsert=True)
+    all_resort_info.update({}, data, upsert=True)
     return redirect("/")
 
-@app.route("/scrape_weather")
-def scrape_weather():
-    data = weather.scrape()
-    weather_dict = conn.db.weather_dict
+# @app.route("/scrape_weather")
+# def scrape_weather():
+#     data = weather.scrape()
+#     weather_dict = conn.db.weather_dict
 
-    # mars_dict.update_one({}, data, upsert=True)
-    weather_dict.update({}, data, upsert=True)
-    return redirect("/")
+#     # mars_dict.update_one({}, data, upsert=True)
+#     weather_dict.update({}, data, upsert=True)
+#     return redirect("/")
 
 
 if __name__ == "__main__":
