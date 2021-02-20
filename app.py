@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 # Establish Mongo connection with PyMongo
 conn = PyMongo(app, uri="mongodb://localhost:27017/resort_app")
-mongo = PyMongo(app)
 
 # # Set routes
 @app.route("/")
@@ -17,8 +16,10 @@ def home():
 
 @app.route("/scrape")
 def scrape():
-    resorts = mongo.db.resorts
+    resorts = conn.db.resorts
     resorts_data = scraping.scrape() # Update name of the .py file here
+    # for x in resorts_data: 
+    #     resorts.update({}, x, upsert=True)
     resorts.update({}, resorts_data, upsert=True)
     return redirect("/")
 
