@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, jsonify
 from flask_pymongo import PyMongo
 # Import scraping .py file name here
-# Import weather api file here
+import 
 import sys
 
 app = Flask(__name__)
@@ -9,12 +9,15 @@ app = Flask(__name__)
 # Establish Mongo connection with PyMongo
 conn = PyMongo(app, uri="mongodb://localhost:27017/resort_app")
 
-# Set routes
-@app.route("/")
-def home():
-    all_resort_info = conn.db.all_resort_info.find_one() # Add the name of the dictionary created with the resort info 
-    return render_template("index.html", resort=all_resort_info)
+# # Set routes
+# @app.route("/")
+# def home():
+#     all_resort_info = conn.db.all_resort_info.find_one() # Add the name of the dictionary created with the resort info 
+#     return render_template("index.html", resort=all_resort_info)
 
+def index():
+    resort_info = mongo.db.weather_info.find_one()
+    return render_template("index.html", resort_info=weather_dict)
 
 @app.route("/resort_scrape")
 def scrape():
@@ -23,15 +26,6 @@ def scrape():
 
     all_resort_info.update({}, data, upsert=True)
     return redirect("/")
-
-# @app.route("/scrape_weather")
-# def scrape_weather():
-#     data = weather.scrape()
-#     weather_dict = conn.db.weather_dict
-
-#     # mars_dict.update_one({}, data, upsert=True)
-#     weather_dict.update({}, data, upsert=True)
-#     return redirect("/")
 
 
 if __name__ == "__main__":
