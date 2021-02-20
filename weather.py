@@ -133,4 +133,5 @@ def get_weather():
     
     weather_dict = new_final_df.to_dict()
     # new_final_df.to_csv('statis/data/city_weather.csv', index=False)
+    
 
