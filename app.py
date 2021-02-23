@@ -1,22 +1,30 @@
 from flask import Flask, render_template, redirect, jsonify
-from flask_pymongo import PyMongo
-import scraping
+from sqlalchemy import create_engine
+# from flask_pymongo import PyMongo
+from config import postgrepass
 import sys
 
 app = Flask(__name__)
 
 # Establish Mongo connection with PyMongo
-conn = PyMongo(app, uri="mongodb://localhost:27017/resort_app")
+# conn = PyMongo(app, uri="mongodb://localhost:27017/resort_app")
+db_path = f'postgresql://postgres:{postgrepass}@localhost:5432/SkiResorts'
+engine = create_engine(db_path)
 
 # # Set routes
 @app.route("/")
 def home():
-    new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
-    print(new_resort_info)
-    return render_template("index.html", resorts=new_resort_info["data"])
+    # new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
+    # print(new_resort_info)
+    return render_template("index.html")
 
 # Route to DB
-
+@app.route("/available_states")
+def getStates():
+    with engine.connect() as conn:
+        query = f"SELECT state FROM resorts_info WHERE state NOT IN ('Empty', 'Unknown')"
+        states = conn.execution_options(stream_results=True).execute(query).fetchall()
+    return states
 
 # Route to scrape website
 # @app.route("/scrape")
