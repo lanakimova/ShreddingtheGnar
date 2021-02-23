@@ -1,4 +1,4 @@
-,name,link,price,closest_town,region,total_len,easy_len,intermediate_len,difficult_len,geometry,state,website,Latitude,Longtitude
+,name,link,price,closest_town,region,total_len,easy_len,intermediate_len,difficult_len,geometry,state,website,lat,lon
 0,Vail,https://www.skiresort.info/ski-resort/vail/,219.0,Vail,Colorado,234.0,57.0,84.0,93.0,"[-106.35805314076724, 39.60991962505997]",Unknown,http://www.vail.snow.com,-106.35805314076724,39.60991962505997
 1,Telluride,https://www.skiresort.info/ski-resort/telluride/,169.0,Mountain Village,Colorado,88.2,6.7,51.7,29.8,"[-107.83598933345762, 37.92046244915704]",Colorado,http://tellurideskiresort.com/,-107.83598933345762,37.92046244915704
 2,Beaver Creek,https://www.skiresort.info/ski-resort/beaver-creek/,218.0,Beaver Creek Village,Colorado,150.0,28.5,64.5,57.0,Empty,Empty,Empty,Empty,Empty
