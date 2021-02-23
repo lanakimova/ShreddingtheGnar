@@ -16,7 +16,7 @@ engine = create_engine(db_path)
 def home():
     # new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
     # print(new_resort_info)
-    return render_template("index.html")
+    return render_template("index.html", states=getStates())
 
 # Route to DB
 @app.route("/available_states")

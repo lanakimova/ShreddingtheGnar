@@ -3,40 +3,83 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Resorts</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" type="text/css" href="static/style.css"> -->
+  <title>Shredding the Gnar</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/projectstyles.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- <script src="static/app.js"></script> -->
 </head>
 
-
-
-
 <body>
-    <!-- Main container -->
-    <div class="container-fluid">
-        <!-- Center text -->
+    
+    <div class="container">
         <div class="jumbotron text-center">
-            <h1>Resorts</h1>
-            <!-- Add button for linking data -->
-            <p><a class="btn btn-primary btn-md" href="/scrape" role="button">Scrape New Data</a></p>
+            <h1>SHREDDING THE GNAR</h1>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Resorts</h2>
+        <header class="fixed-header">
+            <div class="row" id="row1">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand"></a>
+                    <div class="col-md-1">
+                        <img src = "assets/images/logo_light_bg.PNG" href="#">
+                    </div>
+                    <div class="col-md-7">
+                        <button class="btn btn-primary" id="homebutton" type="button">Home</button>
+                    </div>
+                    <div class="col-md-1" id="filtertext">Filter by:</div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="col-md-1">
+                        <div class="dropdown">
+                            <select name="Price" class="btn btn-secondary dropdown-toggle" type="button" id = "button2" aria-labelledby="dropdownMenuButton2" onchange="filterdata(this.value)">
+                                <option value = "none" href="#" selected>State</option>
+                            {% set counter = 0 %}
+                                {% for i in states %}
+                                {% set counter = counter + 1 %}
+                                <option value = counter href="#"> {{i}} </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dropdown">
+                            <select name="Price" class="btn btn-secondary dropdown-toggle" type="button" id = "button2" aria-labelledby="dropdownMenuButton2" onchange="filterdata(this.value)">
+                                <option value = "none" href="#" selected>Price</option>
+                                <option value = "price099" href="#">$0-99</option>
+                                <option value = "price199" href="#">$100-199</option>
+                                <option value = "price299" href="#">$200+</option>
+                            </select>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+        </header>
+
+        <div class="row" id="row2">
+            <div class="col-md-6">
+            <h2>Map</h2>
+            <div id="map">
+
+            </div>
+            </div>
+            <div class="col-md-6">
+            <h2>Map Info</h2>
+                <div id="pie">
+
+                </div>
+                <div id="scatter">
+
+                </div>
             </div>
         </div>
-        <div class="row">
-          <h3>Name: {{ resorts[0].name }}</h3>
-        </div>
-        <br>
-        <br>
-    <!-- End of container div -->
     </div>
+
 </body>
 </html>
