@@ -1,0 +1,76 @@
+body {
+  background-image: url("assets/images/thisthing.png");
+  background-size: 1500px 1000px;
+}
+
+.container {
+  background: rgb(204, 204, 204, 0);
+}
+
+.dropdown {
+  padding-top: 7.5px;
+}
+
+.jumbotron {
+  background: rgb(204, 204, 204, 0);
+}
+
+.jumbotron h1 {
+  color:rgb(240, 0, 248);
+  font-style: italic;
+  font-size: 100px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding-top: 20px;
+  padding-right: 120px;
+}
+
+.fixed-header { 
+  position: fixed; 
+}
+
+h2 {
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#row1 {
+  max-width: 100%;
+}
+#row2 {
+  padding-bottom: 100px;
+}
+
+.navbar {
+  margin-left: 0 auto;
+  width: 100%;
+  height: 70px; 
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 15px;
+  padding-left: 0;
+  background-color: #ffff;
+}
+
+#filtertext {
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.col-md-1 > img {
+  left: 0px;
+  top: 0px;
+  max-width: 8.4%;
+  height: auto;
+  position: fixed;
+}
+
+.btn {
+  top: 20px;
+  padding: 5px;
+  position: fixed;
+}
+
+.dropdown-menu {
+  top: 20px
+}
