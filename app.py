@@ -26,6 +26,13 @@ def getStates():
         states = conn.execution_options(stream_results=True).execute(query).fetchall()
     return states
 
+# EL - All price, price range -- same function -- should return the price that was requested, default = all
+# LA - Functions that return information about the resorts -- all the info that Ryan scraped for us -- length, price, etc
+    # Do this just for 1 resort, shouldn't return info about all of the resorts at once
+# EL - Add weather.csv to db
+    # Jupyter notebook that sets up all of our data-- in the notebook, edit a few rows to add weather data to the resorts database
+# LA - Resorts function that returns resorts name that was chosen for different parameters
+
 # Route to scrape website
 # @app.route("/scrape")
 # def scrape():
