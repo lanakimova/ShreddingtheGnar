@@ -136,6 +136,7 @@ def scrape():
     resort_links = []
 
     for x in range(1, 5):
+        print(x)
         request1 = requests.get(url)
 
         soup1 = bs(request1.text, 'html.parser')
@@ -152,81 +153,84 @@ def scrape():
 
     # GOING THROUGH RESORT PAGES AND GATHERING RESORT SLOPE LENGTHS
     all_resort_info=[]
+    print(len(resort_links))
 
     for x in range(0, len(resort_links)):
-        
-        resort_info = {'name': resort_names[x], 'link': resort_links[x]}
-        
-    # LENGTHS
-
-        request1 = requests.get(resort_links[x])
-        soup1 = bs(request1.text, 'html.parser')
-        
-        if (soup1.find("a", class_="detail-links link-img shaded zero-pad-bottom chart")):
+        print(x)
+        if x<10:
             
-            stuff1 = soup1.find("a", class_="detail-links link-img shaded zero-pad-bottom chart").find("div", class_="description")
-            total_slope= stuff1.find("div").text
-            slope_type_lengths = stuff1.find("div", class_="table-graph-first").find_all("td", class_="distance")
-        
-            splitter = total_slope.split()
-        
-            splits = []
-            for y in slope_type_lengths:
-                split = float(y.text.split()[0])
-                splits.append(split)
-        
-            slope_lengths={'total': float(splitter[1]), 'easy': splits[0], 'intermediate': splits[1], 'difficult': splits[2]}
-            resort_info["slopes"] = slope_lengths  
-        else:
-            resort_info["slopes"] = 'N/A'  
-
-        
-    # PRICES
-
-        if (soup1.find(id="selTicketA")):
+            resort_info = {'name': resort_names[x], 'link': resort_links[x]}
             
-            price = soup1.find(id="selTicketA").text
-            
-            split1 = price.split()
-            split2 = float(split1[1].split(',')[0])
+        # LENGTHS
 
-            resort_info["price"]= split2
+            request1 = requests.get(resort_links[x])
+            soup1 = bs(request1.text, 'html.parser')
             
-        else:
+            if (soup1.find("a", class_="detail-links link-img shaded zero-pad-bottom chart")):
+                
+                stuff1 = soup1.find("a", class_="detail-links link-img shaded zero-pad-bottom chart").find("div", class_="description")
+                total_slope= stuff1.find("div").text
+                slope_type_lengths = stuff1.find("div", class_="table-graph-first").find_all("td", class_="distance")
             
-            resort_info["price"]='N/A'
-        
-        
-    #GETTING CLOSEST TOWNS
-
-        
-        if (soup1.find("ul", class_="detail-overview-citylist")):
+                splitter = total_slope.split()
             
-            stuff1 = soup1.find("ul", class_="detail-overview-citylist")
-            town = stuff1.find("li").find("a").text
-
-            resort_info['closest_town']= town
-        
-        else:
-            resort_info['closest_town']= 'N/A'
+                splits = []
+                for y in slope_type_lengths:
+                    split = float(y.text.split()[0])
+                    splits.append(split)
+            
+                slope_lengths={'total': float(splitter[1]), 'easy': splits[0], 'intermediate': splits[1], 'difficult': splits[2]}
+                resort_info["slopes"] = slope_lengths  
+            else:
+                resort_info["slopes"] = 'N/A'  
 
             
-    #GETTING Regions
+        # PRICES
 
+            if (soup1.find(id="selTicketA")):
+                
+                price = soup1.find(id="selTicketA").text
+                
+                split1 = price.split()
+                split2 = float(split1[1].split(',')[0])
 
-        reg = soup1.find(id="main-content")
-        
-        try:
-            reg1 = reg.find_all("p")[1].find("a").text
-
-            resort_info['region']= reg1
-        
-        except:
-            resort_info['region']= 'N/A'
+                resort_info["price"]= split2
+                
+            else:
+                
+                resort_info["price"]='N/A'
             
-        
-        
-        all_resort_info.append(resort_info)
+            
+        #GETTING CLOSEST TOWNS
+
+            
+            if (soup1.find("ul", class_="detail-overview-citylist")):
+                
+                stuff1 = soup1.find("ul", class_="detail-overview-citylist")
+                town = stuff1.find("li").find("a").text
+
+                resort_info['closest_town']= town
+            
+            else:
+                resort_info['closest_town']= 'N/A'
+
+                
+        #GETTING Regions
+
+
+            reg = soup1.find(id="main-content")
+            
+            try:
+                reg1 = reg.find_all("p")[1].find("a").text
+
+                resort_info['region']= reg1
+            
+            except:
+                resort_info['region']= 'N/A'
+                
+            
+            
+            all_resort_info.append(resort_info)
 
     return all_resort_info
 
