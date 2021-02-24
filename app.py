@@ -16,7 +16,7 @@ engine = create_engine(db_path)
 def home():
     # new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
     # print(new_resort_info)
-    return render_template("index.html", states=getStates(), weather=getWeather())
+    return render_template("index.html", states=getStates(), weather=getWeather(), resorts=getResorts())
 
 # Route for states
 @app.route("/available_states")
@@ -44,10 +44,18 @@ def getStates():
     # Do this just for 1 resort, shouldn't return info about all of the resorts at once
 # EL - Add weather.csv to db
 
+# States route
+@app.route("/resorts")
+def getResorts():
+    with engine.connect() as conn:
+        query =  f"SELECT name FROM resorts_info"
+        resorts = conn.execution_options(stream_results=True).execute(query).fetchall()
+    return resorts
+
 @app.route("/weather")
 def getWeather():
     with engine.connect() as conn:
-        query =  f"SELECT name, temp_min, temp_max, feels_like, daily_chance_snow FROM resorts_info"
+        query =  f"SELECT temp_min, temp_max, feels_like, daily_chance_snow FROM resorts_info"
         weather = conn.execution_options(stream_results=True).execute(query).fetchall()
     return weather
     # Jupyter notebook that sets up all of our data-- in the notebook, edit a few rows to add weather data to the resorts database
