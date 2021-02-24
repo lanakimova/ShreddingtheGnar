@@ -16,7 +16,7 @@ engine = create_engine(db_path)
 def home():
     # new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
     # print(new_resort_info)
-    return render_template("index.html", states=getStates(), weather=getWeather(), resorts=getResorts())
+    return render_template("index.html", states=getStates(), weather=getWeather(), resorts=getResorts(), lopes=getSlopes())
 
 # Route for states
 @app.route("/available_states")
@@ -55,9 +55,16 @@ def getResorts():
 @app.route("/weather")
 def getWeather():
     with engine.connect() as conn:
-        query =  f"SELECT temp_min, temp_max, feels_like, daily_chance_snow FROM resorts_info"
+        query =  f"SELECT name, temp_min, temp_max, feels_like, daily_chance_snow FROM resorts_info"
         weather = conn.execution_options(stream_results=True).execute(query).fetchall()
     return weather
+
+@app.route("/slopes")
+def getSlopes():
+    with engine.connect() as conn:
+        query =  f"SELECT name, easy_len, intermediate_len, difficult_len FROM resorts_info"
+        slopes = conn.execution_options(stream_results=True).execute(query).fetchall()
+    return slopes
     # Jupyter notebook that sets up all of our data-- in the notebook, edit a few rows to add weather data to the resorts database
 # LA - Resorts function that returns resorts name that was chosen for different parameters
 # LA (done) - coordinates
