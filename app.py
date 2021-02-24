@@ -22,8 +22,12 @@ def home():
 @app.route("/available_states")
 def getStates():
     with engine.connect() as conn:
-        query = f"SELECT state FROM resorts_info WHERE state NOT IN ('Empty', 'Unknown')"
-        states = conn.execution_options(stream_results=True).execute(query).fetchall()
+        query = f"SELECT state FROM resorts_info WHERE state IS NOT NULL GROUP BY state ORDER BY state ASC"
+        tempStates = conn.execution_options(stream_results=True).execute(query).fetchall()
+        states = []
+        for state in tempStates:
+            state = str(state)
+            states.append(state[2:len(state)-3])
     return states
 
 # Route for price
@@ -36,11 +40,12 @@ def getPrices():
     #  Stream results is to indicate to the dialect that results should be “streamed” and not pre-buffered, if possible. 
 
 # EL - All price, price range -- same function -- should return the price that was requested, default = all
-# LA - Functions that return information about the resorts -- all the info that Ryan scraped for us -- length, price, etc
+# LA (done) - Functions that return information about the resorts -- all the info that Ryan scraped for us -- length, price, etc
     # Do this just for 1 resort, shouldn't return info about all of the resorts at once
 # EL - Add weather.csv to db
     # Jupyter notebook that sets up all of our data-- in the notebook, edit a few rows to add weather data to the resorts database
 # LA - Resorts function that returns resorts name that was chosen for different parameters
+# LA (done) - coordinates
 
 # Route to scrape website
 # @app.route("/scrape")
