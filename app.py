@@ -30,20 +30,6 @@ def getStates():
             states.append(state[2:len(state)-3])
     return states
 
-# Route for price
-# @app.route("/prices")
-# def getPrices():
-#     with engine.connect() as conn:
-#         query = f"SELECT name, price FROM resorts_info WHERE price NOT IN ('Empty', 'Unknown')" # Returns name of resort and price. 
-#         prices = conn.execution_options(stream_results=True).execute(query).fetchall()
-#     return prices
-    #  Stream results is to indicate to the dialect that results should be “streamed” and not pre-buffered, if possible. 
-
-# TL - All price, price range -- same function -- should return the price that was requested, default = all
-# LA (done) - Functions that return information about the resorts -- all the info that Ryan scraped for us -- length, price, etc
-    # Do this just for 1 resort, shouldn't return info about all of the resorts at once
-# EL - Add weather.csv to db
-
 # States route
 @app.route("/resorts")
 def getResorts():
@@ -65,11 +51,20 @@ def getSlopes():
         query =  f"SELECT name, easy_len, intermediate_len, difficult_len FROM resorts_info"
         slopes = conn.execution_options(stream_results=True).execute(query).fetchall()
     return slopes
-    # Jupyter notebook that sets up all of our data-- in the notebook, edit a few rows to add weather data to the resorts database
-# LA - Resorts function that returns resorts name that was chosen for different parameters
-# LA (done) - coordinates
 
-# Route to scrape website
+if __name__ == "__main__":
+    app.run(debug=True)
+
+# Route for price
+# @app.route("/prices")
+# def getPrices():
+#     with engine.connect() as conn:
+#         query = f"SELECT name, price FROM resorts_info WHERE price NOT IN ('Empty', 'Unknown')" # Returns name of resort and price. 
+#         prices = conn.execution_options(stream_results=True).execute(query).fetchall()
+#     return prices
+    #  Stream results is to indicate to the dialect that results should be “streamed” and not pre-buffered, if possible. 
+
+# Route to scrape website -- don't use, takes forever
 # @app.route("/scrape")
 # def scrape():
 #     resorts = conn.db.resorts
@@ -82,5 +77,3 @@ def getSlopes():
     # return jsonify(resorts_data)
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
