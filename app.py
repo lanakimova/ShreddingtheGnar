@@ -16,7 +16,7 @@ engine = create_engine(db_path)
 def home():
     # new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
     # print(new_resort_info)
-    return render_template("index.html", states=getStates(), prices=getPrices())
+    return render_template("index.html", states=getStates(), weather=getWeather())
 
 # Route for states
 @app.route("/available_states")
@@ -31,18 +31,25 @@ def getStates():
     return states
 
 # Route for price
-@app.route("/prices")
-def getPrices():
-    with engine.connect() as conn:
-        query = f"SELECT name, price FROM resorts_info WHERE price NOT IN ('Empty', 'Unknown')" # Returns name of resort and price. 
-        prices = conn.execution_options(stream_results=True).execute(query).fetchall()
-    return prices
+# @app.route("/prices")
+# def getPrices():
+#     with engine.connect() as conn:
+#         query = f"SELECT name, price FROM resorts_info WHERE price NOT IN ('Empty', 'Unknown')" # Returns name of resort and price. 
+#         prices = conn.execution_options(stream_results=True).execute(query).fetchall()
+#     return prices
     #  Stream results is to indicate to the dialect that results should be “streamed” and not pre-buffered, if possible. 
 
-# EL - All price, price range -- same function -- should return the price that was requested, default = all
+# TL - All price, price range -- same function -- should return the price that was requested, default = all
 # LA (done) - Functions that return information about the resorts -- all the info that Ryan scraped for us -- length, price, etc
     # Do this just for 1 resort, shouldn't return info about all of the resorts at once
 # EL - Add weather.csv to db
+
+@app.route("/weather")
+def getWeather():
+    with engine.connect() as conn:
+        query =  f"SELECT name, temp_min, temp_max, feels_like, daily_chance_snow FROM resorts_info"
+        weather = conn.execution_options(stream_results=True).execute(query).fetchall()
+    return weather
     # Jupyter notebook that sets up all of our data-- in the notebook, edit a few rows to add weather data to the resorts database
 # LA - Resorts function that returns resorts name that was chosen for different parameters
 # LA (done) - coordinates
