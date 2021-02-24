@@ -16,15 +16,24 @@ engine = create_engine(db_path)
 def home():
     # new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
     # print(new_resort_info)
-    return render_template("index.html", states=getStates())
+    return render_template("index.html", states=getStates(), prices=getPrices())
 
-# Route to DB
+# Route for states
 @app.route("/available_states")
 def getStates():
     with engine.connect() as conn:
         query = f"SELECT state FROM resorts_info WHERE state NOT IN ('Empty', 'Unknown')"
         states = conn.execution_options(stream_results=True).execute(query).fetchall()
     return states
+
+# Route for price
+@app.route("/prices")
+def getPrices():
+    with engine.connect() as conn:
+        query = f"SELECT name, price FROM resorts_info WHERE price NOT IN ('Empty', 'Unknown')" # Returns name of resort and price. 
+        prices = conn.execution_options(stream_results=True).execute(query).fetchall()
+    return prices
+    #  Stream results is to indicate to the dialect that results should be “streamed” and not pre-buffered, if possible. 
 
 # EL - All price, price range -- same function -- should return the price that was requested, default = all
 # LA - Functions that return information about the resorts -- all the info that Ryan scraped for us -- length, price, etc
