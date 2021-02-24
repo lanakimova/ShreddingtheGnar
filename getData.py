@@ -28,3 +28,8 @@ def getCoordinates(state):
 
 print(getCoordinates('California'))
 
+def getStates():
+    with engine.connect() as conn:
+        query = f"SELECT state FROM resorts_info WHERE state NOT IN ('Empty', 'Unknown')"
+        states = conn.execution_options(stream_results=True).execute(query).fetchall()
+    return states
