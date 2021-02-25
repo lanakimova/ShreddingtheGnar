@@ -1,6 +1,7 @@
 #map-id {
+    
     height: 500px;
-    width: 100%;
+    width: 50%;
 }
 
 h3 {
@@ -23,4 +24,18 @@ h3 {
     float: left;
     margin-right: 8px;
     opacity: 0.7;
+}
+
+body {
+    text-align: center;
+}
+
+.navbarNav {
+    justify-content: center;
+    text-align: center;
+}
+
+#filters {
+    padding: 10px;
+    padding-bottom: 10px;
 }

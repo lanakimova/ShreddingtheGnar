@@ -115,5 +115,11 @@
     }).addTo(myMap);
   </script>
 
+  <script>
+      d3.json('/getData').then(function(data) {
+          console.log(data);
+      });
+  </script>
+
 </body>
 </html>
