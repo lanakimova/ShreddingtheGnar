@@ -42,6 +42,10 @@ a:not([href]):not([tabindex]) {
     color: black;
 }
 
+/* Shift header down */
+h2{
+    margin-top: 15px;
+}
 
 /* MEDIA CHANGES */
 /* Change the size of the navbar on changing the size of the screen */
