@@ -18,7 +18,7 @@ engine = create_engine(db_path)
 def home():
     # new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
     # print(new_resort_info)
-    return render_template("index.html", states=getStates(), weather=getWeather(), resorts=getResorts(), lopes=getSlopes())
+    return render_template("test-index.html", states=getStates(), weather=getWeather(), resorts=getResorts(), lopes=getSlopes())
 
 # Route for states
 @app.route("/available_states")
@@ -54,7 +54,6 @@ def getResortInfo():
                 # WHERE name = '{resortName}'"
         resort_info = conn.execution_options(stream_results=True).execute(query).fetchall()
     return resort_info
-print(getResortInfo())
 
 @app.route("/getCoordinates/<resortName>")
 def getCoordinates(resortName):
