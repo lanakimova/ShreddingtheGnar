@@ -1,15 +1,15 @@
 function init() {
     d3.csv("resorts.csv").then(function(data)
         {
-            console.log(data)
+            console.log(data);
 
-            prices = []
-            names = []
+            prices = [];
+            names = [];
             data.forEach(function(data) {
                 data.price = +data.price
                 prices.push(data.price)
                 names.push(data.name)
-            })
+            });
 
             console.log(prices)
             console.log(names)
