@@ -18,7 +18,7 @@ engine = create_engine(db_path)
 def home():
     # new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
     # print(new_resort_info)
-    return render_template("test-index.html", states=getStates(), weather=getWeather(), resorts=getResorts(), lopes=getSlopes())
+    return render_template("index.html", states=getStates(), weather=getWeather(), resorts=getResorts(), lopes=getSlopes())
 
 # Route for states
 @app.route("/available_states")
@@ -103,26 +103,5 @@ def getSlopes():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-# Route for price
-# @app.route("/prices")
-# def getPrices():
-#     with engine.connect() as conn:
-#         query = f"SELECT name, price FROM resorts_info WHERE price NOT IN ('Empty', 'Unknown')" # Returns name of resort and price. 
-#         prices = conn.execution_options(stream_results=True).execute(query).fetchall()
-#     return prices
-    #  Stream results is to indicate to the dialect that results should be “streamed” and not pre-buffered, if possible. 
-
-# Route to scrape website -- don't use, takes forever
-# @app.route("/scrape")
-# def scrape():
-#     resorts = conn.db.resorts
-#     resorts_data = scraping.scrape() # Update name of the .py file here
-#     # for x in resorts_data: 
-#     #     resorts.update({}, x, upsert=True)
-#     resorts.update_one({}, {"$set": {"data":resorts_data}}, upsert=True)
-#     return redirect("/")
-
-    # return jsonify(resorts_data)
 
 
