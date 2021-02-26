@@ -30,44 +30,43 @@ def getStates():
         for state in tempStates:
             state = str(state)
             states.append(state[2:len(state)-3])
-        # states = json.dumps(states)
     return states
 
-@app.route("/_getResortInfo/")
-def getResortInfo():
-    resortInfo = {}
+@app.route("/getResortByPriceRange/<min_value>/<max_value>")
+def getResortByPriceRange(min_value, max_value):
+    geo = {'lon': [], 'lat': []}
     with engine.connect() as conn:
-        # query = f"SELECT price FROM resorts_info WHERE name = '{resortName}'"
-        # price = conn.execution_options(stream_results=True).execute(query).fetchall()
-        # price = str(price)
-        # price = price[2:len(price)-3]
-        # resortInfo['price'] = float(price)
-
-        # query = f"SELECT closest_town FROM resorts_info WHERE name = '{resortName}'"
-        # closest_town = conn.execution_options(stream_results=True).execute(query).fetchall()
-        # closest_town = str(closest_town)
-        # closest_town = closest_town[3:len(closest_town)-4]
-        # resortInfo['Closest town'] = closest_town
-
-        query = f"SELECT price, closest_town, total_len, easy_len, intermediate_len, difficult_len, website \
-                FROM resorts_info"
+        query = f"SELECT lat, lon FROM resorts_info WHERE price >= {min_value} \
+                AND price < {max_value} AND lat IS NOT NULL AND lon IS NOT NULL"
                 # WHERE name = '{resortName}'"
-        resort_info = conn.execution_options(stream_results=True).execute(query).fetchall()
-    return resort_info
-
-@app.route("/getCoordinates/<resortName>")
-def getCoordinates(resortName):
-
-    with engine.connect() as conn:
-        geo = {}
-        query = f"SELECT lat, lon  FROM resorts_info WHERE name = '{resortName}'"
         coordinates = conn.execution_options(stream_results=True).execute(query).fetchall()
-        coordinates = list(coordinates[0])
-        geo['lon'] = coordinates[1]
-        geo['lat'] = coordinates[0]
-    return geo
-    # jsonify([coordinates[1], coordinates[0]])
-    # geo
+        for i in range(len(coordinates)):
+            geo['lon'].append(coordinates[i][1])
+            geo['lat'].append(coordinates[i][0])
+    # return jsonify(resortsPrice)
+    return jsonify(geo)
+# test = getResortByPriceRange([0, 50])
+# print(test['lon'])
+
+# function bellow is working.
+@app.route("/getCoordinates/<resortName>")
+def getCoordinates(resortName): 
+    geo = {'lon': [], 'lat': []}
+    query = ''   
+    with engine.connect() as conn:
+        if resortName == 'All States':
+            query = f"SELECT lat, lon  FROM resorts_info WHERE lat IS NOT NULL AND lon IS NOT NULL" 
+        else:
+            query = f"SELECT lat, lon  FROM resorts_info WHERE name = '{resortName}' and lat IS NOT NULL AND lon IS NOT NULL"
+
+        coordinates = conn.execution_options(stream_results=True).execute(query).fetchall()
+        for i in range(len(coordinates)):
+            geo['lon'].append(coordinates[i][1])
+            geo['lat'].append(coordinates[i][0])
+
+    return jsonify(geo)
+    # return geo
+
 
 @app.route("/getResortsNameByState/<state>")
 def getResortsNameByState(state):
@@ -79,6 +78,7 @@ def getResortsNameByState(state):
             name = str(name)
             resortNames.append(name[2:len(name)-3])
     return jsonify(resortNames)
+    
 # States route
 @app.route("/resorts")
 def getResorts():
