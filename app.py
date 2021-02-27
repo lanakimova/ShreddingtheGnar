@@ -18,7 +18,13 @@ engine = create_engine(db_path)
 def home():
     # new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
     # print(new_resort_info)
-    return render_template("test-index.html", states=getStates(), weather=getWeather(), resorts=getResorts(), lopes=getSlopes())
+    return render_template("index.html", states=getStates(), weather=getWeather(), resorts=getResorts(), slopes=getSlopes())
+
+# comparison page
+@app.route('/comparison')
+def comparison():    
+    return render_template('comparison.html', states=getStates(), weather=getWeather(), resorts=getResorts(), slopes=getSlopes())
+
 
 # Route for states
 @app.route("/available_states")
@@ -30,62 +36,111 @@ def getStates():
         for state in tempStates:
             state = str(state)
             states.append(state[2:len(state)-3])
-        # states = json.dumps(states)
     return states
 
-@app.route("/_getResortInfo/")
-def getResortInfo():
+@app.route("/getResortByPriceRange/<min_value>/<max_value>")
+def getResortByPriceRange(min_value, max_value):
+    geo = {'lon': [], 'lat': []}
+    with engine.connect() as conn:
+        query = f"SELECT lat, lon FROM resorts_info WHERE price >= {min_value} \
+                AND price < {max_value} AND lat IS NOT NULL AND lon IS NOT NULL"
+                # WHERE name = '{resortName}'"
+        coordinates = conn.execution_options(stream_results=True).execute(query).fetchall()
+        for i in range(len(coordinates)):
+            geo['lon'].append(coordinates[i][1])
+            geo['lat'].append(coordinates[i][0])
+    # return jsonify(resortsPrice)
+    return jsonify(geo)
+# test = getResortByPriceRange([0, 50])
+# print(test['lon'])
+
+# function bellow is working.
+@app.route("/getCoordinates/<resortName>")
+def getCoordinates(resortName): 
+    geo = {'lon': [], 'lat': []}
+    query = ''   
+    with engine.connect() as conn:
+        if resortName == 'All States':
+            query = f"SELECT lat, lon  FROM resorts_info WHERE lat IS NOT NULL AND lon IS NOT NULL" 
+        else:
+            query = f"SELECT lat, lon  FROM resorts_info WHERE name = '{resortName}' and lat IS NOT NULL AND lon IS NOT NULL"
+
+        coordinates = conn.execution_options(stream_results=True).execute(query).fetchall()
+        for i in range(len(coordinates)):
+            geo['lon'].append(coordinates[i][1])
+            geo['lat'].append(coordinates[i][0])
+
+    return jsonify(geo)
+    # return geo
+
+
+@app.route("/getCheepestResortInState/<state>")
+def getCheepestResortInState(state):
     resortInfo = {}
     with engine.connect() as conn:
-        # query = f"SELECT price FROM resorts_info WHERE name = '{resortName}'"
-        # price = conn.execution_options(stream_results=True).execute(query).fetchall()
-        # price = str(price)
-        # price = price[2:len(price)-3]
-        # resortInfo['price'] = float(price)
-
-        # query = f"SELECT closest_town FROM resorts_info WHERE name = '{resortName}'"
-        # closest_town = conn.execution_options(stream_results=True).execute(query).fetchall()
-        # closest_town = str(closest_town)
-        # closest_town = closest_town[3:len(closest_town)-4]
-        # resortInfo['Closest town'] = closest_town
-
-        query = f"SELECT price, closest_town, total_len, easy_len, intermediate_len, difficult_len, website \
-                FROM resorts_info"
-                # WHERE name = '{resortName}'"
-        resort_info = conn.execution_options(stream_results=True).execute(query).fetchall()
-    return resort_info
-
-@app.route("/getCoordinates/<resortName>")
-def getCoordinates(resortName):
-
-    with engine.connect() as conn:
-        geo = {}
-        query = f"SELECT lat, lon  FROM resorts_info WHERE name = '{resortName}'"
-        coordinates = conn.execution_options(stream_results=True).execute(query).fetchall()
-        coordinates = list(coordinates[0])
-        geo['lon'] = coordinates[1]
-        geo['lat'] = coordinates[0]
-    return geo
-    # jsonify([coordinates[1], coordinates[0]])
-    # geo
-
-@app.route("/getResortsNameByState/<state>")
-def getResortsNameByState(state):
-    resortNames = []
-    with engine.connect() as conn:
-        query = f"SELECT name FROM resorts_info WHERE state = '{state}'"
+        query = f"SELECT MIN(price) FROM resorts_info WHERE state = '{state}' LIMIT 1"
+        lowPrice = conn.execution_options(stream_results=True).execute(query).fetchall()
+        lowPrice = str(lowPrice)
+        lowPrice = lowPrice[2: len(lowPrice)-3]
+        query = f"SELECT name, price, closest_town, zip, total_len, easy_len, intermediate_len, difficult_len \
+                , temperature, feels_like, website FROM resorts_info \
+                 WHERE state = '{state}' AND lat IS NOT NULL AND price = {lowPrice}"
         names = conn.execution_options(stream_results=True).execute(query).fetchall()
-        for name in names:
-            name = str(name)
-            resortNames.append(name[2:len(name)-3])
-    return jsonify(resortNames)
+        
+        resortInfo['name'] = names[0][0]
+        resortInfo['price'] = names[0][1]
+        resortInfo['closest_town'] = names[0][2]
+        resortInfo['zip'] = names[0][3]
+        resortInfo['total_len'] = names[0][4]
+        resortInfo['easy_len'] = names[0][5]
+        resortInfo['inter_len'] = names[0][6]
+        resortInfo['dif_len'] = names[0][7]
+        resortInfo['temp'] = names[0][8]
+        resortInfo['feels_like'] = names[0][9]
+        resortInfo['website'] = names[0][10]
+
+    return jsonify(resortInfo)
+
+
+@app.route("/getExpenciveResortInState/<state>")
+def getExpencivetResortInState(state):
+    resortInfo = {}
+    with engine.connect() as conn:
+        query = f"SELECT MAX(price) FROM resorts_info WHERE state = '{state}' LIMIT 1"
+        highPrice = conn.execution_options(stream_results=True).execute(query).fetchall()
+        highPrice = str(highPrice)
+        highPrice = highPrice[2: len(highPrice)-3]
+        query = f"SELECT name, price, closest_town, zip, total_len, easy_len, intermediate_len, difficult_len \
+                , temperature, feels_like, website FROM resorts_info \
+                 WHERE state = '{state}' AND lat IS NOT NULL AND price = {highPrice}"
+        names = conn.execution_options(stream_results=True).execute(query).fetchall()
+        
+        resortInfo['name'] = names[0][0]
+        resortInfo['price'] = names[0][1]
+        resortInfo['closest_town'] = names[0][2]
+        resortInfo['zip'] = names[0][3]
+        resortInfo['total_len'] = names[0][4]
+        resortInfo['easy_len'] = names[0][5]
+        resortInfo['inter_len'] = names[0][6]
+        resortInfo['dif_len'] = names[0][7]
+        resortInfo['temp'] = names[0][8]
+        resortInfo['feels_like'] = names[0][9]
+        resortInfo['website'] = names[0][10]
+
+    return jsonify(resortInfo)
+
+
 # States route
 @app.route("/resorts")
 def getResorts():
+    resortsList = []
     with engine.connect() as conn:
         query =  f"SELECT name FROM resorts_info"
         resorts = conn.execution_options(stream_results=True).execute(query).fetchall()
-    return resorts
+        for resort in resorts:
+            resort = str(resort)
+            resortsList.append(resort[2:len(resort)-3])
+    return resortsList
 
 @app.route("/weather")
 def getWeather():
@@ -103,26 +158,5 @@ def getSlopes():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-# Route for price
-# @app.route("/prices")
-# def getPrices():
-#     with engine.connect() as conn:
-#         query = f"SELECT name, price FROM resorts_info WHERE price NOT IN ('Empty', 'Unknown')" # Returns name of resort and price. 
-#         prices = conn.execution_options(stream_results=True).execute(query).fetchall()
-#     return prices
-    #  Stream results is to indicate to the dialect that results should be “streamed” and not pre-buffered, if possible. 
-
-# Route to scrape website -- don't use, takes forever
-# @app.route("/scrape")
-# def scrape():
-#     resorts = conn.db.resorts
-#     resorts_data = scraping.scrape() # Update name of the .py file here
-#     # for x in resorts_data: 
-#     #     resorts.update({}, x, upsert=True)
-#     resorts.update_one({}, {"$set": {"data":resorts_data}}, upsert=True)
-#     return redirect("/")
-
-    # return jsonify(resorts_data)
 
 

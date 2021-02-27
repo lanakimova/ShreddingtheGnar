@@ -9,9 +9,11 @@ body {
 
 .dropdown {
   padding-top: 7.5px;
+  margin-left: 50px;
+  margin-right: 20px;
 }
 
-.jumbotron {
+/* .jumbotron {
   background: rgb(204, 204, 204, 0);
 }
 
@@ -22,7 +24,7 @@ body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   padding-top: 20px;
   padding-right: 120px;
-}
+} */
 
 .fixed-header { 
   position: fixed; 
@@ -74,3 +76,5 @@ h2 {
 .dropdown-menu {
   top: 20px
 }
+
+
