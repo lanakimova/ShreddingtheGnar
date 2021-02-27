@@ -4,20 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Shredding the Gnar</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-  <!--<script src="//netdna.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
-  <!-- <link rel="stylesheet" href="static/css/projectstyles.css"> -->
   <link rel="stylesheet" type="text/css" href="/static/css/el_style.css">
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
   crossorigin=""/>
-  <script src="static/app.js"></script>
 
 </head>
 
@@ -36,13 +32,13 @@
         <!-- <div class="col-md-6"> -->
         <!-- <div class="dropdown"></div> -->
         <div class="dropdown-content">
-            <select name="State" class="btn btn-primary dropdown-toggle" type="button" id="button2"
-                aria-labelledby="dropdownMenuButton2" onchange="filterdata(this.value)">
-                <option value="none" href="#" selected>State</option>
+            <select name="State" class="btn btn-primary dropdown-toggle" type="button" id="selectState"
+                aria-labelledby="dropdownMenuButton2">
+                <option val="none" href="#" selected>State</option>
                 {% set counter = 0 %}
                 {% for i in range(states|length) %}
                 {% set counter = counter + i %}
-                <option value={{counter}} href="#"> {{states[i]}} </option>
+                <option val={{counter}} href="#"> {{states[i]}} </option>
                 {% endfor %}
             </select>
         </div>
@@ -76,71 +72,48 @@
     </nav>
     <!-- End of navbar -->
 
+    <div class='container-fluid'>
+        <div class='row'>
+          <div class='col-md-2'>
 
-    <div class="container">
-        <!-- <div class="jumbotron text-center">
-            <h1>SHREDDING THE GNAR</h1>
-        </div> -->
-        <header class="fixed-header">
-            <div class="row" id="row1">
-
+            <div class="card" id='cheepestResort' style="width: 150px;">
+              
+              
             </div>
-        </header>
-    </div>
-
-    <div class="container">
-        <div class="row" id="row2">
-            <div class="col-md-6">
-            <h2>Map</h2>
-            <div id="map-id" style="height: 525px;">
-
-            </div>
-            </div>
-            <div class="col-md-6">
-            <h2>Resort Info</h2>
-                <div id="pie">
-
-                </div>
-
-                <div class="col-md-6">
-                    <div id="scatter">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-    <div class="container">
-        <div id = "d3stuff">
-            
-        </div>
-    </div>
-    </div>
-
-    <div class="row">
-    <div class="chart-container">
-        <script src="git@github.com:alangrafu/radar-chart-d3.git"></script>
-    </div>
-    </div>
+          </div>
     
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
-    <script src="static/config.js"></script>
-    <script type="text/javascript">
+          <div class='col-md-8'>
+            <!-- <div id="map1" style="height: 100%; width: 100%"></div> -->
+            <div id="map-id" style="height: 600px; width: 600px"> </div>
+          </div>
+    
+          <div class='col-md-2'>
+            <div class="card" id='expenciveResort' style="width: 150px;">
+              
+              
+            </div>
+          </div>
+        </div>
+    
+        <div class='row'>
+    
+        </div>
+      </div>
+    
+    <!-- D3 -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
 
-        //var L = window.L;
-        var myMap = L.map("map-id", { center: [37.0902, -95.7129], zoom: 3});
-          L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-              attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-              tileSize: 512,
-              maxZoom: 18,
-              zoomOffset: -1,
-              id: "mapbox/streets-v11",
-              accessToken: API_KEY
-          }).addTo(myMap);
-        </script>
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <!-- Bootstrap 5 -->
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script> 
+  <!-- API Key -->
+  <script type="text/javascript" src="static/js/config.js"></script>
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="static/js/map.js"></script>
+
 </body>
 </html>

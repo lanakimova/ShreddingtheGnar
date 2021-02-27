@@ -1,5 +1,5 @@
 function init() {
-    d3.csv("resorts.csv").then(function(data)
+    d3.csv("static/data/resorts_info.csv").then(function(data)
         {
             console.log(data)
 
@@ -46,7 +46,7 @@ homeButton.on("click", function() {
 
 function filterdata(dropdownid) {
     var filtereddata = []
-    d3.csv("resorts.csv").then(function(data) {
+    d3.csv("static/data/resorts.csv").then(function(data) {
         if (dropdownid === "price099") {
             filtereddata = data.filter(data => data.price < 100)
             console.log(filtereddata);

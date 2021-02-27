@@ -47,6 +47,10 @@ h2{
     margin-top: 15px;
 }
 
+.container-fluid {
+    padding-top: 10px;
+}
+
 /* MEDIA CHANGES */
 /* Change the size of the navbar on changing the size of the screen */
 @media(min-width: 1900px){
