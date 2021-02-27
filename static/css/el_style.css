@@ -54,6 +54,7 @@ h2{
     margin-top: 15px;
 }
 
+<<<<<<< HEAD
 .footer {
     position: absolute;
     left: 0;
@@ -71,6 +72,14 @@ h2{
 .footer_desc:hover{
     color: white;
 }
+=======
+<<<<<<< HEAD
+.container-fluid {
+    padding-top: 10px;
+}
+=======
+>>>>>>> 7ceeec23f71889bb8fe7e1e0efaac5df96943259
+>>>>>>> 6faf83efee4587c177fdae2572f11aa7c82ee96c
 
 /* MEDIA CHANGES */
 /* Change the size of the navbar on changing the size of the screen */
