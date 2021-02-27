@@ -127,10 +127,14 @@ def getExpencivetResortInState(state):
 # States route
 @app.route("/resorts")
 def getResorts():
+    resortsList = []
     with engine.connect() as conn:
         query =  f"SELECT name FROM resorts_info"
         resorts = conn.execution_options(stream_results=True).execute(query).fetchall()
-    return resorts
+        for resort in resorts:
+            resort = str(resort)
+            resortsList.append(resort[2:len(resort)-3])
+    return resortsList
 
 @app.route("/weather")
 def getWeather():

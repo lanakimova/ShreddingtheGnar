@@ -22,19 +22,26 @@
     <!-- NOTE: moved navbar ahead of class container where the header was. Don't think we need the header? It restricts the navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="/" class="navbar-brand">
-            <img src="/static/images/logo_light_bg-removebg-preview.png" class="logo"></a>
-        <a class="filter_by">Filter:</a>
+            <img src="/static/images/logo_light_bg-removebg-preview.png" class="logo">Shredding the Gnar</a>
+
         <!-- <div class="col-md-1" id="filtertext">Filter by:</div> -->
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button> -->
+        </button> 
+
         <!-- <div class="col-md-6"> -->
         <!-- <div class="dropdown"></div> -->
         <div class="dropdown-content">
+<<<<<<< HEAD
             <select name="State" class="btn btn-primary dropdown-toggle" type="button" id="selectState"
                 aria-labelledby="dropdownMenuButton2">
                 <option val="none" href="#" selected>State</option>
+=======
+            <select name="State" class="btn btn-secondary dropdown-toggle" type="button" id="button2"
+                aria-labelledby="dropdownMenuButton2" onchange="filterdata(this.value)">
+                <option value="none" href="#" selected>State</option>
+>>>>>>> 7ceeec23f71889bb8fe7e1e0efaac5df96943259
                 {% set counter = 0 %}
                 {% for i in range(states|length) %}
                 {% set counter = counter + i %}
@@ -45,8 +52,8 @@
         </div>
         <!-- <div class="col-md-3"> -->
         <!-- <div class="dropdown"></div> -->
-        <div class="dropdown-content">
-            <select name="Price" class="btn btn-primary dropdown-toggle" type="button" id="button1"
+        <div class="dropdown-content"></div>
+            <select name="Price" class="btn btn-secondary dropdown-toggle" type="button" id="button1"
                 aria-labelledby="dropdownMenuButton2" onchange="filterdata(this.value)">
                 <option value="none" href="#" selected>Price</option>
                 <option value="price099" href="#">$0-99</option>
@@ -58,7 +65,7 @@
         <!-- <div class="col-md-4"> -->
         <!-- <div class="dropdown"></div> -->
         <div class="dropdown-content">
-            <select name="Resort" class="btn btn-primary dropdown-toggle" type="button" id="button3"
+            <select name="Resort" class="btn btn-secondary dropdown-toggle" type="button" id="button3"
                 onchange="piefilter(this.value)">
                 <option value="none" href="#" selected>Resort</option>
                 {% set counter2 = 0 %}
