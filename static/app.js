@@ -17,11 +17,14 @@ d3.select("#button2").on("change", filterdata);
 function init() {
     d3.json('static/node-api-postgres/resortinfo.json').then(function(data)
         {
+
             console.log(data)
             
+
             data.forEach(function(data) {
                 prices.push(data.price)
                 names.push(data.name)
+
                 states.push(data.state)
             })
 
@@ -34,6 +37,7 @@ function init() {
             allsortedStates = sortedStates.filter(function(x) {
                 return ((x != null) && (x != 'Unknown'))
             })
+
 
             console.log(allsortedStates);
 
