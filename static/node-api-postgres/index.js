@@ -1,6 +1,6 @@
 const pg = require('pg');
 
-const cs = 'postgres://postgres:postgres@localhost:5432/SkiResort';
+const cs = 'postgres://{username}:{password}@localhost:5432/SkiResorts';
 
 const client = new pg.Client(cs);
 
@@ -18,7 +18,7 @@ client.query("SELECT * FROM resorts_info").then(res => {
 
     require('fs').writeFile(
 
-        './resortinfo.json',
+        './resortinfo.json',  //If you want you can rename this and edit path in app.js
     
         JSON.stringify(resortInfo),
     
