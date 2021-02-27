@@ -12,7 +12,21 @@
 7. Run app.py
 
 ## Our site:
+The **index page** contains a map that can be filtered by price or by state.  
 
-![]()
+![](assets/images/indexShredMap.PNG)
+![](assets/images/indexShred.PNG) 
+![](assets/images/indexShredCard.PNG)  
+In addition, the "State" dropdown button will bring up the cheapest and most expensive resorts in selected state.
+
+The **comparison page** gives the user the ability to select "State", "Price", or "Resort" from the dropdown menu to see a bar chart with the price distribution of each resort, either filtered by state or price range. Additionally, selecting a resort from the "Resort" dropdown produces a table with current weather conditions, a radar chart with a visualization of the weather table, and a pie chart with the distribution of slope difficulty by resort.
+
+![](assets/images/compShredResort.PNG)![](assets/images/compShredPie.PNG)
+
+The **Contact Us** link will take the user to the presentation about how Team Shredding the Gnar put this site together.
+
+Happy shredding!  
+-- Team Shredding the Gnar
+
 
 
