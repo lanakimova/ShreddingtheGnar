@@ -11,7 +11,7 @@ body {
 }
 
 .navbar-brand {
-    margin-right: 550px;
+    margin-right: 125px;
 }
 
 
@@ -27,13 +27,10 @@ body {
     /* margin-right: 200px; */
 }
 
-.dropdown-content:active{
-    background-color: white;
-}
 
-a:not([href]):not([tabindex]) {
+/* a:not([href]):not([tabindex]) {
     margin-left: 670px;
-}
+} */
 
 /* Change size of the dropdown buttons */
 .btn-secondary{
@@ -57,9 +54,33 @@ h2{
     margin-top: 15px;
 }
 
+
 .container-fluid {
     padding-top: 10px;
 }
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    background-color: black;
+    text-align: center;
+  }
+
+.footer_desc{
+    color: white;
+}
+
+.footer_desc:hover{
+    color: white;
+}
+
+.container-fluid {
+    padding-top: 10px;
+}
+
 
 /* MEDIA CHANGES */
 /* Change the size of the navbar on changing the size of the screen */
