@@ -1,6 +1,6 @@
 # **Find the resort that's right for you!**
 
-**Shredding the Gnar** was motivated by a desire to identify and locate the multitude of ski and snowboard resorts around the US, our team’s goal is to create a page to access information about each resort. Our target audience is people with all levels of ski/snowboard experience and a range of budgets. We seek to create a site that is easy to navigate, visually appealing, and informative to provide the user with a streamlined experience in finding their next ski/snowboard location.
+**Shredding the Gnar** was motivated by a desire to identify and locate the multitude of ski and snowboard resorts around the US. Our team’s goal is to create a page to access information about each resort. Our target audience is people with all levels of ski/snowboard experience and a range of budgets. We seek to create a site that is easy to navigate, visually appealing, and informative to provide the user with a streamlined experience in finding their next ski/snowboard location.
 
 ## Before you start:
 1. On your server/computer run PostrgeSQL and create new DB with name SkiResorts
