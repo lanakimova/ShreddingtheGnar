@@ -18,7 +18,13 @@ engine = create_engine(db_path)
 def home():
     # new_resort_info = conn.db.resorts.find_one() # Add the name of the dictionary created with the resort info 
     # print(new_resort_info)
-    return render_template("index.html", states=getStates(), weather=getWeather(), resorts=getResorts(), lopes=getSlopes())
+    return render_template("index.html", states=getStates(), weather=getWeather(), resorts=getResorts(), slopes=getSlopes())
+
+# comparison page
+@app.route('/comparison')
+def comparison():    
+    return render_template('comparison.html', states=getStates(), weather=getWeather(), resorts=getResorts(), slopes=getSlopes())
+
 
 # Route for states
 @app.route("/available_states")

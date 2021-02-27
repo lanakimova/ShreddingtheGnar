@@ -6,14 +6,19 @@ body {
 
 /* Set navbar height */
 .navbar {
-    height: 80px;
+    height: 60px;
     
 }
 
 .navbar-brand {
-    margin-right: 125px;
+    margin-right: 600px;
+    /* margin-left: 10px; */
 }
 
+#comparisonNav{
+    margin-right: 450px;
+    margin-left: 0px;
+}
 
 /* Change font on filter buttons */
 .filter_by{
@@ -22,12 +27,26 @@ body {
 
 /* Change the size of the logos */
 .logo {
-    height: 80px;
-    width: 150px;
+    height: 60px;
+    width: 120px;
     /* margin-right: 200px; */
 }
 
+a {
+    color: grey;
+    text-decoration: none;
+}
 
+a.contactUs{
+    margin-left: 10px; 
+    margin-top: 10px;
+    vertical-align: text-top;
+}
+
+a.contactUs:hover{
+    text-decoration: none;
+    color: white;
+}
 /* a:not([href]):not([tabindex]) {
     margin-left: 670px;
 } */
@@ -44,7 +63,7 @@ body {
 
 
 /* Change color over hover on primary button */
-.btn-primary:hover{
+.btn-secondary:hover{
     background-color: white;
     color: black;
 }
@@ -54,33 +73,63 @@ h2{
     margin-top: 15px;
 }
 
+/* Add padding to expensive card*/
+.cardExpensive{
+    padding-top: 15px;
+    width: 200px;
+}
+
+/* Add padding to cheap card*/
+.cardCheap{
+padding-top: 15px;
+width: 200px;
+}
+
+#expensiveCol{
+    margin-right: 25px;
+}
+
+#cheapCol{
+    margin-right: 25px;
+}
+
 
 .container-fluid {
     padding-top: 10px;
 }
 
-.footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 25px;
-    background-color: black;
-    text-align: center;
+h5{
+    text-align: left;
+}
+
+
+.container-fluid {
+    padding-top: 10px;
+}
+
+/* Indent slopes difficulty*/
+#easyLen{
+    text-indent: 20px;
+  }
+#intLen{
+text-indent: 20px;
+}
+#hardLen{
+    text-indent: 20px;
   }
 
-.footer_desc{
-    color: white;
+/* Indent weather */
+#temp{
+    text-indent: 20px;
+}
+#feelsLike{
+    text-indent: 20px;
 }
 
-.footer_desc:hover{
-    color: white;
+/* Format resort link */
+.card-link{
+    font-weight: bold;
 }
-
-.container-fluid {
-    padding-top: 10px;
-}
-
 
 /* MEDIA CHANGES */
 /* Change the size of the navbar on changing the size of the screen */

@@ -2,8 +2,10 @@
 // d3.select('body').on('load', initMap)
 
 // function initMap() {
-    d3.csv("static/data/complete_resorts_info.csv").then(function(data) {
-
+    d3.csv("static/data/test2.csv").then(function(data) {
+        var mapStates = [
+          'Alabama', 'Alaska', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Maine', 'Massachusetts', 'Michigan', 'Minnesota', 'Missouri', 'Montana', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Dakota', 'Tennessee', 'Utah', 'Vermont', 'Virgina', 'Washington', 'West Virgina', 'Wisconsin', 'Wyoming'
+        ];
         var all_resorts = data
         var price100 =  data.filter(function(resort) {
                     return ((resort.price < 100) && (resort.price > 0))
@@ -74,10 +76,88 @@
         layers: [streetmap, resortLayer1]
       });
     
-      L.control.layers(baseMaps, overlayMaps, {
+      // L.control.layers(baseMaps, overlayMaps, {
+      //   collapsed: false
+      // }).addTo(myMap);
+
+      function applyMarkers() {  
+        console.log('State were choosen');
+          let showAll = 'All States';
+          let dropDownState = d3.select('#selectState').node().value;
+      
+          if (dropDownState === showAll) {
+      
+          }
+          else {
+              d3.json(`/getResortsNameByState/${dropDownState}`).then(function(d) {
+                  d.forEach(element => {
+                      geo = d3.json(`/getCoordinates/${element}`).then(function(data) {
+                          L.marker([data['lon'], data['lat']]).addTo(myMap)
+      
+                      });
+                  });
+                  
+              });
+          };
+      
+      }
+      var controller = L.control.layers(baseMaps, overlayMaps, {
         collapsed: false
-      }).addTo(myMap);
-    
+      })
+      var legend = L.control({position: 'bottomleft'});
+      legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend');
+        // div.innerHTML = '<select>';
+        // <option>sike</option><option>y</option></select>';
+        var stateString = "";
+        mapStates.forEach( function(state) { 
+          stateString += `<option>${state}</option>`;
+        });
+          // div.innerHTML += `<option>${state}</option>`;
+          div.innerHTML = `<select>${stateString}</select>`;
+        // div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
+        return div;};
+      // controller.onAdd = function (map) {
+      //       var div = L.DomUtil.create('div', 'info legend');
+      //       div.innerHTML = '<select><option>1</option><option>2</option><option>3</option></select>';
+      //       div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
+      //       return div;};
+        controller.addTo(myMap);
+        legend.addTo(myMap);
+      //   $('select').change(function(){
+      //     alert($( "select option:selected" ).text);
+      // });
+      $('select').on('change', function (e) {
+        var optionSelected = $("option:selected", this);
+        var valueSelected = this.value;
+        // alert(valueSelected);
+        makeMap(valueSelected);
+    });
+    var resortLayer = L.layerGroup();
+    function makeMap(state) {
+    console.log(state);
+    //  d3.json(`/getResortsNameByState/${state}`).then(function(d) {
+    // //       console.log(d);
+    //   var stateResortNames = d ;
+    //   console.log(d);
+    // });
+      stateResorts =  data.filter(function(resort) {
+                return (resort.state === state)
+            });
+            console.log(data);
+            console.log(stateResorts);
+            resortLayer.clearLayers();
+            resortLayer1.clearLayers();
+            resortLayer2.clearLayers();
+            resortLayer3.clearLayers();
+            resortLayer4.clearLayers();
+            stateResorts.forEach(resort=>{
+                  resortLayer.addLayer(
+                  L.marker([resort.lon, resort.lat])
+                  .bindPopup("<h1>" + resort.name + "</h1>")
+                )});
+          resortLayer.addTo(myMap);
+                  }
     });
     // };
     
@@ -93,18 +173,18 @@
         var cheepestResort = document.getElementById('cheepestResort');
         var cardBody = document.createElement('div');
         cardBody.setAttribute('class', 'card_info');
-        cardBody.innerHTML = `<h5 class="card-title">${data.name}</h5>                   
-                              <h6 class="card-subtitle mb-2 text-muted">Town: ${data.zip} ${data.closest_town}</h6>
+        cardBody.innerHTML = `<h5 class="card-title">Cheapest:<br><br>${data.name}</h5>                   
+                              <h6 class="card-subtitle mb-2 text-muted">Town: ${data.closest_town}, ${data.zip}</h6>
                               <p class="card-text">
-                              <b>Total slopes len:</b> ${data.total_len}</br>
-                                Easy: ${data.easy_len}</br>
-                                Intermedium: ${data.inter_len}</br> 
-                                Hard: ${data.dif_len}</br>
+                              <b>Total slopes len (km):</b> ${data.total_len}</p>
+                               <p id='easyLen'> Easy: ${data.easy_len}</p>
+                               <p id='intLen'> Intermediate: ${data.inter_len}</br></p>
+                               <p id='hardLen'> Hard: ${data.dif_len}</p>
                               <b>Weather:</b>  </br>
-                                Temperature: ${data.temp}
-                                Feels Like: ${data.feels_like}
+                              <p id='temp'>Temperature: ${Math.round(data.temp)} F</p>
+                              <p id='feelsLike'>Feels Like: ${Math.round(data.feels_like)} F</p>
                               </p>
-                              <a href="#" class="card-link">${data.website}</a>
+                              <a target="_blank" href="${data.website}" class="card-link">Resort Link</a>
                               `;
         cheepestResort.appendChild(cardBody);
       });
@@ -117,41 +197,19 @@
         
         var cheepestResort = document.getElementById('expenciveResort');
         var cardBody = document.createElement('div');
-        cardBody.innerHTML = `<h5 class="card-title">${data.name}</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Town: ${data.zip} ${data.closest_town}</h6>
+        cardBody.innerHTML = `<h5 class="card-title">Most Expensive:<br><br>${data.name}</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">Town: ${data.closest_town}, ${data.zip}</h6>
                               <p class="card-text">
-                              <b>Total slopes len:</b> ${data.total_len}</br>
-                                Easy: ${data.easy_len}</br>
-                                Intermedium: ${data.inter_len}</br> 
-                                Hard: ${data.dif_len}</br>
+                              <b>Total slopes len (km):</b> ${data.total_len}</p>
+                              <p id='easyLen'> Easy: ${data.easy_len}</p>
+                              <p id='intLen'> Intermediate: ${data.inter_len}</br></p>
+                              <p id='hardLen'> Hard: ${data.dif_len}</p>
                               <b>Weather:</b>  </br>
-                                Temperature: ${data.temp}
-                                Feels Like: ${data.feels_like}
+                              <p id='temp'>Temperature: ${Math.round(data.temp)} F</p>
+                              <p id='feelsLike'>Feels Like: ${Math.round(data.feels_like)} F</p>
                               </p>
-                              <a href="#" class="card-link">${data.website}</a>
+                              <a target="_blank" href="${data.website}" class="card-link">Resort Link</a>
                               `;
         cheepestResort.appendChild(cardBody);
       });
     };
-    
-    function applyMarkers() {  
-      console.log('State were choosen');
-        let showAll = 'All States';
-        let dropDownState = d3.select('#selectState').node().value;
-    
-        if (dropDownState === showAll) {
-    
-        }
-        else {
-            d3.json(`/getResortsNameByState/${dropDownState}`).then(function(d) {
-                d.forEach(element => {
-                    geo = d3.json(`/getCoordinates/${element}`).then(function(data) {
-                        L.marker([data['lon'], data['lat']]).addTo(myMap)
-    
-                    });
-                });
-                
-            });
-        };
-    
-    }

@@ -25,15 +25,15 @@
             <img src="/static/images/logo_light_bg-removebg-preview.png" class="logo">Shredding the Gnar</a>
 
         <!-- <div class="col-md-1" id="filtertext">Filter by:</div> -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button> 
+        </button>  -->
 
         <!-- <div class="col-md-6"> -->
         <!-- <div class="dropdown"></div> -->
         <div class="dropdown-content">
-            <select name="State" class="btn btn-primary dropdown-toggle" type="button" id="selectState"
+            <select name="State" class="btn btn-secondary dropdown-toggle" type="button" id="selectState"
                 aria-labelledby="dropdownMenuButton2">
                 <option val="none" href="#" selected>State</option>
                 {% set counter = 0 %}
@@ -44,9 +44,17 @@
             </select>
         </div>
         </div>
+        <ul class="navbar-nav mr-left">
+          <li class="nav-item active">
+              <a class="nav-link" href="/comparison">Comparison<span class="sr-only"></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="https://docs.google.com/presentation/d/11My6oznZEgoI8yojyB5zZIndk0h40zuZ8xHygYNEmns/edit#slide=id.p" target="_blank">Contact Us<span class="sr-only"></a>
+        </li>
+        </ul>
         <!-- <div class="col-md-3"> -->
         <!-- <div class="dropdown"></div> -->
-        <div class="dropdown-content"></div>
+        <!-- <div class="dropdown-content"></div>
             <select name="Price" class="btn btn-secondary dropdown-toggle" type="button" id="button1"
                 aria-labelledby="dropdownMenuButton2" onchange="filterdata(this.value)">
                 <option value="none" href="#" selected>Price</option>
@@ -55,10 +63,10 @@
                 <option value="price299" href="#">$200+</option>
             </select>
         </div>
-        </div>
+        </div> -->
         <!-- <div class="col-md-4"> -->
         <!-- <div class="dropdown"></div> -->
-        <div class="dropdown-content">
+        <!-- <div class="dropdown-content">
             <select name="Resort" class="btn btn-secondary dropdown-toggle" type="button" id="button3"
                 onchange="piefilter(this.value)">
                 <option value="none" href="#" selected>Resort</option>
@@ -69,27 +77,27 @@
                 {% endfor %}
             </select>
         </div>
-        </div>
-    </nav>
+        </div> -->
+  </nav>
     <!-- End of navbar -->
 
     <div class='container-fluid'>
         <div class='row'>
           <div class='col-md-2'>
 
-            <div class="card" id='cheepestResort' style="width: 150px;">
+            <div class="cardCheap" id='cheepestResort'>
               
               
             </div>
           </div>
     
-          <div class='col-md-8'>
+          <div class='col-md-6'>
             <!-- <div id="map1" style="height: 100%; width: 100%"></div> -->
-            <div id="map-id" style="height: 600px; width: 600px"> </div>
+            <div id="map-id" style="height: 600px; width: 600px" style="margin-right:10px;"> </div>
           </div>
     
-          <div class='col-md-2'>
-            <div class="card" id='expenciveResort' style="width: 150px;">
+          <div class='col-md-4'>
+            <div class="cardExpensive" id='expenciveResort'>
               
               
             </div>
@@ -98,9 +106,9 @@
     
         <div class='row'>
     
-        </div>
+        <!-- </div> -->
       </div>
-    
+
     <!-- D3 -->
   <script src="https://d3js.org/d3.v6.min.js"></script>
 
@@ -115,25 +123,5 @@
   <script type="text/javascript" src="static/js/config.js"></script>
   <!-- Our JavaScript -->
   <script type="text/javascript" src="static/js/map.js"></script>
-
-<<<<<<< HEAD
-        //var L = window.L;
-        var myMap = L.map("map-id", { center: [37.0902, -95.7129], zoom: 3});
-          L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-              attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-              tileSize: 512,
-              maxZoom: 18,
-              zoomOffset: -1,
-              id: "mapbox/streets-v11",
-              accessToken: API_KEY
-          }).addTo(myMap);
-        </script>
-    <!-- <footer class="footer">
-        <p><a class="footer_desc" href="https://github.com/lanakimova/ShreddingtheGnar" target="_blank">Github: Shredding the Gnar</a></p>
-    </footer> -->
-    </div>
-    </body>
-=======
 </body>
->>>>>>> 6faf83efee4587c177fdae2572f11aa7c82ee96c
 </html>

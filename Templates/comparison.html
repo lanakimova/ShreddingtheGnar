@@ -11,7 +11,7 @@
   <!--<script src="//netdna.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
   <!-- <link rel="stylesheet" href="static/css/projectstyles.css"> -->
-  <link rel="stylesheet" type="text/css" href="/static/css/projectstyles.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/el_style.css">
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -25,9 +25,9 @@
     <!-- style="background-image: url('static/assets/images/thisthing.png')"> -->
     <!-- NOTE: moved navbar ahead of class container where the header was. Don't think we need the header? It restricts the navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="/" class="navbar-brand">
-            <img src="static/assets/images/logo_light_bg-removebg-preview.png" class="logo"></a>
-        <a class="filter_by">Filter:</a>
+        <a href="/" class="navbar-brand" id="comparisonNav">
+            <img src="/static/images/logo_light_bg-removebg-preview.png" class="logo">Shredding the Gnar</a>
+        <!-- <a class="filter_by">Filter:</a> -->
         <!-- <div class="col-md-1" id="filtertext">Filter by:</div> -->
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
         <!-- <div class="col-md-6"> -->
         <!-- <div class="dropdown"></div> -->
         <div class="dropdown-content">
-            <select name="State" class="btn btn-primary dropdown-toggle" type="button" id="button2"
+            <select name="State" class="btn btn-secondary dropdown-toggle" type="button" id="button2"
                 aria-labelledby="dropdownMenuButton2" onchange="filterdata(this.value)">
                 <option value="none" href="#" selected>State</option>
                 {% set counter = 0 %}
@@ -50,7 +50,7 @@
         <!-- <div class="col-md-3"> -->
         <!-- <div class="dropdown"></div> -->
         <div class="dropdown-content">
-            <select name="Price" class="btn btn-primary dropdown-toggle" type="button" id="button1"
+            <select name="Price" class="btn btn-secondary dropdown-toggle" type="button" id="button1"
                 aria-labelledby="dropdownMenuButton2" onchange="filterdata(this.value)">
                 <option value="none" href="#" selected>Price</option>
                 <option value="price099" href="#">$0-99</option>
@@ -62,7 +62,7 @@
         <!-- <div class="col-md-4"> -->
         <!-- <div class="dropdown"></div> -->
         <div class="dropdown-content">
-            <select name="Resort" class="btn btn-primary dropdown-toggle" type="button" id="button3" value="none"
+            <select name="Resort" class="btn btn-secondary dropdown-toggle" type="button" id="button3" value="none"
                 onchange="piefilter(this.value)">
                 <option value="none" href="#" selected>Resort</option>
                 {% set counter2 = 0 %}
@@ -73,11 +73,17 @@
             </select>
         </div>
         </div>
+        <ul>
+            <li class="nav-item active">
+                <a class="contactUs" href="https://docs.google.com/presentation/d/11My6oznZEgoI8yojyB5zZIndk0h40zuZ8xHygYNEmns/edit#slide=id.p" target="_blank">Contact Us<span class="sr-only"></a>
+            </li>
+        </ul>
     </nav>
+    
     <!-- End of navbar -->
 
 
-    <div class="container">
+    <div class="container-fluid">
         <!-- <div class="jumbotron text-center">
             <h1>SHREDDING THE GNAR</h1>
         </div> -->
@@ -87,30 +93,7 @@
             </div>
         </header>
     </div>
-
-    <div class="container">
-        <div class="row" id="row2">
-            <h2>Resort Info</h2>
-                <div id="pie">
-
-                </div>
-
-                <div class="col-md-6">
-                    <div id="scatter">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-    <div class="container">
-        <div id = "d3stuff">
-        </div>
-    </div>
-    </div>
-
+    <!-- Table -->
     <div class="row">
         <div class="container">
             <table id = "d3table" style="border: 1px solid black">
@@ -134,6 +117,60 @@
             </table>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row" id="row2">
+            <div class="col-md-6">
+                <!-- Bar chart -->
+                <div id="pie">
+            
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="d3stuff">
+                </div>
+            </div>
+        </div>
+            <!-- <h2>Resort Info</h2> -->
+        <div class="row" id="row2">
+            <!-- Pie chart -->
+            <div class="col-md-6">
+                <div id="scatter">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Radar chart -->
+    <!-- <div class="row">
+    <div class="container">
+        <div id = "d3stuff">
+        </div>
+    </div>
+    </div> -->
+
+    <!-- <div class="row">
+        <div class="container">
+            <table id = "d3table" style="border: 1px solid black">
+              <caption>Resort Weather Info</caption>
+              <thead style="border: 1px solid black">
+                <tr>
+                  <th class="table-head">Temperature</th>
+                  <th class="table-head">Feels Like</th>
+                  <th class="table-head">Min. Temp</th>
+                  <th class="table-head">Max. Temp</th>
+                  <th class="table-head">Humidity</th>
+                  <th class="table-head">Cloudiness</th>
+                  <th class="table-head">Wind Speed</th>
+                  <th class="table-head">Daily % Snow</th>
+                  <th class="table-head">Hourly % Snow</th>
+                </tr>
+              </thead>
+                <tbody style="border: 1px solid black">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div> -->
     
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
