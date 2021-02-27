@@ -1,0 +1,141 @@
+/* Set background color */
+body {
+    background-color: #f2fbff;
+    /* background-color: pink; */
+}
+
+/* Set navbar height */
+.navbar {
+    height: 60px;
+    
+}
+
+.navbar-brand {
+    margin-right: 600px;
+    /* margin-left: 10px; */
+}
+
+#comparisonNav{
+    margin-right: 450px;
+    margin-left: 0px;
+}
+
+/* Change font on filter buttons */
+.filter_by{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Change the size of the logos */
+.logo {
+    height: 60px;
+    width: 120px;
+    /* margin-right: 200px; */
+}
+
+a {
+    color: grey;
+    text-decoration: none;
+}
+
+a.contactUs{
+    margin-left: 10px; 
+    margin-top: 10px;
+    vertical-align: text-top;
+}
+
+a.contactUs:hover{
+    text-decoration: none;
+    color: white;
+}
+/* a:not([href]):not([tabindex]) {
+    margin-left: 670px;
+} */
+
+/* Change size of the dropdown buttons */
+.btn-secondary{
+    width: 100px;
+    margin: 5px 10px 5px 10px;
+    justify-content: right;
+    background-color: #44b7ff;
+    border-color: #44b7ff;
+    color: white;
+}
+
+
+/* Change color over hover on primary button */
+.btn-secondary:hover{
+    background-color: white;
+    color: black;
+}
+
+/* Shift header down */
+h2{
+    margin-top: 15px;
+}
+
+/* Add padding to expensive card*/
+.cardExpensive{
+    padding-top: 15px;
+    width: 200px;
+}
+
+/* Add padding to cheap card*/
+.cardCheap{
+padding-top: 15px;
+width: 200px;
+}
+
+#expensiveCol{
+    margin-right: 25px;
+}
+
+#cheapCol{
+    margin-right: 25px;
+}
+
+
+.container-fluid {
+    padding-top: 10px;
+}
+
+h5{
+    text-align: left;
+}
+
+
+.container-fluid {
+    padding-top: 10px;
+}
+
+/* Indent slopes difficulty*/
+#easyLen{
+    text-indent: 20px;
+  }
+#intLen{
+text-indent: 20px;
+}
+#hardLen{
+    text-indent: 20px;
+  }
+
+/* Indent weather */
+#temp{
+    text-indent: 20px;
+}
+#feelsLike{
+    text-indent: 20px;
+}
+
+/* Format resort link */
+.card-link{
+    font-weight: bold;
+}
+
+/* MEDIA CHANGES */
+/* Change the size of the navbar on changing the size of the screen */
+@media(min-width: 1900px){
+    .navbar-brand {
+        margin-right: 1200px;
+    }
+
+}

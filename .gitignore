@@ -1,11 +1,16 @@
+readme.md
 config.py
+
+snow_configs.py
+
 QuickDBD*
 .ipynb_checkpoints
 DBUpload.ipynb
 .vscode
-map.js
+
 test*
 .DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
