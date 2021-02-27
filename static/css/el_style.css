@@ -10,6 +10,11 @@ body {
     
 }
 
+.navbar-brand {
+    margin-right: 550px;
+}
+
+
 /* Change font on filter buttons */
 .filter_by{
     font-family: Arial, Helvetica, sans-serif;
@@ -22,19 +27,24 @@ body {
     /* margin-right: 200px; */
 }
 
+.dropdown-content:active{
+    background-color: white;
+}
+
 a:not([href]):not([tabindex]) {
     margin-left: 670px;
 }
 
 /* Change size of the dropdown buttons */
-.btn-primary{
+.btn-secondary{
     width: 100px;
     margin: 5px 10px 5px 10px;
     justify-content: right;
     background-color: #44b7ff;
     border-color: #44b7ff;
-    color: black;
+    color: white;
 }
+
 
 /* Change color over hover on primary button */
 .btn-primary:hover{
@@ -47,10 +57,12 @@ h2{
     margin-top: 15px;
 }
 
+
 /* MEDIA CHANGES */
 /* Change the size of the navbar on changing the size of the screen */
 @media(min-width: 1900px){
-    a:not([href]):not([tabindex]) {
-        margin-left: 1300px;
+    .navbar-brand {
+        margin-right: 1200px;
     }
+
 }
