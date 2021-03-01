@@ -25,6 +25,7 @@ The **comparison page** gives the user the ability to select "State", "Price", o
 
 The **Contact Us** link will take the user to the presentation about how Team Shredding the Gnar put this site together.
 
+See our presentation [here](https://docs.google.com/presentation/d/11My6oznZEgoI8yojyB5zZIndk0h40zuZ8xHygYNEmns/edit#slide=id.p).
 Happy shredding!  
 -- Team Shredding the Gnar
 
