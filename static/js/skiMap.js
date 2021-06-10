@@ -9,8 +9,6 @@ let streetMap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
         accessToken: API_KEY
       }).addTo(myMap);
 
-let allResortsLayerGroup = L.layerGroup().addTo(myMap);
-
 d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
     data.forEach(resort => {
             
@@ -25,31 +23,33 @@ d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
             let popupContent = "<b style='font-size: 16px'>" + resortName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
                                  + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
             let marker = L.marker([lon, lat]).bindPopup(popupContent); 
-            allResortsLayerGroup.addLayer(marker);     
+            // allResortsLayerGroup.addLayer(marker);     
         }
     });
 });
 
-let overlay = {'All Resorts': allResortsLayerGroup};
-L.control.layers(null, overlay).addTo(myMap);
-
 // create a drop down menu with all available states
 
-let states = ['Alabama', 'Alaska', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Idaho', 'Illinois', 'Indiana'
-                , 'Iowa', 'Maine', 'Massachusetts', 'Michigan', 'Minnesota', 'Missouri', 'Montana', 'Nevada'
-                , 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio'
-                , 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Dakota', 'Tennessee', 'Utah', 'Vermont', 'Virgina'
-                , 'Washington', 'West Virgina', 'Wisconsin', 'Wyoming'];
+let states =  ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
+                'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 
+                'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
+                'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 
+                'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
 
-let statesDropDown = L.control({position: 'bottomleft'});
+
+let statesDropDown = L.control({position: 'topright'});
 statesDropDown.onAdd = function() {
+    
     let div = L.DomUtil.create('div', 'info legend');
     let stateString = "";
+    
     states.forEach( function(state) { 
           stateString += `<option>${state}</option>`;
     });
     div.innerHTML = `<select id='statesMenu'>${stateString}</select>`;
+    console.log(div);
     return div;
+    
 };
 statesDropDown.addTo(myMap);
 
@@ -58,10 +58,30 @@ d3.select('#statesMenu').on('change', updateMap);
 
 function updateMap(){
     let dropDownStates = d3.select('#statesMenu').node().value;
+
+    let stateCoordinates = [];
+
+    d3.json('/static/data/us_states.json').then(function(d) {
+        let features = d.features;
+        features.forEach(feature => {
+            if (feature.properties.name === dropDownStates) {
+                coordinates = feature.geometry.coordinates;
+                for (let i=0; i < coordinates[0].length; i++) {
+                    let lat = coordinates[0][i][1];
+                    let lng = coordinates[0][i][0];
+                    stateCoordinates.push([lat, lng]);
+                };               
+            };
+        });
+    });
+    console.log(stateCoordinates);
+    let polygon = L.polygon(stateCoordinates, {color: 'red'});
+    polygon.addTo(myMap);
+    // myMap.fitBounds(polygon.getBounds());
     
     d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
         data.forEach(resort => {
-            if (resort.region .toLowerCase() === dropDownStates.toLowerCase() & resort.lon) {
+            if (resort.region.toLowerCase() === dropDownStates.toLowerCase() & resort.lon) {
                 let lon = Number(resort.lon),
                 lat = Number(resort.lat),
                 resortName = resort.name,
@@ -75,6 +95,6 @@ function updateMap(){
                 marker.addTo(myMap);
 
             }
-        })
+        });
     });
 }
