@@ -34,12 +34,11 @@ let states =  ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colora
                 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 
                 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
                 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 
-                'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
+                'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
 
 
 let statesDropDown = L.control({position: 'topright'});
-statesDropDown.onAdd = function() {
-    
+statesDropDown.onAdd = function() {   
     let div = L.DomUtil.create('div', 'info legend');
     let stateString = "";
     
@@ -47,7 +46,6 @@ statesDropDown.onAdd = function() {
           stateString += `<option>${state}</option>`;
     });
     div.innerHTML = `<select id='statesMenu'>${stateString}</select>`;
-    console.log(div);
     return div;
     
 };
@@ -59,42 +57,60 @@ d3.select('#statesMenu').on('change', updateMap);
 function updateMap(){
     let dropDownStates = d3.select('#statesMenu').node().value;
 
-    let stateCoordinates = [];
-
-    d3.json('/static/data/us_states.json').then(function(d) {
-        let features = d.features;
-        features.forEach(feature => {
-            if (feature.properties.name === dropDownStates) {
-                coordinates = feature.geometry.coordinates;
-                for (let i=0; i < coordinates[0].length; i++) {
-                    let lat = coordinates[0][i][1];
-                    let lng = coordinates[0][i][0];
-                    stateCoordinates.push([lat, lng]);
-                };               
-            };
-        });
-    });
-    console.log(stateCoordinates);
-    let polygon = L.polygon(stateCoordinates, {color: 'red'});
-    polygon.addTo(myMap);
-    // myMap.fitBounds(polygon.getBounds());
+    fetch('/static/data/us_states.json').then(response => {
+        return response.json();
+    }).then(data => {
+        let features = data.features;
     
-    d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
-        data.forEach(resort => {
-            if (resort.region.toLowerCase() === dropDownStates.toLowerCase() & resort.lon) {
-                let lon = Number(resort.lon),
-                lat = Number(resort.lat),
-                resortName = resort.name,
-                totalSlopeLen = resort.total_len,
-                closestTown = resort.closestTown,
-                liftTicket = resort.price;
-                
-                let popupContent = "<b style='font-size: 16px'>" + resortName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
-                                 + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
-                let marker = L.marker([lon, lat]).bindPopup(popupContent); 
-                marker.addTo(myMap);
+        features.forEach(feature => {
+            if (feature.properties.name === dropDownStates){
+                let statePoly = L.geoJSON(feature).addTo(myMap);
+                let poly = [];
+                if (feature.geometry.type === 'Polygon') {
+                    poly = feature.geometry.coordinates[0];
+                };
 
-            }
+                if (feature.geometry.type === 'MultiPolygon'){
+                    poly = feature.geometry.coordinates[0][0]
+                };
+                myMap.fitBounds(statePoly.getBounds());
+                
+                d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
+                    data.forEach(resort => {
+                        if (resort.lon) {
+                            let lon = Number(resort.lon),
+                                lat = Number(resort.lat);
+                            let marker = L.marker([lon, lat]);
+                            if (isMarkerInsidePolygon(marker, poly)) {
+                                let resortName = resort.name,
+                                    totalSlopeLen = resort.total_len,
+                                    closestTown = resort.closest_town,
+                                    liftTicket = resort.price;
+
+                                let popupContent = "<b style='font-size: 16px'>" + resortName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
+                                                    + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
+                                marker.addTo(myMap).bindPopup(popupContent);
+                            };
+                        };
+                    });
+                });
+            }; 
         });
-    });
-}
+    });   
+};
+    
+
+function isMarkerInsidePolygon(marker, poly) {
+    var inside = false;
+
+    var x = marker.getLatLng().lat, y = marker.getLatLng().lng;
+
+    for (let i=0; i < poly.length-1; i++){
+        let xi = poly[i][1], yi = poly[i][0];
+        let xj = poly[i+1][1], yj = poly[i+1][0];
+        var intersect = ((yi > y) != (yj > y))
+                && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+            if (intersect) inside = !inside;
+    }
+    return inside;
+};
