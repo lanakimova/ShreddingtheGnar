@@ -51,11 +51,17 @@ statesDropDown.onAdd = function() {
 };
 statesDropDown.addTo(myMap);
 
-// get selected option
+// lisener for selected option
 d3.select('#statesMenu').on('change', updateMap);
 
 function updateMap(){
+    // get value from dropdown
     let dropDownStates = d3.select('#statesMenu').node().value;
+
+    //  remove previous layer with markers
+    let stateMarkers = L.layerGroup();
+    myMap.eachLayer(function(layer) { if (layer != streetMap) { myMap.removeLayer(layer) }});
+
 
     fetch('/static/data/us_states.json').then(response => {
         return response.json();
@@ -76,6 +82,7 @@ function updateMap(){
                 myMap.fitBounds(statePoly.getBounds());
                 
                 d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
+                    let markers = [];
                     data.forEach(resort => {
                         if (resort.lon) {
                             let lon = Number(resort.lon),
@@ -89,7 +96,9 @@ function updateMap(){
 
                                 let popupContent = "<b style='font-size: 16px'>" + resortName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
                                                     + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
-                                marker.addTo(myMap).bindPopup(popupContent);
+                                
+                                markers.push(marker.bindPopup(popupContent));
+                                stateMarkers = L.layerGroup(markers).addTo(myMap);
                             };
                         };
                     });
