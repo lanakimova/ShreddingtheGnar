@@ -10,11 +10,9 @@
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://cdn.plot.ly/plotly-2.0.0.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/static/css/el_style.css">
-  <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
-  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
-  
 
   </head>
 
@@ -26,16 +24,23 @@
     </nav>
    
 
-
     <div class='container-fluid'>
         <div class='row'>
           <div class='col-md-6'>
-            <div class='card' style="height: 700px; width: 700px;">
+            <div class='card' style="height: 400px; width: 1400px;">
               <div class='card-body'>
-                <div id="map" style="height: 600px; width: 650px;"> </div>
+                <div id="map" style="height: 350px; width: 1350px;"> </div>
               </div>
             </div>
           </div>
+        </div> 
+        <div class='row'>
+          <div class='card' style="width: 600px; height: 600px">
+            <div class='card-body'>
+              <div id='priceChart' style="width: 550px; height: 580px;"></div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <!-- D3 -->

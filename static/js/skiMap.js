@@ -83,22 +83,32 @@ function updateMap(){
                 
                 d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
                     let markers = [];
+                    let resortNames = [],
+                        liftPrice = [];
+
                     data.forEach(resort => {
                         if (resort.lon) {
                             let lon = Number(resort.lon),
                                 lat = Number(resort.lat);
                             let marker = L.marker([lon, lat]);
                             if (isMarkerInsidePolygon(marker, poly)) {
-                                let resortName = resort.name,
+
+                                let rName = resort.name,
                                     totalSlopeLen = resort.total_len,
                                     closestTown = resort.closest_town,
                                     liftTicket = resort.price;
 
-                                let popupContent = "<b style='font-size: 16px'>" + resortName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
+                                if (liftTicket) {
+                                    resortNames.push(rName);
+                                    liftPrice.push(liftTicket);
+                                }
+
+                                let popupContent = "<b style='font-size: 16px'>" + rName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
                                                     + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
                                 
                                 markers.push(marker.bindPopup(popupContent));
                                 stateMarkers = L.layerGroup(markers).addTo(myMap);
+                                comparePrice(resortNames, liftPrice);
                             };
                         };
                     });
@@ -107,7 +117,6 @@ function updateMap(){
         });
     });   
 };
-    
 
 function isMarkerInsidePolygon(marker, poly) {
     var inside = false;
@@ -123,3 +132,40 @@ function isMarkerInsidePolygon(marker, poly) {
     }
     return inside;
 };
+
+function comparePrice(resortNames, liftPrice) {
+    let trace = {
+        x: resortNames,
+        y: liftPrice,
+        type: 'bar',
+        transforms: [{
+            type: 'sort',
+            target: 'y',
+            order: 'ascending'}],
+        test: liftPrice
+        // orientation: 'h'
+    };
+
+    let layout = {
+        title: "Compare Price",
+        showlegend: false,
+        xaxis: {
+            type: 'category',
+            showticklabels: true,
+            tickangle: 45,
+            tickfont: {
+                family: 'Old Standard TT, serif',
+                size: 8,
+                color: 'black'
+              }
+            },
+        yaxis: {
+            title: "Price",
+            showticklabels: true,
+            tickangle: 'auto'}
+    };
+
+    let data = [trace];
+
+    Plotly.newPlot('priceChart', data, layout);
+}
