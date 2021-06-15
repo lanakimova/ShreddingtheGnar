@@ -22,7 +22,8 @@ def home():
     return render_template("index.html")
     # , states=getStates(), weather=getWeather(), resorts=getResorts(), slopes=getSlopes())
 
-        
+
+
 # comparison page
 # @app.route('/comparison')
 # def comparison():    

@@ -107,11 +107,30 @@ function updateMap(){
                                                     + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
                                 
                                 markers.push(marker.bindPopup(popupContent));
-                                stateMarkers = L.layerGroup(markers).addTo(myMap);
-                                comparePrice(resortNames, liftPrice);
+                                stateMarkers = L.layerGroup(markers).addTo(myMap);                           
                             };
                         };
                     });
+
+                    if (markers.length > 0) {
+                        if (document.getElementById('priceChart')) {
+                            document.getElementById('priceChart').remove();
+                        };
+                        document.getElementById('barChart').insertAdjacentHTML('afterend', 
+                                    `<div class='card' id='priceChart' style='width: 600px; height: 600px'> <div class='card-body'>
+                                                                    <div  style='width: 550px; height: 580px;'></div>
+                                                                </div>
+                                                            </div>`);
+                        comparePrice(resortNames, liftPrice);
+                    }
+                    else {
+                        if (document.getElementById('priceChart')) {
+                            document.getElementById('priceChart').remove();
+                        };
+                        
+                    };
+                    // console.log('stateMarkers', markers);
+                    
                 });
             }; 
         });
