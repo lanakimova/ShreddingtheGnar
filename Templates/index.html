@@ -12,32 +12,39 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://cdn.plot.ly/plotly-2.0.0.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/static/css/el_style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a href="/" class="navbar-brand">
-        <img src="/static/images/logo_light_bg-removebg-preview.png" class="logo">Shredding the Gnar
-      </a>    
+    
+    <nav class="navbar sticky-top navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/static/images/logo_light_bg-removebg-preview.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          Shredding the Gnar
+        </a>
+      </div>
     </nav>
    
-
-    <div class='container-fluid'>
-        <div class='row'>
-          <div class='col-md-6'>
-            <div class='card' style="height: 400px; width: 1400px;">
-              <div class='card-body'>
-                <div id="map" style="height: 350px; width: 1350px;"> </div>
-              </div>
-            </div>
-          </div>
-        </div> 
-        <div class='row' id='barChart'>
-          
+    <div class="container-fluid">
+      <div class="row">
+        <div class='col' >
+          <div id="map" style="width: 100%; height: 400px;"> </div>
         </div>
+      </div>
+
+      <div class="row">
+        <div class='col'>
+          <div id="price"> </div>
+        </div>
+        <div class="col">
+          <div id='slope'></div>
+        </div>
+      </div>
+      
     </div>
+    
 
     <!-- D3 -->
     <script src="https://d3js.org/d3.v6.min.js"></script>

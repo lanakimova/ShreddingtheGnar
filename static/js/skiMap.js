@@ -116,11 +116,8 @@ function updateMap(){
                         if (document.getElementById('priceChart')) {
                             document.getElementById('priceChart').remove();
                         };
-                        document.getElementById('barChart').insertAdjacentHTML('afterend', 
-                                    `<div class='card' id='priceChart' style='width: 600px; height: 600px'> <div class='card-body'>
-                                                                    <div  style='width: 550px; height: 580px;'></div>
-                                                                </div>
-                                                            </div>`);
+                        document.getElementById('price').insertAdjacentHTML('afterend', 
+                                    `<div id='priceChart'></div>`);
                         comparePrice(resortNames, liftPrice);
                     }
                     else {
