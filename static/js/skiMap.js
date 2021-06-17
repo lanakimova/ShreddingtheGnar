@@ -91,7 +91,7 @@ function updateMap(){
                         if (resort.lon) {
                             let lon = Number(resort.lon),
                                 lat = Number(resort.lat);
-                            let marker = L.marker([lon, lat]);
+                            let marker = L.marker([lon, lat]).addEventListener('click', markerOnClick);
                             if (isMarkerInsidePolygon(marker, poly)) {
 
                                 let rName = resort.name,
@@ -199,7 +199,7 @@ function comparePrice(resortNames, liftPrice) {
     let data = [trace];
 
     Plotly.newPlot('priceChart', data, layout);
-}
+};
 
 
 function compareSlopesLen(resortNames, slopesLen) {
@@ -236,4 +236,18 @@ function compareSlopesLen(resortNames, slopesLen) {
     let data = [trace];
 
     Plotly.newPlot('slopeChart', data, layout);
-}
+};
+
+// event listener for markers
+
+// d3.select('#map').select(".leaflet-marker-icon leaflet-zoom-animated leaflet-interactive").on('click', markerOnClick);
+
+let markerOnClick = function(e){
+    const parser = new DOMParser();
+    let popupContent = e.target.getPopup().getContent();
+    let htmlContent = parser.parseFromString(popupContent, "text/html");
+
+    console.log(typeof popupContent);
+    console.log(htmlContent.body.firstChild.textContent);
+    // console.log(e.target.getPopup().getContent());
+};
