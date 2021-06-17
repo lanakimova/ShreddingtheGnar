@@ -253,15 +253,15 @@ let markerOnClick = function(e){
                 }
 
                 document.getElementById("resortInfo").insertAdjacentHTML('afterend',
-                         `<div id="info"> <a style="font-size: 16px">${resort.name}</a>
-                            <a style="font-size: 12px">Total Slopes Length: ${resort.total_len} </a>
-                            <a style="font-size: 12px">Easy Slopes Length: ${resort.easy_len} </a>
-                            <a style="font-size: 12px">Intermediate Slopes Length: ${resort.intermediate_len} </a>
-                            <a style="font-size: 12px">Difficult Slopes Length: ${resort.difficult_len} </a>
-                          </div>`)
-
-
-            }
+                         `<div id="info"> <br><b style="font-size: 18px">${resort.name}</b><br><br>
+                            <b style="font-size: 12px">Closest Town:</b> ${resort.closest_town} <br><br>
+                            <b style="font-size: 12px">Lift Price:</b> $${resort.price} <br><br>
+                            <b style="font-size: 12px">Total Slopes Length:</b> ${resort.total_len} miles<br>
+                            <b style="font-size: 12px">Easy Slopes Length:</b> ${resort.easy_len} miles<br>
+                            <b style="font-size: 12px">Intermediate Slopes Length:</b> ${resort.intermediate_len} miles<br>
+                            <b style="font-size: 12px">Difficult Slopes Length:</b> ${resort.difficult_len} miles<br>
+                          </div>`);
+            };
         });
     });
    
