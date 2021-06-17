@@ -238,16 +238,31 @@ function compareSlopesLen(resortNames, slopesLen) {
     Plotly.newPlot('slopeChart', data, layout);
 };
 
-// event listener for markers
-
-// d3.select('#map').select(".leaflet-marker-icon leaflet-zoom-animated leaflet-interactive").on('click', markerOnClick);
 
 let markerOnClick = function(e){
     const parser = new DOMParser();
     let popupContent = e.target.getPopup().getContent();
     let htmlContent = parser.parseFromString(popupContent, "text/html");
+    let resortName = htmlContent.body.firstChild.textContent;
 
-    console.log(typeof popupContent);
-    console.log(htmlContent.body.firstChild.textContent);
-    // console.log(e.target.getPopup().getContent());
+    d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
+        data.forEach(resort => {
+            if (resort.name === resortName) {
+                if (document.getElementById("info")) {
+                    document.getElementById("info").remove();
+                }
+
+                document.getElementById("resortInfo").insertAdjacentHTML('afterend',
+                         `<div id="info"> <a style="font-size: 16px">${resort.name}</a>
+                            <a style="font-size: 12px">Total Slopes Length: ${resort.total_len} </a>
+                            <a style="font-size: 12px">Easy Slopes Length: ${resort.easy_len} </a>
+                            <a style="font-size: 12px">Intermediate Slopes Length: ${resort.intermediate_len} </a>
+                            <a style="font-size: 12px">Difficult Slopes Length: ${resort.difficult_len} </a>
+                          </div>`)
+
+
+            }
+        });
+    });
+   
 };
