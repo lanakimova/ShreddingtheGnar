@@ -84,7 +84,8 @@ function updateMap(){
                 d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
                     let markers = [];
                     let resortNames = [],
-                        liftPrice = [];
+                        liftPrice = [],
+                        slopesLen = [];
 
                     data.forEach(resort => {
                         if (resort.lon) {
@@ -101,6 +102,7 @@ function updateMap(){
                                 if (liftTicket) {
                                     resortNames.push(rName);
                                     liftPrice.push(liftTicket);
+                                    slopesLen.push(totalSlopeLen);
                                 }
 
                                 let popupContent = "<b style='font-size: 16px'>" + rName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
@@ -116,17 +118,31 @@ function updateMap(){
                         if (document.getElementById('priceChart')) {
                             document.getElementById('priceChart').remove();
                         };
+
+                        if (document.getElementById('slopeChart')) {
+                            document.getElementById('slopeChart').remove();
+                        };
                         document.getElementById('price').insertAdjacentHTML('afterend', 
                                     `<div id='priceChart'></div>`);
+                        
+                        document.getElementById('slope').insertAdjacentHTML('afterend',
+                                    `<div id='slopeChart'></div>`);
+
                         comparePrice(resortNames, liftPrice);
+                        compareSlopesLen(resortNames, slopesLen);
                     }
                     else {
                         if (document.getElementById('priceChart')) {
                             document.getElementById('priceChart').remove();
                         };
+
+                        if (document.getElementById('slopeChart')) {
+                            document.getElementById('slopeChart').remove();
+                        };
                         
                     };
-                    // console.log('stateMarkers', markers);
+                    
+
                     
                 });
             }; 
@@ -158,8 +174,7 @@ function comparePrice(resortNames, liftPrice) {
             type: 'sort',
             target: 'y',
             order: 'ascending'}],
-        test: liftPrice
-        // orientation: 'h'
+
     };
 
     let layout = {
@@ -176,7 +191,7 @@ function comparePrice(resortNames, liftPrice) {
               }
             },
         yaxis: {
-            title: "Price",
+            title: "Price $",
             showticklabels: true,
             tickangle: 'auto'}
     };
@@ -184,4 +199,41 @@ function comparePrice(resortNames, liftPrice) {
     let data = [trace];
 
     Plotly.newPlot('priceChart', data, layout);
+}
+
+
+function compareSlopesLen(resortNames, slopesLen) {
+    let trace = {
+        x: resortNames,
+        y: slopesLen,
+        type: 'bar',
+        transforms: [{
+            type: 'sort',
+            target: 'y',
+            order: 'ascending'}],
+ 
+    };
+
+    let layout = {
+        title: "Compare Slopes Length",
+        showlegend: false,
+        xaxis: {
+            type: 'category',
+            showticklabels: true,
+            tickangle: 45,
+            tickfont: {
+                family: 'Old Standard TT, serif',
+                size: 8,
+                color: 'black'
+              }
+            },
+        yaxis: {
+            title: "Slope length (miles)",
+            showticklabels: true,
+            tickangle: 'auto'}
+    };
+
+    let data = [trace];
+
+    Plotly.newPlot('slopeChart', data, layout);
 }
