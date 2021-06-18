@@ -18,7 +18,6 @@ app = Flask(__name__)
 # # Set routes
 @app.route("/")
 def home():
-    getAllCoordinates()
     return render_template("index.html")
     # , states=getStates(), weather=getWeather(), resorts=getResorts(), slopes=getSlopes())
 
