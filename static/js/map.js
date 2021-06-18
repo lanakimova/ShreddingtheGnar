@@ -1,4 +1,30 @@
 
+// Define a baseMaps object to hold our base layers
+var baseMaps = {
+  "Street Map": streetmap
+};
+
+// // Create overlay object to hold our overlay layer
+var overlayMaps = {
+  "All": resortLayer1,
+  "<100": resortLayer2,
+  "100-200": resortLayer3,
+  "200+": resortLayer4,   
+};
+
+var myMap = L.map("map", {
+  center:  [37.7749, -122.4194],
+  zoom: 5,
+  layers: [streetmap, resortLayer1]
+}).addTo(map);
+
+// L.control.layers(baseMaps, overlayMaps, {
+//   collapsed: false
+// }).addTo(myMap);
+
+
+
+
 // d3.select('body').on('load', initMap)
 
 // function initMap() {
@@ -57,28 +83,7 @@
         });
       
     
-    //     // Define a baseMaps object to hold our base layers
-    var baseMaps = {
-        "Street Map": streetmap,
-      };
     
-      // // Create overlay object to hold our overlay layer
-      var overlayMaps = {
-        "All": resortLayer1,
-        "<100": resortLayer2,
-        "100-200": resortLayer3,
-        "200+": resortLayer4,   
-      };
-    
-    var myMap = L.map("map-id", {
-        center:  [37.7749, -122.4194],
-        zoom: 5,
-        layers: [streetmap, resortLayer1]
-      });
-    
-      // L.control.layers(baseMaps, overlayMaps, {
-      //   collapsed: false
-      // }).addTo(myMap);
 
       function applyMarkers() {  
         console.log('State were choosen');
