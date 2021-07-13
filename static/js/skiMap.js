@@ -9,28 +9,30 @@ let streetMap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
         accessToken: API_KEY
       }).addTo(myMap);
 
-d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
-    data.forEach(resort => {
-            
-        if (resort.lon) {
-            let lon = Number(resort.lon),
-                lat = Number(resort.lat),
-                resortName = resort.name,
-                totalSlopeLen = resort.total_len,
-                closestTown = resort.closestTown,
-                liftTicket = resort.price;
 
-            let popupContent = "<b style='font-size: 16px'>" + resortName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
-                                 + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
-            let marker = L.marker([lon, lat]).bindPopup(popupContent); 
-            // allResortsLayerGroup.addLayer(marker);     
-        }
+function showAllResorts() {
+    d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
+        data.forEach(resort => {
+                
+            if (resort.lon) {
+                let lon = Number(resort.lon),
+                    lat = Number(resort.lat),
+                    resortName = resort.name,
+                    totalSlopeLen = resort.total_len,
+                    closestTown = resort.closestTown,
+                    liftTicket = resort.price;
+    
+                let popupContent = "<b style='font-size: 16px'>" + resortName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
+                                     + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
+                let marker = L.marker([lon, lat]).bindPopup(popupContent).addTo(myMap);      
+            }
+        });
     });
-});
+};
 
 // create a drop down menu with all available states
 
-let states =  ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
+let states =  ['All States', 'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
                 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 
                 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
                 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 
@@ -62,92 +64,96 @@ function updateMap(){
     let stateMarkers = L.layerGroup();
     myMap.eachLayer(function(layer) { if (layer != streetMap) { myMap.removeLayer(layer) }});
 
-
-    fetch('/static/data/us_states.json').then(response => {
-        return response.json();
-    }).then(data => {
-        let features = data.features;
-    
-        features.forEach(feature => {
-            if (feature.properties.name === dropDownStates){
-                let statePoly = L.geoJSON(feature).addTo(myMap);
-                let poly = [];
-                if (feature.geometry.type === 'Polygon') {
-                    poly = feature.geometry.coordinates[0];
-                };
-
-                if (feature.geometry.type === 'MultiPolygon'){
-                    poly = feature.geometry.coordinates[0][0]
-                };
-                myMap.fitBounds(statePoly.getBounds());
-                
-                d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
-                    let markers = [];
-                    let resortNames = [],
-                        liftPrice = [],
-                        slopesLen = [];
-
-                    data.forEach(resort => {
-                        if (resort.lon) {
-                            let lon = Number(resort.lon),
-                                lat = Number(resort.lat);
-                            let marker = L.marker([lon, lat]).addEventListener('click', markerOnClick);
-                            if (isMarkerInsidePolygon(marker, poly)) {
-
-                                let rName = resort.name,
-                                    totalSlopeLen = resort.total_len,
-                                    closestTown = resort.closest_town,
-                                    liftTicket = resort.price;
-
-                                if (liftTicket) {
-                                    resortNames.push(rName);
-                                    liftPrice.push(liftTicket);
-                                    slopesLen.push(totalSlopeLen);
-                                }
-
-                                let popupContent = "<b style='font-size: 16px'>" + rName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
-                                                    + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
-                                
-                                markers.push(marker.bindPopup(popupContent));
-                                stateMarkers = L.layerGroup(markers).addTo(myMap);                           
-                            };
-                        };
-                    });
-
-                    if (markers.length > 0) {
-                        if (document.getElementById('priceChart')) {
-                            document.getElementById('priceChart').remove();
-                        };
-
-                        if (document.getElementById('slopeChart')) {
-                            document.getElementById('slopeChart').remove();
-                        };
-                        document.getElementById('price').insertAdjacentHTML('afterend', 
-                                    `<div id='priceChart'></div>`);
-                        
-                        document.getElementById('slope').insertAdjacentHTML('afterend',
-                                    `<div id='slopeChart'></div>`);
-
-                        comparePrice(resortNames, liftPrice);
-                        compareSlopesLen(resortNames, slopesLen);
-                    }
-                    else {
-                        if (document.getElementById('priceChart')) {
-                            document.getElementById('priceChart').remove();
-                        };
-
-                        if (document.getElementById('slopeChart')) {
-                            document.getElementById('slopeChart').remove();
-                        };
-                        
+    if (dropDownStates != 'All States') {
+        fetch('/static/data/us_states.json').then(response => {
+            return response.json();
+        }).then(data => {
+            let features = data.features;
+        
+            features.forEach(feature => {
+                if (feature.properties.name === dropDownStates){
+                    let statePoly = L.geoJSON(feature).addTo(myMap);
+                    let poly = [];
+                    if (feature.geometry.type === 'Polygon') {
+                        poly = feature.geometry.coordinates[0];
                     };
+    
+                    if (feature.geometry.type === 'MultiPolygon'){
+                        poly = feature.geometry.coordinates[0][0]
+                    };
+                    myMap.fitBounds(statePoly.getBounds());
                     
-
-                    
-                });
-            }; 
-        });
-    });   
+                    d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
+                        let markers = [];
+                        let resortNames = [],
+                            liftPrice = [],
+                            slopesLen = [];
+    
+                        data.forEach(resort => {
+                            if (resort.lon) {
+                                let lon = Number(resort.lon),
+                                    lat = Number(resort.lat);
+                                let marker = L.marker([lon, lat]).addEventListener('click', markerOnClick);
+                                if (isMarkerInsidePolygon(marker, poly)) {
+    
+                                    let rName = resort.name,
+                                        totalSlopeLen = resort.total_len,
+                                        closestTown = resort.closest_town,
+                                        liftTicket = resort.price;
+    
+                                    if (liftTicket) {
+                                        resortNames.push(rName);
+                                        liftPrice.push(liftTicket);
+                                        slopesLen.push(totalSlopeLen);
+                                    }
+    
+                                    let popupContent = "<b style='font-size: 16px'>" + rName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
+                                                        + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
+                                    
+                                    markers.push(marker.bindPopup(popupContent));
+                                    stateMarkers = L.layerGroup(markers).addTo(myMap);                           
+                                };
+                            };
+                        });
+    
+                        if (markers.length > 0) {
+                            if (document.getElementById('priceChart')) {
+                                document.getElementById('priceChart').remove();
+                            };
+    
+                            if (document.getElementById('slopeChart')) {
+                                document.getElementById('slopeChart').remove();
+                            };
+                            document.getElementById('price').insertAdjacentHTML('afterend', 
+                                        `<div id='priceChart'></div>`);
+                            
+                            document.getElementById('slope').insertAdjacentHTML('afterend',
+                                        `<div id='slopeChart'></div>`);
+    
+                            comparePrice(resortNames, liftPrice);
+                            compareSlopesLen(resortNames, slopesLen);
+                        }
+                        else {
+                            if (document.getElementById('priceChart')) {
+                                document.getElementById('priceChart').remove();
+                            };
+    
+                            if (document.getElementById('slopeChart')) {
+                                document.getElementById('slopeChart').remove();
+                            };                           
+                        };                       
+                    });
+                }; 
+            });
+        }); 
+    }
+    else { 
+        showAllResorts();
+        myMap.setView([39.8283, -98.5795], 4);
+        document.getElementById('priceChart').remove();
+        document.getElementById('slopeChart').remove();
+    };
+      
 };
 
 function isMarkerInsidePolygon(marker, poly) {
@@ -201,7 +207,6 @@ function comparePrice(resortNames, liftPrice) {
     Plotly.newPlot('priceChart', data, layout);
 };
 
-
 function compareSlopesLen(resortNames, slopesLen) {
     let trace = {
         x: resortNames,
@@ -238,7 +243,6 @@ function compareSlopesLen(resortNames, slopesLen) {
     Plotly.newPlot('slopeChart', data, layout);
 };
 
-
 let markerOnClick = function(e){
     const parser = new DOMParser();
     let popupContent = e.target.getPopup().getContent();
@@ -266,3 +270,4 @@ let markerOnClick = function(e){
     });
    
 };
+
