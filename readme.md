@@ -18,7 +18,7 @@ Shredding the Gnar is a Flask base application. On the main page you will find a
 * Plotly
 
 ## Our site: 
-[link on the site will be here soon]
+https://shreddingthegnar-app.herokuapp.com/
 
 
 Happy shredding ⛷⛷⛷!  
@@ -27,8 +27,9 @@ Happy shredding ⛷⛷⛷!
 
 # Our plans
 
-- [] host site to heroku
-- [] find info about resorts hight
-- [] add weather condition for each resorts
-- [] provide direct link to resort
-- [] more is comming ...
+- [x] host site to heroku
+- [ ] made a beautiful design ;)
+- [ ] find info about resorts hight
+- [ ] add weather condition for each resorts
+- [ ] provide direct link to resort
+- [ ] more is comming ...
