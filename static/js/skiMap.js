@@ -160,6 +160,7 @@ function isMarkerInsidePolygon(marker, poly) {
     var inside = false;
 
     var x = marker.getLatLng().lat, y = marker.getLatLng().lng;
+    console.log("isMARKER FUNC", x, y );
 
     for (let i=0; i < poly.length-1; i++){
         let xi = poly[i][1], yi = poly[i][0];
