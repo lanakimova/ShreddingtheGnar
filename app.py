@@ -23,7 +23,7 @@ def getData():
 def home():
     return render_template("index.html", template_folder='Templates')
 
-@app.route("/states")
+@app.route("/states", methods=['GET'])
 def states():
     # return unique states with snow resorts
     states = []   
@@ -34,6 +34,7 @@ def states():
     for i in range(len(data)):
         if data[i][stateName] not in states:
             states.append(data[i][stateName])
+    states.sort()
 
     return jsonify(states)
 
@@ -77,7 +78,7 @@ def isResortInState(resort_name):
 
     return resortInState
 
-@app.route('averagePrice/<state>')
+@app.route('/averagePrice/<state>')
 def averagePrice(state='All States'):
     # function return average price for given state. 
     average_price = 0
