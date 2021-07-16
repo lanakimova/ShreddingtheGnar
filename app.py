@@ -23,6 +23,7 @@ def getData():
 def home():
     return render_template("index.html", template_folder='Templates')
 
+@app.route("/states")
 def states():
     # return unique states with snow resorts
     states = []   
