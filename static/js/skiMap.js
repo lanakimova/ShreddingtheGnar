@@ -30,27 +30,26 @@ function showAllResorts() {
     });
 };
 
-// create a drop down menu with all available states
-
-let states =  ['All States', 'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
-                'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 
-                'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
-                'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 
-                'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
-
-
+// Create a drop down menu with states
 let statesDropDown = L.control({position: 'topright'});
-statesDropDown.onAdd = function() {   
-    let div = L.DomUtil.create('div', 'info legend');
-    let stateString = "";
-    
-    states.forEach( function(state) { 
-          stateString += `<option>${state}</option>`;
+
+statesDropDown.onAdd = function() {
+    let div = L.DomUtil.create('div', 'dropdown menu');
+    let stateString = '<option>All State</option>';
+
+    fetch('/states').then(function(resp) {
+        return resp.json();
+    }).then(function(text) {
+      text.forEach(function(state) {
+          stateString += `<option>${state}</option>`;  
+                  
+      });
+      div.innerHTML = `<select id='stateMenu'>${stateString}</select>`;
     });
-    div.innerHTML = `<select id='statesMenu'>${stateString}</select>`;
+
     return div;
-    
 };
+
 statesDropDown.addTo(myMap);
 
 // lisener for selected option
@@ -59,6 +58,7 @@ d3.select('#statesMenu').on('change', updateMap);
 function updateMap(){
     // get value from dropdown
     let dropDownStates = d3.select('#statesMenu').node().value;
+    console.log(dropDownStates);
 
     //  remove previous layer with markers
     let stateMarkers = L.layerGroup();
@@ -160,6 +160,7 @@ function isMarkerInsidePolygon(marker, poly) {
     var inside = false;
 
     var x = marker.getLatLng().lat, y = marker.getLatLng().lng;
+    console.log("isMARKER FUNC", x, y );
 
     for (let i=0; i < poly.length-1; i++){
         let xi = poly[i][1], yi = poly[i][0];

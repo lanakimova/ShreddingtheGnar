@@ -1,0 +1,489 @@
+,name,link,price,closest_town,region,zip,coordinates,total_len,easy_len,intermediate_len,difficult_len
+0,Vail,https://www.skiresort.info/ski-resort/vail/,219.0,Vail,Colorado,81658,"[-106.497314, 39.624171]",234.0,57.0,84.0,93.0
+1,Telluride,https://www.skiresort.info/ski-resort/telluride/,169.0,Mountain Village,Colorado,81435,"[-107.88874, 37.932874]",88.2,6.7,51.7,29.8
+2,Beaver Creek,https://www.skiresort.info/ski-resort/beaver-creek/,218.0,Beaver Creek Village,Colorado,81658,"[-106.497314, 39.624171]",150.0,28.5,64.5,57.0
+3,Mammoth Mountain,https://www.skiresort.info/ski-resort/mammoth-mountain/,209.0,Mammoth Lakes,Mammoth Lakes,93546,"[-118.86279, 37.621587]",89.8,18.4,48.5,22.9
+4,Snowmass,https://www.skiresort.info/ski-resort/snowmass/,199.0,Snowmass Village,Aspen Snowmass,81612,"[-106.882774, 39.223416]",237.0,12.0,114.0,111.0
+5,Breckenridge,https://www.skiresort.info/ski-resort/breckenridge/,199.0,Breckenridge,Colorado,80424,"[-106.03747, 39.478893]",153.0,28.0,60.0,65.0
+6,Keystone,https://www.skiresort.info/ski-resort/keystone/,176.0,Keystone,Colorado,80435,"[-105.97937, 39.607479]",135.0,25.0,65.0,45.0
+7,Killington,https://www.skiresort.info/ski-resort/killington/,165.0,Killington,Vermont,5751,"[-72.79419, 43.659839]",117.0,19.9,46.7,50.2
+8,Sunday River,https://www.skiresort.info/ski-resort/sunday-river/,119.0,Sunday River,Maine,4261,"[-70.87599, 44.570532]",84.8,25.5,30.5,28.8
+9,Heavenly,https://www.skiresort.info/ski-resort/heavenly/,164.0,Heavenly Village,Lake Tahoe,96150,"[-120.00992, 38.908741]",94.0,18.0,42.0,34.0
+10,Winter Park Resort,https://www.skiresort.info/ski-resort/winter-park-resort/,164.0,Winter Park,Colorado,80482,"[-105.78359, 39.915508]",143.0,11.0,53.0,79.0
+11,Stowe,https://www.skiresort.info/ski-resort/stowe/,149.0,Stowe,Vermont,5672,"[-72.70225, 44.475387]",70.0,20.0,42.0,8.0
+12,Squaw Valley,https://www.skiresort.info/ski-resort/squaw-valley/,209.0,Olympic Valley,Lake Tahoe,96146,"[-120.21804, 39.180983]",100.0,25.0,45.0,30.0
+13,Steamboat,https://www.skiresort.info/ski-resort/steamboat/,199.0,Steamboat Springs,Colorado,80487,"[-106.87521, 40.502772]",165.0,25.0,95.0,45.0
+14,Park City,https://www.skiresort.info/ski-resort/park-city/,133.0,Park City,Salt Lake City,84060,"[-111.49362, 40.648541]",250.0,27.0,152.0,71.0
+15,Big Sky Resort,https://www.skiresort.info/ski-resort/big-sky-resort/,194.0,Big Sky Mountain Village,Montana,59716,"[-111.32651, 45.268367]",250.0,55.0,69.0,126.0
+16,Aspen Highlands,https://www.skiresort.info/ski-resort/aspen-highlands/,199.0,Highlands Village,Aspen Snowmass,81612,"[-106.882774, 39.223416]",135.0,24.3,40.5,70.2
+17,Copper Mountain,https://www.skiresort.info/ski-resort/copper-mountain/,189.0,Frisco,Colorado,80443,"[-106.14029, 39.532506]",126.0,30.0,40.0,56.0
+18,Alpine Meadows,https://www.skiresort.info/ski-resort/alpine-meadows/,209.0,Alpine Meadows,Lake Tahoe,96146,"[-120.21804, 39.180983]",100.0,25.0,40.0,35.0
+19,Alta,https://www.skiresort.info/ski-resort/alta/,125.0,Alta,,84092,"[-111.80902, 40.558748]",116.0,29.0,46.4,40.6
+20,Buttermilk Mountain,https://www.skiresort.info/ski-resort/buttermilk-mountain/,199.0,Aspen,Aspen Snowmass,81612,"[-106.882774, 39.223416]",34.0,11.9,13.3,8.8
+21,Jackson Hole,https://www.skiresort.info/ski-resort/jackson-hole/,182.0,Teton Village,Wyoming,83025,"[-110.694002, 43.443851]",116.0,16.0,50.0,50.0
+22,Deer Valley,https://www.skiresort.info/ski-resort/deer-valley/,,Park City, read more,84060,"[-111.49362, 40.648541]",103.0,28.0,42.0,33.0
+23,Crested Butte,https://www.skiresort.info/ski-resort/crested-butte/,151.0,Mount Crested Butte,Colorado,81224,"[-106.96556, 38.865307]",121.0,31.4,69.0,20.6
+24,Powder Mountain,https://www.skiresort.info/ski-resort/powder-mountain/,99.0,Eden,Utah,84310,"[-111.81304, 41.364638]",135.0,30.0,50.0,55.0
+25,Whiteface – Lake Placid,https://www.skiresort.info/ski-resort/whiteface-lake-placid/,115.0,Lake Placid,The Adirondacks,12997,"[-73.815204, 44.145678]",37.0,12.8,15.9,8.3
+26,Mt. Bachelor,https://www.skiresort.info/ski-resort/mt-bachelor/,169.0,Bend,Oregon,97702,"[-121.30891, 44.020483]",100.0,15.0,25.0,60.0
+27,Northstar California Resort,https://www.skiresort.info/ski-resort/northstar-california-resort/,170.0,Truckee,Lake Tahoe,96161,"[-120.22805, 39.339574]",97.0,25.0,45.0,27.0
+28,Yellowstone Club,https://www.skiresort.info/ski-resort/yellowstone-club/,,Yellowstone Club,Montana,59716,"[-111.32651, 45.268367]",80.0,30.0,30.0,20.0
+29,Snowbird,https://www.skiresort.info/ski-resort/snowbird/,165.0,Snowbird,Salt Lake City,84092,"[-111.80902, 40.558748]",103.0,27.0,38.0,38.0
+30,Bald Mountain – Sun Valley,https://www.skiresort.info/ski-resort/bald-mountain-sun-valley/,165.0,,Idaho,83353,"[-114.18191, 43.661373]",92.0,35.0,40.0,17.0
+31,Schweitzer Mountain Resort,https://www.skiresort.info/ski-resort/schweitzer-mountain-resort/,95.0,Sandpoint,Idaho,83864,"[-116.55101, 48.362033]",95.0,20.0,40.0,35.0
+32,Arapahoe Basin,https://www.skiresort.info/ski-resort/arapahoe-basin/,158.0,Keystone,Colorado,80435,"[-105.97937, 39.607479]",105.0,40.0,25.0,40.0
+33,Mt. Hood Meadows,https://www.skiresort.info/ski-resort/mt-hood-meadows/,129.0,Government Camp,Oregon,97041,"[-121.59252, 45.503224]",90.0,13.5,45.0,31.5
+34,Stratton,https://www.skiresort.info/ski-resort/stratton/,125.0,Stratton,Vermont,5155,"[-72.84497, 43.158484]",92.0,60.0,20.0,12.0
+35,Wenatchee – Mission Ridge,https://www.skiresort.info/ski-resort/wenatchee-mission-ridge/,74.0,Wenatchee,Washington State,98801,"[-120.32881, 47.425497]",100.0,10.0,60.0,30.0
+36,Taos,https://www.skiresort.info/ski-resort/taos/,128.0,Taos Ski Valley,New Mexico,87525,"[-105.50602, 36.575944]",113.0,27.0,28.0,58.0
+37,Mt. Rose,https://www.skiresort.info/ski-resort/mt-rose/,145.0,Reno,Lake Tahoe,89511,"[-119.7606, 39.403178]",100.0,20.0,30.0,50.0
+38,Aspen Mountain,https://www.skiresort.info/ski-resort/aspen-mountain/,199.0,Aspen,Aspen Snowmass,81612,"[-106.882774, 39.223416]",103.0,0.0,49.0,54.0
+39,Sugar Bowl,https://www.skiresort.info/ski-resort/sugar-bowl/,125.0,Truckee,Lake Tahoe,95724,"[-120.64145, 39.26599]",90.0,15.3,40.5,34.2
+40,Whitefish Mountain Resort,https://www.skiresort.info/ski-resort/whitefish-mountain-resort/,85.0,Whitefish Mountain Village,Montana,59937,"[-114.43069, 48.409454]",91.0,18.0,46.0,27.0
+41,Angel Fire,https://www.skiresort.info/ski-resort/angel-fire/,79.0,Angel Fire,New Mexico,87710,"[-105.24877, 36.363506]",75.0,40.0,28.0,7.0
+42,Wolf Creek,https://www.skiresort.info/ski-resort/wolf-creek/,80.0,Pagosa Springs,Colorado,81147,"[-107.11287, 37.241179]",100.0,20.0,35.0,45.0
+43,Sugarbush,https://www.skiresort.info/ski-resort/sugarbush/,119.0,Warren,Vermont,5674,"[-72.85816, 44.106922]",85.0,17.0,38.0,30.0
+44,Purgatory – Durango,https://www.skiresort.info/ski-resort/purgatory-durango/,89.0,Durango,Colorado,81301,"[-107.84945, 37.295888]",85.0,15.0,40.0,30.0
+45,Sugarloaf,https://www.skiresort.info/ski-resort/sugarloaf/,119.0,Carrabassett Valley,Maine,4947,"[-70.2669, 45.018122]",87.0,20.0,30.0,37.0
+46,Brighton,https://www.skiresort.info/ski-resort/brighton/,97.0,Sandy,Salt Lake City,84121,"[-111.8158, 40.625621]",66.0,10.0,18.0,38.0
+47,Okemo,https://www.skiresort.info/ski-resort/okemo/,119.0,Ludlow,Vermont,5149,"[-72.70416, 43.416827]",70.0,22.0,26.0,22.0
+48,Mt. Baker,https://www.skiresort.info/ski-resort/mt-baker/,68.58,Glacier,Washington State,98229,"[-122.435478, 48.725417]",100.0,24.0,45.0,31.0
+49,Bolton Valley,https://www.skiresort.info/ski-resort/bolton-valley/,84.0,Burlington,Vermont,5477,"[-72.95936, 44.392443]",30.0,15.0,10.0,5.0
+50,Jay Peak,https://www.skiresort.info/ski-resort/jay-peak/,89.0,Jay,Vermont,5859,"[-72.41782, 44.963802]",76.0,15.0,31.0,30.0
+51,Solitude,https://www.skiresort.info/ski-resort/solitude/,125.0,Salt Lake City,Salt Lake City,84121,"[-111.8158, 40.625621]",64.0,20.0,30.0,14.0
+52,Brian Head,https://www.skiresort.info/ski-resort/brian-head/,59.0,Parowan,Utah,84719,"[-112.81081, 37.663896]",71.0,22.0,24.0,25.0
+53,Bear Valley,https://www.skiresort.info/ski-resort/bear-valley/,99.0,Bear Valley,California,95223,"[-120.28875, 38.282255]",67.0,17.0,27.0,23.0
+54,Alyeska Resort – Girdwood,https://www.skiresort.info/ski-resort/alyeska-resort-girdwood/,89.0,Anchorage,Alaska,99587,"[-149.0838, 60.952049]",62.0,14.0,31.0,17.0
+55,Bretton Woods,https://www.skiresort.info/ski-resort/bretton-woods/,104.0,Twin Mountain,New Hampshire,3575,"[-71.387387, 44.695648]",56.0,25.0,16.0,15.0
+56,Mount Snow,https://www.skiresort.info/ski-resort/mount-snow/,110.0,West Dover,Vermont,5356,"[-72.87237, 42.952974]",60.0,6.0,46.0,8.0
+57,Red Lodge Mountain,https://www.skiresort.info/ski-resort/red-lodge-mountain/,84.0,Red Lodge,Montana,59068,"[-109.32217, 45.241761]",65.0,11.0,30.0,24.0
+58,Smugglers' Notch,https://www.skiresort.info/ski-resort/smugglers-notch/,90.0,Jeffersonville,Vermont,05464-9537,"[-72.82257, 44.636283]",78.0,13.0,41.0,24.0
+59,Bridger Bowl – Bozeman,https://www.skiresort.info/ski-resort/bridger-bowl-bozeman/,63.0,Bozeman,Montana,59715,"[-110.9878, 45.707153]",71.0,20.0,26.0,25.0
+60,Bogus Basin,https://www.skiresort.info/ski-resort/bogus-basin/,64.0,Boise,Idaho,83702,"[-116.20756, 43.627734]",50.0,11.0,22.0,17.0
+61,Kirkwood,https://www.skiresort.info/ski-resort/kirkwood/,119.0,Kirkwood,Lake Tahoe,95646,"[-120.05516, 38.688329]",65.0,15.0,30.0,20.0
+62,Gore Mountain,https://www.skiresort.info/ski-resort/gore-mountain/,94.0,North Creek,The Adirondacks,12853,"[-73.97457, 43.683067]",58.2,6.7,28.2,23.3
+63,Sierra at Tahoe,https://www.skiresort.info/ski-resort/sierra-at-tahoe/,115.0,South Lake Tahoe,Lake Tahoe,95735,"[-120.13213, 38.805745]",46.5,12.0,23.0,11.5
+64,Crystal Mountain (WA),https://www.skiresort.info/ski-resort/crystal-mountain-wa/,149.0,Enumclaw,Washington State,98022,"[-121.91915, 47.193729]",50.0,8.0,27.0,15.0
+65,49 Degrees North Mountain Resort,https://www.skiresort.info/ski-resort/49-degrees-north-mountain-resort/,62.0,Chewelah,Washington State,99109,"[-117.73437, 48.269784]",68.0,20.0,27.0,21.0
+66,Timberline,https://www.skiresort.info/ski-resort/timberline/,89.0,Welches,Oregon,97028,"[-121.78441, 45.305113]",31.0,8.0,15.0,8.0
+67,Snowbasin,https://www.skiresort.info/ski-resort/snowbasin/,135.0,Huntsville (Utah),Utah,84317,"[-111.70449, 41.288679]",48.0,5.0,28.0,15.0
+68,Loon Mountain,https://www.skiresort.info/ski-resort/loon-mountain/,104.0,Lincoln,New Hampshire,03251,"[-71.6606, 44.051981]",45.0,13.0,26.0,6.0
+69,Apache,https://www.skiresort.info/ski-resort/apache/,74.0,Ruidoso,New Mexico,88312-9600,"[-105.63599, 33.420542]",55.0,12.0,18.0,25.0
+70,Hunter Mountain,https://www.skiresort.info/ski-resort/hunter-mountain/,91.0,Tannersville,The Catskills,12442,"[-74.23418, 42.222061]",55.0,18.0,18.0,19.0
+71,Tamarack Resort,https://www.skiresort.info/ski-resort/tamarack-resort/,100.0,Donnelly,Idaho,83615,"[-116.05992, 44.699961]",42.0,12.0,20.0,10.0
+72,Windham Mountain,https://www.skiresort.info/ski-resort/windham-mountain/,98.0,Windham,The Catskills,12496,"[-74.24657, 42.326918]",46.0,20.0,16.0,10.0
+73,Arizona Snowbowl,https://www.skiresort.info/ski-resort/arizona-snowbowl/,99.0,Flagstaff,Arizona,86002,"[-112.052427, 35.630842]",37.0,12.0,14.0,11.0
+74,Mt. Hood Skibowl,https://www.skiresort.info/ski-resort/mt-hood-skibowl/,59.0,Government Camp,Oregon,97028,"[-121.78441, 45.305113]",65.0,15.0,15.0,35.0
+76,Holiday Valley,https://www.skiresort.info/ski-resort/holiday-valley/,85.0,Ellicottville,Chautauqua-Allegheny,14731-0370,"[-78.65425, 42.286037]",48.0,16.0,13.0,19.0
+77,Stevens Pass,https://www.skiresort.info/ski-resort/stevens-pass/,100.0,Skykomish,Washington State,98826,"[-120.73874, 47.728186]",39.0,6.0,18.0,15.0
+78,Cannon Mountain,https://www.skiresort.info/ski-resort/cannon-mountain/,79.0,Franconia,New Hampshire,03580,"[-71.69959, 44.200124]",50.0,15.0,25.0,10.0
+79,Lutsen Mountains,https://www.skiresort.info/ski-resort/lutsen-mountains/,84.0,Lutsen,Minnesota,55612,"[-90.63836, 47.757804]",40.0,8.0,19.0,13.0
+80,Eldora Mountain,https://www.skiresort.info/ski-resort/eldora-mountain/,129.0,Nederland,Colorado,80466,"[-105.50805, 39.964486]",52.0,11.0,26.0,15.0
+81,Loveland,https://www.skiresort.info/ski-resort/loveland/,89.0,Silverthorne,Colorado,80444,"[-105.7258, 39.694915]",93.0,12.0,38.0,43.0
+82,Pico Mountain,https://www.skiresort.info/ski-resort/pico-mountain/,85.0,Killington,Vermont,05751,"[-72.79419, 43.659839]",30.4,5.4,14.0,11.0
+83,White Pass,https://www.skiresort.info/ski-resort/white-pass/,69.0,Naches,Washington State,98937,"[-120.97097, 46.71207]",30.0,10.0,12.0,8.0
+84,Lost Trail Powder Mountain,https://www.skiresort.info/ski-resort/lost-trail-powder-mountain/,46.0,Sula,Montana,59827,"[-114.07478, 45.905748]",50.0,15.0,25.0,10.0
+85,Powderhorn,https://www.skiresort.info/ski-resort/powderhorn/,79.0,Mesa,Colorado,81643,"[-108.16033, 39.102266]",38.0,5.0,15.0,18.0
+86,Gunstock,https://www.skiresort.info/ski-resort/gunstock/,92.0,Gilford,New Hampshire,03249,"[-71.398521, 43.555878]",40.0,5.0,25.0,10.0
+87,June Mountain,https://www.skiresort.info/ski-resort/june-mountain/,129.0,June Lake,Mammoth Lakes,93529,"[-119.07769, 37.765218]",35.7,2.1,12.9,20.7
+88,China Peak,https://www.skiresort.info/ski-resort/china-peak/,104.0,Clovis,California,93634,"[-119.23304, 37.237216]",50.0,20.0,17.0,13.0
+89,Donner Ski Ranch,https://www.skiresort.info/ski-resort/donner-ski-ranch/,79.0,Truckee,Lake Tahoe,95724,"[-120.64145, 39.26599]",52.0,13.0,26.0,13.0
+90,Mad River Glen,https://www.skiresort.info/ski-resort/mad-river-glen/,92.0,Waitsfield,Vermont,05673,"[-72.8367, 44.184703999999996]",46.0,14.0,17.0,15.0
+91,Discovery Ski Area,https://www.skiresort.info/ski-resort/discovery-ski-area/,49.0,Philipsburg,Montana,59858,"[-113.36273, 46.293656]",45.0,12.0,12.0,21.0
+92,Great Divide,https://www.skiresort.info/ski-resort/great-divide/,48.0,Marysville,Montana,59640,"[-112.30023, 46.748706]",50.0,10.0,20.0,20.0
+93,Dodge Ridge,https://www.skiresort.info/ski-resort/dodge-ridge/,78.0,Sonora,California,95364,"[-119.89619, 38.275328]",50.0,10.0,20.0,20.0
+94,Cranmore Mountain Resort,https://www.skiresort.info/ski-resort/cranmore-mountain-resort/,89.0,North Conway,New Hampshire,03860,"[-71.13084, 44.035684]",43.0,16.0,19.0,8.0
+95,Attitash Mountain Resort,https://www.skiresort.info/ski-resort/attitash-mountain-resort/,94.0,North Conway,New Hampshire,03812,"[-71.29729, 44.081906]",37.0,7.4,17.4,12.2
+96,Mt. Sunapee,https://www.skiresort.info/ski-resort/mt-sunapee/,99.0,Newbury,New Hampshire,03255,"[-72.02654, 43.32582]",30.0,8.0,16.0,6.0
+97,Sundance,https://www.skiresort.info/ski-resort/sundance/,85.0,Provo,Utah,84604,"[-111.6491, 40.280454]",44.0,15.0,20.0,9.0
+98,Silver Mountain,https://www.skiresort.info/ski-resort/silver-mountain/,62.0,Kellogg,Idaho,83837,"[-116.11848, 47.542783]",25.0,4.0,8.0,13.0
+99,Brundage Mountain,https://www.skiresort.info/ski-resort/brundage-mountain/,70.0,McCall,Idaho,83638,"[-116.04991, 44.854428]",30.0,6.0,15.0,9.0
+100,Bear Mountain – Big Bear Lake,https://www.skiresort.info/ski-resort/bear-mountain-big-bear-lake/,,Big Bear Lake,California,92315,"[-116.90328, 34.241295]",27.2,8.0,11.2,8.0
+101,Terry Peak,https://www.skiresort.info/ski-resort/terry-peak/,58.0,Lead,South Dakota,57754,"[-103.83118, 44.312922]",16.0,4.7,7.2,4.1
+102,Ragged Mountain,https://www.skiresort.info/ski-resort/ragged-mountain/,84.0,Danbury,New Hampshire,03230,"[-71.87281, 43.506405]",22.5,4.5,10.0,8.0
+103,Snowshoe Mountain,https://www.skiresort.info/ski-resort/snowshoe-mountain/,119.0,Marlinton,West Virginia,26209,"[-79.99344, 38.422376]",31.0,14.0,11.0,6.0
+104,Saddleback,https://www.skiresort.info/ski-resort/saddleback/,79.0,Rangeley,Maine,04970,"[-70.6576, 44.966701]",22.0,4.0,8.0,10.0
+105,Snow Valley,https://www.skiresort.info/ski-resort/snow-valley/,89.0,Highland,California,92382,"[-117.10499, 34.205626]",34.0,4.0,20.0,10.0
+106,Beaver Mountain,https://www.skiresort.info/ski-resort/beaver-mountain/,50.0,Logan,Utah,84028,"[-111.40328, 41.91021]",30.0,10.0,12.0,8.0
+107,Wildcat Mountain,https://www.skiresort.info/ski-resort/wildcat-mountain/,94.0,Jackson,New Hampshire,03581,"[-71.16273, 44.386557]",25.0,5.2,12.1,7.7
+108,Santa Fé,https://www.skiresort.info/ski-resort/santa-fe/,80.0,Santa Fe,New Mexico,87505,"[-105.97926, 35.616662]",34.0,9.0,15.0,10.0
+109,Timberline Mountain,https://www.skiresort.info/ski-resort/timberline-mountain/,84.0,Davis,West Virginia,26260,"[-79.43805, 39.101535]",18.0,6.0,6.0,6.0
+110,Camelback,https://www.skiresort.info/ski-resort/camelback/,70.0,Stroudsburg,Pennsylvania,18372,"[-75.31865, 41.048423]",34.0,20.0,11.0,3.0
+111,Waterville Valley,https://www.skiresort.info/ski-resort/waterville-valley/,96.0,Waterville Valley,New Hampshire,03215,"[-71.50336, 43.951304]",25.0,3.5,16.0,5.5
+112,Willamette Pass – Crescent,https://www.skiresort.info/ski-resort/willamette-pass-crescent/,60.0,Crescent,Oregon,97405,"[-123.12203, 44.004396]",29.0,6.0,13.0,10.0
+113,Snow Summit – Big Bear Lake,https://www.skiresort.info/ski-resort/snow-summit-big-bear-lake/,,Big Bear Lake,California,92315,"[-116.90328, 34.241295]",29.0,10.0,12.0,7.0
+114,Montana Snowbowl,https://www.skiresort.info/ski-resort/montana-snowbowl/,50.0,Missoula,Montana,59807,"[-113.958686, 46.910342]",31.0,5.0,12.0,14.0
+115,Lookout Pass,https://www.skiresort.info/ski-resort/lookout-pass/,49.0,Mullan,Idaho,83846,"[-115.78377, 47.466971]",31.0,8.0,14.0,9.0
+116,Mountain Creek – Vernon,https://www.skiresort.info/ski-resort/mountain-creek-vernon/,79.99,Vernon Township,New Jersey,07462,"[-74.5089, 41.193708]",24.0,4.0,14.0,6.0
+117,Belleayre Mountain,https://www.skiresort.info/ski-resort/belleayre-mountain/,95.0,Margaretville,The Catskills,12441,"[-74.345684, 41.878801]",20.0,5.0,11.0,4.0
+118,Haystack Mountain – The Hermitage Club,https://www.skiresort.info/ski-resort/haystack-mountain-the-hermitage-club/,,Wilmington,Vermont,05356,"[-72.87237, 42.952974]",19.3,5.6,9.5,4.2
+119,Monarch,https://www.skiresort.info/ski-resort/monarch/,89.0,Salida,Colorado,81227,"[-106.243422, 38.545757]",31.0,5.0,14.0,12.0
+120,The Summit at Snoqualmie,https://www.skiresort.info/ski-resort/the-summit-at-snoqualmie/,95.0,North Bend,Washington State,98068,"[-121.39603, 47.397811]",27.9,5.2,13.7,9.0
+121,Mt. Spokane,https://www.skiresort.info/ski-resort/mt-spokane/,62.0,Mead,Washington State,99021,"[-117.22306, 47.81108]",26.0,7.0,5.0,14.0
+122,Sandia Peak,https://www.skiresort.info/ski-resort/sandia-peak/,55.0,Sandia Park,New Mexico,87122,"[-106.52021, 35.18076]",31.0,8.0,20.0,3.0
+123,Bristol Mountain,https://www.skiresort.info/ski-resort/bristol-mountain/,79.0,Rochester,Finger Lakes,14424,"[-77.29466, 42.85297]",20.0,6.0,10.0,4.0
+124,Wachusett Mountain,https://www.skiresort.info/ski-resort/wachusett-mountain/,71.0,Westminster,Massachusetts,01541,"[-71.882, 42.451569]",12.0,3.6,4.8,3.6
+125,Pats Peak,https://www.skiresort.info/ski-resort/pats-peak/,72.0,Henniker,New Hampshire,03242,"[-71.81722, 43.173469]",33.0,10.0,8.0,15.0
+126,Boyne Highlands,https://www.skiresort.info/ski-resort/boyne-highlands/,98.0,Harbor Springs,Michigan,49740,"[-84.99025, 45.502308]",25.7,10.3,7.7,7.7
+127,Granby Ranch,https://www.skiresort.info/ski-resort/granby-ranch/,84.0,,Colorado,80446,"[-105.95502, 40.142434]",20.0,6.0,10.0,4.0
+128,Granite Peak at Rib Mountain State Park,https://www.skiresort.info/ski-resort/granite-peak-at-rib-mountain-state-park/,82.0,Wausau,Wisconsin,54401,"[-89.6693, 44.958382]",20.0,10.0,5.0,5.0
+129,Magic Mountain,https://www.skiresort.info/ski-resort/magic-mountain/,74.0,Londonderry,Vermont,05148,"[-72.80106, 43.238921]",23.0,7.0,7.0,9.0
+130,Diamond Peak,https://www.skiresort.info/ski-resort/diamond-peak/,109.0,Incline Village,Lake Tahoe,89451,"[-119.95204, 39.245257]",16.3,1.6,7.1,7.6
+131,Homewood Mountain Resort,https://www.skiresort.info/ski-resort/homewood-mountain-resort/,,Homewood,Lake Tahoe,96141,"[-120.16325, 39.093271]",20.0,6.0,13.0,1.0
+132,Sugar Mountain,https://www.skiresort.info/ski-resort/sugar-mountain/,75.0,Sugar Mountain,North Carolina,28604,"[-81.84672, 36.166515]",14.0,4.0,7.0,3.0
+133,Titus Mountain,https://www.skiresort.info/ski-resort/titus-mountain/,49.0,Malone,The Adirondacks,12953,"[-74.2772, 44.813419]",27.0,10.0,10.0,7.0
+134,Maverick Mountain,https://www.skiresort.info/ski-resort/maverick-mountain/,39.0,Polaris,Montana,59746,"[-113.17025, 45.534274]",20.0,6.0,8.0,6.0
+135,Soldier Mountain,https://www.skiresort.info/ski-resort/soldier-mountain/,43.0,Fairfield,Idaho,83327,"[-114.77559, 43.365909]",25.0,9.0,8.0,8.0
+136,Mountain High East,https://www.skiresort.info/ski-resort/mountain-high-east/,84.0,Wrightwood,California,92397,"[-117.62752, 34.35876]",11.0,2.0,5.0,4.0
+137,Boreal,https://www.skiresort.info/ski-resort/boreal/,,Truckee,Lake Tahoe,96160,"[-120.186383, 39.3781]",20.0,6.0,11.0,3.0
+138,Mt. Baldy,https://www.skiresort.info/ski-resort/mt-baldy/,76.0,Mt Baldy,California,91759,"[-117.66106, 34.231581]",20.0,3.0,6.0,11.0
+139,Shawnee Peak,https://www.skiresort.info/ski-resort/shawnee-peak/,75.0,Bridgton,Maine,04009,"[-70.72552, 44.059192]",23.0,4.0,12.0,7.0
+140,Holimont,https://www.skiresort.info/ski-resort/holimont/,75.0,Ellicottville,Chautauqua-Allegheny,14731-0279,"[-78.65425, 42.286037]",20.0,4.0,6.0,10.0
+141,Mt. Shasta Ski Park,https://www.skiresort.info/ski-resort/mt-shasta-ski-park/,65.0,McCloud,California,96067,"[-122.31207, 41.317771]",23.0,5.0,8.0,10.0
+142,Sunlight Mountain,https://www.skiresort.info/ski-resort/sunlight-mountain/,65.0,Glenwood Springs,Colorado,81601,"[-107.32107, 39.533318]",20.0,4.0,11.0,5.0
+143,Pebble Creek,https://www.skiresort.info/ski-resort/pebble-creek/,47.0,Inkom,Idaho,83245,"[-112.23562, 42.79471]",19.0,6.0,9.0,4.0
+144,Cooper,https://www.skiresort.info/ski-resort/cooper/,56.0,Leadville,Colorado,80461,"[-106.31399, 39.231775999999996]",26.0,8.0,10.0,8.0
+145,Butternut,https://www.skiresort.info/ski-resort/butternut/,65.0,Great Barrington,Massachusetts,01230,"[-73.35249, 42.189715]",22.0,4.4,13.2,4.4
+146,Showdown,https://www.skiresort.info/ski-resort/showdown/,47.0,White Sulphur Springs,Montana,59465,"[-110.71696, 46.926021]",20.0,6.0,8.0,6.0
+147,Cascade Mountain,https://www.skiresort.info/ski-resort/cascade-mountain/,69.0,,Wisconsin,53901-9633,"[-89.47101, 43.549851]",14.0,5.0,5.0,4.0
+148,Cherry Peak,https://www.skiresort.info/ski-resort/cherry-peak/,40.0,Logan,Utah,84333,"[-111.81676, 41.919806]",20.0,5.0,10.0,5.0
+149,Seven Springs,https://www.skiresort.info/ski-resort/seven-springs/,89.0,Champion,Pennsylvania,15622,"[-79.30426, 40.038201]",17.0,6.0,7.0,4.0
+150,Deer Mountain  (temporarily closed),https://www.skiresort.info/ski-resort/deer-mountain/,,Lead,South Dakota,57754,"[-103.83118, 44.312922]",22.0,10.0,7.0,5.0
+151,Red River,https://www.skiresort.info/ski-resort/red-river/,79.0,Red River,New Mexico,87558,"[-105.3955, 36.705987]",20.0,7.0,6.0,7.0
+152,Burke Mountain,https://www.skiresort.info/ski-resort/burke-mountain/,73.0,Saint Johnsbury,Vermont,05832,"[-71.92705, 44.588911]",10.0,2.0,4.0,4.0
+153,Nordic Valley,https://www.skiresort.info/ski-resort/nordic-valley/,50.0,Eden,Utah,84310,"[-111.81304, 41.364638]",9.5,2.5,4.0,3.0
+154,Eagle Point,https://www.skiresort.info/ski-resort/eagle-point/,70.0,Beaver,Utah,84713,"[-112.6926, 38.35906]",20.0,6.0,9.0,5.0
+155,Greek Peak,https://www.skiresort.info/ski-resort/greek-peak/,84.0,Virgil,Finger Lakes,13045,"[-76.19217, 42.591109]",19.0,9.0,4.0,6.0
+156,Wintergreen Resort,https://www.skiresort.info/ski-resort/wintergreen-resort/,89.0,Wintergreen,Virginia,22958,"[-78.90273, 37.905649]",10.0,2.0,4.0,4.0
+157,Mountain High West,https://www.skiresort.info/ski-resort/mountain-high-west/,84.0,Wrightwood,California,92397,"[-117.62752, 34.35876]",15.0,3.0,5.0,7.0
+158,Spirit Mountain,https://www.skiresort.info/ski-resort/spirit-mountain/,59.0,Duluth,Minnesota,55810,"[-92.24355, 46.753414]",11.0,4.0,5.0,2.0
+159,Bigrock Mountain,https://www.skiresort.info/ski-resort/bigrock-mountain/,40.0,Houlton,Maine,04758,"[-67.86655, 46.512409]",20.0,2.0,14.0,4.0
+160,Arctic Valley,https://www.skiresort.info/ski-resort/arctic-valley/,45.0,Anchorage,Alaska,99520-0546,"[-149.440311, 61.108864]",25.0,5.0,10.0,10.0
+161,Shawnee Mountain,https://www.skiresort.info/ski-resort/shawnee-mountain/,65.0,Stroudsburg,Pennsylvania,18356,"[-75.09995, 41.010333]",18.0,4.0,9.0,5.0
+162,Pine Creek,https://www.skiresort.info/ski-resort/pine-creek/,45.0,Cokeville,Wyoming,83114,"[-110.85188, 42.039281]",16.0,4.0,7.0,5.0
+163,Wisp – McHenry (Deep Creek Lake),https://www.skiresort.info/ski-resort/wisp-mchenry-deep-creek-lake/,89.0,McHenry,Maryland,21541,"[-79.35999, 39.557364]",16.0,5.6,6.1,4.3
+164,Kissing Bridge,https://www.skiresort.info/ski-resort/kissing-bridge/,60.0,Boston,Greater Niagara,14069,"[-78.64273, 42.601635]",17.8,4.5,4.8,8.5
+165,Skiland – Mt. Aurora,https://www.skiresort.info/ski-resort/skiland-mt-aurora/,40.0,Fairbanks,Alaska,99712,"[-147.49573, 64.926041]",17.0,4.0,9.0,4.0
+166,Hoodoo Ski Area,https://www.skiresort.info/ski-resort/hoodoo-ski-area/,59.0,Sisters,Oregon,97759,"[-121.54897, 44.322689]",17.0,6.0,8.0,3.0
+167,Alpental,https://www.skiresort.info/ski-resort/alpental/,95.0,North Bend,Washington State,98068,"[-121.39603, 47.397811]",9.6,0.5,2.3,6.8
+168,Eaglecrest – Juneau,https://www.skiresort.info/ski-resort/eaglecrest-juneau/,59.0,Juneau,Alaska,99801,"[-134.54749, 58.358599]",17.0,3.4,6.8,6.8
+169,Snowy Range,https://www.skiresort.info/ski-resort/snowy-range/,49.0,Centennial,Wyoming,82055,"[-106.17649, 41.33144]",16.5,4.5,9.0,3.0
+170,Plattekill,https://www.skiresort.info/ski-resort/plattekill/,67.0,Roxbury,The Catskills,12474,"[-74.59011, 42.285644]",16.5,4.5,6.0,6.0
+171,Boyne Mountain,https://www.skiresort.info/ski-resort/boyne-mountain/,98.0,Boyne Falls,Michigan,49713,"[-84.86185, 45.206973]",14.0,4.5,6.0,3.5
+172,Blue Knob,https://www.skiresort.info/ski-resort/blue-knob/,75.0,Altoona,Pennsylvania,16625,"[-78.48646, 40.290914]",16.0,5.0,8.0,3.0
+173,Nub's Nob Ski Area,https://www.skiresort.info/ski-resort/nubs-nob-ski-area/,85.0,Harbor Springs,Michigan,49740,"[-84.99025, 45.502308]",18.9,6.2,9.0,3.7
+174,Labrador Mountain,https://www.skiresort.info/ski-resort/labrador-mountain/,61.0,Tully,Finger Lakes,13158,"[-75.97209, 42.717801]",17.0,6.0,6.0,5.0
+175,Giants Ridge,https://www.skiresort.info/ski-resort/giants-ridge/,58.0,Biwabik,Minnesota,55708,"[-92.34084, 47.533314]",12.0,4.0,5.0,3.0
+176,Middlebury College Snow Bowl,https://www.skiresort.info/ski-resort/middlebury-college-snow-bowl/,60.0,Hancock,Vermont,05753,"[-73.172, 44.006024]",15.0,5.0,4.0,6.0
+177,Pomerelle,https://www.skiresort.info/ski-resort/pomerelle/,45.0,Malta,Idaho,83311,"[-113.59744, 42.390977]",15.0,4.0,7.0,4.0
+178,Sipapu,https://www.skiresort.info/ski-resort/sipapu/,55.0,Vadito,New Mexico,87579,"[-105.56045, 36.160484]",18.0,3.0,7.0,8.0
+179,Catamount,https://www.skiresort.info/ski-resort/catamount/,69.0,Great Barrington,Hudson Valley,12529,"[-73.54775, 42.204681]",15.0,8.0,4.0,3.0
+180,Beech Mountain,https://www.skiresort.info/ski-resort/beech-mountain/,70.0,Banner Elk,North Carolina,28604,"[-81.84672, 36.166515]",14.0,3.0,7.0,4.0
+181,Sleeping Giant,https://www.skiresort.info/ski-resort/sleeping-giant/,46.0,Cody,Wyoming,82414,"[-109.20826, 44.566114]",17.0,3.0,8.0,6.0
+182,Dollar Mountain – Sun Valley,https://www.skiresort.info/ski-resort/dollar-mountain-sun-valley/,139.0,,Idaho,83353,"[-114.18191, 43.661373]",9.0,7.0,2.0,0.0
+183,Whitetail,https://www.skiresort.info/ski-resort/whitetail/,79.0,Mercersburg,Pennsylvania,17236,"[-77.92889, 39.793293]",10.2,1.5,5.6,3.1
+184,Mt. Ashland,https://www.skiresort.info/ski-resort/mt-ashland/,52.0,Ashland,Oregon,97520,"[-122.61772, 42.169751]",13.0,1.0,7.0,5.0
+185,Shanty Creek Resorts – Schuss Mountain,https://www.skiresort.info/ski-resort/shanty-creek-resorts-schuss-mountain/,73.0,Bellaire,Michigan,49615,"[-85.21448, 44.970267]",12.0,5.0,4.0,3.0
+186,Kelly Canyon,https://www.skiresort.info/ski-resort/kelly-canyon/,42.0,Ririe,Idaho,83443,"[-111.59911, 43.570104]",12.0,4.0,5.0,3.0
+187,Jiminy Peak,https://www.skiresort.info/ski-resort/jiminy-peak/,91.0,Hancock,Massachusetts,01237,"[-73.24364, 42.557346]",9.1,4.1,2.0,3.0
+188,Song Mountain,https://www.skiresort.info/ski-resort/song-mountain/,59.0,Tully,Finger Lakes,13159,"[-76.12717, 42.802031]",13.0,4.5,6.0,2.5
+189,Crotched Mountain,https://www.skiresort.info/ski-resort/crotched-mountain/,69.0,Keene,New Hampshire,03442,"[-71.91635, 43.005429]",8.0,2.5,4.0,1.5
+190,Mt. Kato,https://www.skiresort.info/ski-resort/mt-kato/,46.0,Mankato,Minnesota,56001,"[-93.99388, 44.15644]",12.0,2.5,4.5,5.0
+191,Loup Loup Ski Bowl,https://www.skiresort.info/ski-resort/loup-loup-ski-bowl/,50.0,Twisp,Washington State,98840,"[-119.57656, 48.343356]",11.0,3.0,5.0,3.0
+192,White Pine – Pinedale,https://www.skiresort.info/ski-resort/white-pine-pinedale/,49.0,Pinedale,Wyoming,82941,"[-109.85694, 42.874606]",11.6,3.7,2.6,5.3
+193,Caberfae Peaks,https://www.skiresort.info/ski-resort/caberfae-peaks/,59.0,Cadillac,Michigan,49601,"[-85.46006, 44.243788]",11.0,4.0,5.0,2.0
+194,Tahoe Donner,https://www.skiresort.info/ski-resort/tahoe-donner/,89.0,Truckee,Lake Tahoe,96161,"[-120.22805, 39.339574]",14.0,6.0,8.0,0.0
+195,Big Powderhorn Mountain,https://www.skiresort.info/ski-resort/big-powderhorn-mountain/,69.0,Bessemer,Michigan,49911,"[-90.05138, 46.480948]",10.0,3.5,3.5,3.0
+196,Snow King Mountain – Jackson,https://www.skiresort.info/ski-resort/snow-king-mountain-jackson/,59.0,Jackson,Wyoming,83001,"[-110.75714, 43.468383]",9.0,3.0,2.5,3.5
+197,Bear Creek Mountain Resort,https://www.skiresort.info/ski-resort/bear-creek-mountain-resort/,60.0,Allentown,Pennsylvania,18062,"[-75.56515, 40.517304]",10.0,3.0,4.0,3.0
+198,Bromley Mountain,https://www.skiresort.info/ski-resort/bromley-mountain/,91.0,Manchester,Vermont,05152,"[-72.88309, 43.24283]",45.0,15.0,18.0,12.0
+199,Mt. Bohemia,https://www.skiresort.info/ski-resort/mt-bohemia/,68.0,Mohawk,Michigan,49950,"[-88.14768, 47.400603]",13.0,0.0,3.0,10.0
+200,Swain,https://www.skiresort.info/ski-resort/swain/,59.0,Swain,Chautauqua-Allegheny,14884,"[-77.89514, 42.473556]",10.9,3.0,4.2,3.7
+201,Suicide Six,https://www.skiresort.info/ski-resort/suicide-six/,75.0,Woodstock,Vermont,05601,"[-72.559638, 44.19906]",10.5,3.5,4.0,3.0
+202,Teton Pass,https://www.skiresort.info/ski-resort/teton-pass/,50.0,Choteau,Montana,59422,"[-112.35083, 47.840047]",15.0,6.0,5.0,4.0
+203,Meadowlark Ski Lodge,https://www.skiresort.info/ski-resort/meadowlark-ski-lodge/,48.0,Ten Sleep,Wyoming,82442,"[-107.36569, 43.885863]",10.0,3.0,4.0,3.0
+204,Cooper Spur,https://www.skiresort.info/ski-resort/cooper-spur/,39.0,Hood River,Oregon,97041,"[-121.59252, 45.503224]",10.0,4.0,4.0,2.0
+205,Oak Mountain,https://www.skiresort.info/ski-resort/oak-mountain/,40.0,Speculator,The Adirondacks,12164,"[-74.37431, 43.515611]",12.0,6.0,4.0,2.0
+206,Montage Mountain Resort,https://www.skiresort.info/ski-resort/montage-mountain-resort/,67.0,Scranton,Pennsylvania,18507,"[-75.71228, 41.35838]",9.5,2.0,4.0,3.5
+207,Whaleback,https://www.skiresort.info/ski-resort/whaleback/,45.0,Enfield,New Hampshire,03748,"[-72.12058, 43.614847]",11.5,5.2,2.8,3.5
+208,Soda Springs,https://www.skiresort.info/ski-resort/soda-springs/,54.0,Truckee,Lake Tahoe,96160,"[-120.186383, 39.3781]",10.0,3.0,5.0,2.0
+209,Mt. Waterman,https://www.skiresort.info/ski-resort/mt-waterman/,60.0,La Cañada Flintridge,California,91011,"[-118.19776, 34.211171]",10.0,2.0,2.0,6.0
+210,West Mountain,https://www.skiresort.info/ski-resort/west-mountain/,79.0,Glens Falls,The Adirondacks,12804,"[-73.67816, 43.330471]",9.7,5.9,2.1,1.7
+211,Spout Springs  (temporarily closed),https://www.skiresort.info/ski-resort/spout-springs/,35.0,Weston,Oregon,97217,"[-122.68665, 45.574439]",9.5,3.0,5.0,1.5
+212,Pine Mountain,https://www.skiresort.info/ski-resort/pine-mountain/,45.0,Iron Mountain,Michigan,49801,"[-87.99717, 45.87178]",9.5,2.5,5.5,1.5
+213,Liberty Mountain,https://www.skiresort.info/ski-resort/liberty-mountain/,77.0,Fairfield,Pennsylvania,17320,"[-77.37768, 39.759356]",9.0,3.0,4.0,2.0
+214,Marquette Mountain,https://www.skiresort.info/ski-resort/marquette-mountain/,54.0,Marquette,Michigan,49855,"[-87.42223, 46.554402]",10.0,1.5,5.0,3.5
+215,Anthony Lakes Mountain Resort,https://www.skiresort.info/ski-resort/anthony-lakes-mountain-resort/,40.0,Baker City,Oregon,97867,"[-117.96742, 45.048141]",10.0,2.0,3.8,4.2
+216,Otsego – Gaylord,https://www.skiresort.info/ski-resort/otsego-gaylord/,65.0,Gaylord,Michigan,49734,"[-84.612207, 45.028411]",7.0,3.0,2.0,2.0
+217,Big Squaw,https://www.skiresort.info/ski-resort/big-squaw/,30.0,Bangor,Maine,04442,"[-69.62773, 45.479835]",8.0,3.0,3.0,2.0
+218,Mohawk Mountain,https://www.skiresort.info/ski-resort/mohawk-mountain/,67.0,Cornwall,Connecticut,06753,"[-73.332345, 41.828067]",8.0,3.0,2.0,3.0
+219,Bear Paw Ski Bowl,https://www.skiresort.info/ski-resort/bear-paw-ski-bowl/,25.0,Havre,Montana,59501,"[-109.78365, 48.584562]",10.0,3.0,6.0,1.0
+220,Big Bear at Masthope Mountain,https://www.skiresort.info/ski-resort/big-bear-at-masthope-mountain/,64.0,Scranton,Pennsylvania,18435,"[-75.01149, 41.497511]",7.0,3.0,2.0,2.0
+221,Bousquet,https://www.skiresort.info/ski-resort/bousquet/,47.0,Pittsfield,Massachusetts,01201,"[-73.254, 42.45384]",8.0,3.0,2.0,3.0
+222,Alpine Mountain Ski & Snow Tubing Center  (temporarily closed),https://www.skiresort.info/ski-resort/alpine-mountain-ski-snow-tubing-center/,55.0,Henryville,Pennsylvania,18320,"[-75.236436, 41.071213]",8.0,2.0,4.0,2.0
+223,Royal Mountain,https://www.skiresort.info/ski-resort/royal-mountain/,45.0,Caroga Lake,Capital-Saratoga Region,12032,"[-74.49646, 43.158567]",7.5,2.5,3.0,2.0
+224,Badger Pass,https://www.skiresort.info/ski-resort/badger-pass/,62.0,Mariposa,California,95389,"[-119.67529, 37.699662000000004]",10.0,3.5,5.0,1.5
+225,Afton Alps,https://www.skiresort.info/ski-resort/afton-alps/,58.0,Hastings,Minnesota,55033,"[-92.86147, 44.726517]",8.0,3.0,3.0,2.0
+226,Massanutten,https://www.skiresort.info/ski-resort/massanutten/,77.0,Massanutten,Virginia,22840,"[-78.73452, 38.387721]",8.0,2.0,3.5,2.5
+227,Hesperus Ski Area,https://www.skiresort.info/ski-resort/hesperus-ski-area/,39.0,Durango,Colorado,81326,"[-108.15728, 37.131282]",10.0,3.0,5.0,2.0
+228,Spring Mountain,https://www.skiresort.info/ski-resort/spring-mountain/,48.0,Schwenksville,Pennsylvania,19478,"[-75.4582, 40.276511]",8.5,4.0,2.5,2.0
+229,Roundtop,https://www.skiresort.info/ski-resort/roundtop/,73.0,Lewisberry,Pennsylvania,17339,"[-76.86904, 40.138959]",7.5,1.5,3.0,3.0
+230,Mt. La Crosse,https://www.skiresort.info/ski-resort/mt-la-crosse/,56.0,La Crosse,Wisconsin,54602,"[-91.167621, 43.907739]",7.0,1.5,3.0,2.5
+231,Sitzmark,https://www.skiresort.info/ski-resort/sitzmark/,45.0,Oroville,Washington State,98855,"[-119.32169, 48.689509]",7.5,2.0,3.0,2.5
+232,Mt. Lemmon Ski Valley,https://www.skiresort.info/ski-resort/mt-lemmon-ski-valley/,47.0,Summerhaven,Arizona,85619,"[-110.75682, 32.441496]",8.5,2.5,4.0,2.0
+233,Laurel Mountain,https://www.skiresort.info/ski-resort/laurel-mountain/,64.0,Jennerstown,Pennsylvania,15531,"[-79.0629, 40.173782]",8.0,4.0,3.0,1.0
+234,Norway Mountain,https://www.skiresort.info/ski-resort/norway-mountain/,,Norway,Michigan,49870,"[-87.90824, 45.792399]",8.0,2.5,3.5,2.0
+235,Black Mountain – Rumford,https://www.skiresort.info/ski-resort/black-mountain-rumford/,45.0,Rumford,Maine,04276,"[-70.56609, 44.53599]",8.0,2.0,3.5,2.5
+236,Alpine Valley Resort – Elkhorn,https://www.skiresort.info/ski-resort/alpine-valley-resort-elkhorn/,66.0,Elkhorn,Wisconsin,53121,"[-88.54214, 42.711105]",4.0,1.5,1.5,1.0
+237,Ski Brule,https://www.skiresort.info/ski-resort/ski-brule/,55.0,Iron River,Michigan,49935,"[-88.70073, 46.108022]",7.5,2.0,4.0,1.5
+238,Cataloochee,https://www.skiresort.info/ski-resort/cataloochee/,70.0,Waynesville,North Carolina,28751,"[-83.085, 35.518138]",6.0,1.5,3.0,1.5
+239,Las Vegas Ski and Snowboard Resort – Lee Canyon,https://www.skiresort.info/ski-resort/las-vegas-ski-and-snowboard-resort-lee-canyon/,72.0,Las Vegas,Nevada,89124,"[-115.39948, 36.101538]",7.3,0.3,5.0,2.0
+240,Hogadon Ski Area,https://www.skiresort.info/ski-resort/hogadon-ski-area/,,Casper,Wyoming,82601,"[-106.29799, 42.896822]",5.0,1.9,1.6,1.5
+241,McCauly Mountain,https://www.skiresort.info/ski-resort/mccauly-mountain/,30.0,Old Forge,Central New York,13420,"[-74.94498, 43.707330999999996]",9.0,3.0,4.0,2.0
+242,Powder Ridge Mountain Park & Resort,https://www.skiresort.info/ski-resort/powder-ridge-mountain-park-resort/,49.0,Middlefield,Connecticut,06455,"[-72.7183, 41.514383]",5.5,2.5,2.0,1.0
+243,Camden Snow Bowl,https://www.skiresort.info/ski-resort/camden-snow-bowl/,43.0,Camden,Maine,04843,"[-69.08184, 44.218159]",6.0,1.2,3.6,1.2
+244,Mt. Southington,https://www.skiresort.info/ski-resort/mt-southington/,60.0,Southington,Connecticut,06489,"[-72.87103, 41.612298]",5.8,2.0,3.0,0.8
+245,Snow Trails,https://www.skiresort.info/ski-resort/snow-trails/,52.0,Mansfield,Ohio,44901-1456,"[-82.511369, 40.850833]",5.3,1.5,2.8,1.0
+246,Mt. Eyak,https://www.skiresort.info/ski-resort/mt-eyak/,30.0,Cordova,Alaska,99574,"[-145.40256, 60.474512]",5.0,1.0,2.0,2.0
+247,Wolf Ridge,https://www.skiresort.info/ski-resort/wolf-ridge/,65.0,Mars Hill,North Carolina,28754,"[-82.52043, 35.866763]",6.0,3.0,2.0,1.0
+248,Alpine Valley – White Lake,https://www.skiresort.info/ski-resort/alpine-valley-white-lake/,58.0,White Lake,Michigan,48383,"[-83.54529, 42.657361]",5.8,2.4,1.6,1.8
+249,Hunt Hollow Ski Club,https://www.skiresort.info/ski-resort/hunt-hollow-ski-club/,58.0,Naples,Finger Lakes,14512-9287,"[-77.39457, 42.628515]",5.0,2.0,2.0,1.0
+250,Paoli Peaks,https://www.skiresort.info/ski-resort/paoli-peaks/,45.0,Paoli,Indiana,47454,"[-86.48362, 38.533167]",6.6,2.6,3.0,1.0
+251,Mad River Mountain,https://www.skiresort.info/ski-resort/mad-river-mountain/,49.0,Zanesfield,Ohio,43360,"[-83.66884, 40.327984]",6.3,3.0,2.0,1.3
+252,Crystal Mountain (MI),https://www.skiresort.info/ski-resort/crystal-mountain-mi/,79.0,Thompsonville,Michigan,49683,"[-85.9334, 44.531456]",4.9,1.2,2.3,1.4
+253,Nashoba Valley,https://www.skiresort.info/ski-resort/nashoba-valley/,58.0,Westford,Massachusetts,01886,"[-71.43754, 42.592086]",5.8,1.0,3.0,1.8
+254,Granite Gorge,https://www.skiresort.info/ski-resort/granite-gorge/,30.0,Keene,New Hampshire,03431,"[-72.28616, 42.946418]",6.0,3.0,2.0,1.0
+255,Bryce Resort,https://www.skiresort.info/ski-resort/bryce-resort/,,Harrisonburg,Virginia,22810,"[-78.77149, 38.81913]",5.0,2.0,2.8,0.2
+256,King Pine – Purity Spring Resort,https://www.skiresort.info/ski-resort/king-pine-purity-spring-resort/,58.0,East Madison,New Hampshire,03849,"[-71.14311, 43.930805]",5.3,2.8,1.5,1.0
+257,Pine Knob,https://www.skiresort.info/ski-resort/pine-knob/,57.0,Clarkston,Michigan,48348,"[-83.37805, 42.768373]",5.0,1.0,2.5,1.5
+258,Pajarito Mountain,https://www.skiresort.info/ski-resort/pajarito-mountain/,49.0,Los Alamos,New Mexico,87544,"[-106.29536, 35.86849]",26.0,8.0,12.0,6.0
+259,Mont Ripley,https://www.skiresort.info/ski-resort/mont-ripley/,52.0,Hancock,Michigan,49930,"[-88.57829, 47.145007]",6.9,2.0,2.2,2.7
+260,Mount Pleasant,https://www.skiresort.info/ski-resort/mount-pleasant/,38.0,Cambridge Springs,Pennsylvania,16403,"[-80.02524, 41.79637]",5.0,2.0,2.0,1.0
+261,Quechee Lakes Ski Area,https://www.skiresort.info/ski-resort/quechee-lakes-ski-area/,49.0,White River Junction,Vermont,05059,"[-72.42943, 43.649153]",5.0,2.0,2.5,0.5
+262,Mountain High North,https://www.skiresort.info/ski-resort/mountain-high-north/,84.0,Wrightwood,California,92397,"[-117.62752, 34.35876]",5.0,2.0,3.0,0.0
+263,Hidden Valley (MO),https://www.skiresort.info/ski-resort/hidden-valley-mo/,49.0,Eureka,Missouri,63025,"[-90.61304, 38.494203]",4.0,1.0,2.0,1.0
+264,Mt. Brighton,https://www.skiresort.info/ski-resort/mt-brighton/,59.0,Brighton,Michigan,48116,"[-83.77718, 42.509476]",6.2,1.0,3.5,1.7
+265,Mount Peter,https://www.skiresort.info/ski-resort/mount-peter/,62.0,Warwick,Hudson Valley,10990,"[-74.35837, 41.259896]",3.8,1.0,2.0,0.8
+266,Nordic Mountain,https://www.skiresort.info/ski-resort/nordic-mountain/,47.0,Wild Rose,Wisconsin,54984,"[-89.20231, 44.186455]",6.5,2.0,3.0,1.5
+267,Seven Oaks,https://www.skiresort.info/ski-resort/seven-oaks/,40.0,Boone,Iowa,50036,"[-93.87437, 42.074515]",4.0,1.5,2.0,0.5
+268,Ober Gatlinburg,https://www.skiresort.info/ski-resort/ober-gatlinburg/,65.0,Gatlinburg,Tennessee,37738,"[-83.47156, 35.733627]",6.2,0.7,4.2,1.3
+269,Wilmot Mountain,https://www.skiresort.info/ski-resort/wilmot-mountain/,68.0,Wilmot,Wisconsin,53192,"[-88.18285, 42.511818]",4.0,1.4,1.6,1.0
+270,Moose Mountain,https://www.skiresort.info/ski-resort/moose-mountain/,40.0,Fairbanks,Alaska,99709,"[-147.87406, 64.854937]",25.0,3.0,12.0,10.0
+271,Shanty Creek Resorts – Summit Mountain,https://www.skiresort.info/ski-resort/shanty-creek-resorts-summit-mountain/,73.0,Bellaire,Michigan,49615,"[-85.21448, 44.970267]",4.0,0.8,2.5,0.7
+272,Hilltop – Anchorage,https://www.skiresort.info/ski-resort/hilltop-anchorage/,34.0,Anchorage,Alaska,99507,"[-149.82865, 61.154834]",5.0,4.0,1.0,0.0
+273,Snowstar,https://www.skiresort.info/ski-resort/snowstar/,35.0,Andalusia,Illinois,61232,"[-90.71957, 41.440852]",4.0,0.5,1.5,2.0
+274,Mystic Mountain – Farmington,https://www.skiresort.info/ski-resort/mystic-mountain-farmington/,43.0,Farmington,Pennsylvania,15437,"[-79.59465, 39.793095]",3.9,2.3,1.0,0.6
+275,Mt. Ashwabay – Salmo,https://www.skiresort.info/ski-resort/mt-ashwabay-salmo/,24.0,Salmo,Wisconsin,54814,"[-90.85401, 46.856701]",4.0,1.5,1.2,1.3
+276,Snow Creek,https://www.skiresort.info/ski-resort/snow-creek/,47.0,Weston,Missouri,64098,"[-94.89833, 39.445387]",3.2,1.3,1.8,0.1
+277,Antelope Butte,https://www.skiresort.info/ski-resort/antelope-butte/,20.0,Sheridan,Wyoming,82441,"[-107.67034, 44.632199]",20.0,4.0,10.0,6.0
+278,Wild Mountain,https://www.skiresort.info/ski-resort/wild-mountain/,56.0,Taylors Falls,Minnesota,55084,"[-92.68321, 45.424065]",4.8,1.1,1.6,2.1
+279,Powder Ridge,https://www.skiresort.info/ski-resort/powder-ridge/,48.0,Kimball,Minnesota,55353,"[-94.32528, 45.328802]",4.0,2.0,1.5,0.5
+280,Treetops,https://www.skiresort.info/ski-resort/treetops/,,Gaylord,Michigan,49735,"[-84.67492, 44.989608]",4.4,0.3,1.9,2.2
+281,Lost Valley,https://www.skiresort.info/ski-resort/lost-valley/,55.0,Auburn,Maine,04210,"[-70.24143, 44.089173]",2.0,1.0,0.5,0.5
+282,Summit Ski Area at Mt. Hood,https://www.skiresort.info/ski-resort/summit-ski-area-at-mt-hood/,36.0,Governemt Camp,Oregon,97028,"[-121.78441, 45.305113]",4.0,2.0,2.0,0.0
+283,Skeetawk – Hatcher Pass,https://www.skiresort.info/ski-resort/skeetawk-hatcher-pass/,39.0,,Alaska,99645,"[-149.04109, 61.598203]",2.5,1.0,0.8,0.7
+284,Great Bear Ski Valley,https://www.skiresort.info/ski-resort/great-bear-ski-valley/,29.0,Sioux Falls,South Dakota,57105,"[-96.73297, 43.525226]",3.8,2.6,1.2,0.0
+285,Dartmouth Skiway,https://www.skiresort.info/ski-resort/dartmouth-skiway/,50.0,Hanover,New Hampshire,03769,"[-72.120468, 43.786267]",16.0,4.0,8.0,4.0
+286,McIntyre,https://www.skiresort.info/ski-resort/mcintyre/,38.0,Manchester,New Hampshire,03104,"[-71.44716, 43.006033]",3.0,2.5,0.5,0.0
+288,Elko Snobowl,https://www.skiresort.info/ski-resort/elko-snobowl/,20.0,Elko,Nevada,89801,"[-115.75016, 40.883028]",3.0,1.5,1.5,0.0
+289,Little Switzerland,https://www.skiresort.info/ski-resort/little-switzerland/,46.0,Slinger,Wisconsin,53086,"[-88.27907, 43.33278]",3.0,1.1,1.3,0.6
+290,Chester Bowl,https://www.skiresort.info/ski-resort/chester-bowl/,15.0,Duluth,Minnesota,55812,"[-92.07319, 46.809438]",1.3,0.3,0.5,0.5
+291,Blacktail Mountain,https://www.skiresort.info/ski-resort/blacktail-mountain/,42.0,Kalispell,Montana,59922,"[-114.24184, 48.005656]",17.0,3.0,11.0,3.0
+292,Otis Ridge,https://www.skiresort.info/ski-resort/otis-ridge/,40.0,Otis,Massachusetts,01253,"[-73.10205, 42.198403]",3.7,1.2,1.5,1.0
+293,Turner Mountain,https://www.skiresort.info/ski-resort/turner-mountain/,38.0,Libby,Montana,59923,"[-115.3286, 48.309374]",13.8,2.1,5.5,6.2
+294,Frost Fire Mountain,https://www.skiresort.info/ski-resort/frost-fire-mountain/,37.0,Walhalla,North Dakota,58282,"[-97.92312, 48.915739]",1.5,0.7,0.6,0.2
+295,Sawmill Mountain Resort,https://www.skiresort.info/ski-resort/sawmill-mountain-resort/,44.0,Morris,Pennsylvania,16938,"[-77.31191, 41.564177]",4.4,0.9,2.5,1.0
+296,Kendall Mountain – Silverton,https://www.skiresort.info/ski-resort/kendall-mountain-silverton/,25.0,Silverton,Colorado,81433,"[-107.62223, 37.868294]",1.7,1.0,0.5,0.2
+297,Blue Mountain,https://www.skiresort.info/ski-resort/blue-mountain/,65.0,Allentown,Pennsylvania,18071,"[-75.58537, 40.820558]",18.0,10.0,6.0,2.0
+298,Mt. Holiday,https://www.skiresort.info/ski-resort/mt-holiday/,34.0,Traverse City,Michigan,49686,"[-85.54511, 44.735559]",4.5,1.0,2.0,1.5
+299,Howelsen Hill – Steamboat Springs,https://www.skiresort.info/ski-resort/howelsen-hill-steamboat-springs/,25.0,Steamboat Springs,Colorado,80487,"[-106.87521, 40.502772]",4.0,1.7,1.5,0.8
+300,Sunburst,https://www.skiresort.info/ski-resort/sunburst/,44.0,Kewaskum,Wisconsin,53040,"[-88.19215, 43.52413]",3.0,0.5,1.5,1.0
+301,Mt. Jefferson,https://www.skiresort.info/ski-resort/mt-jefferson/,25.0,Lee,Maine,04455,"[-68.29313, 45.333971]",9.5,3.0,4.0,2.5
+302,Trollhaugen,https://www.skiresort.info/ski-resort/trollhaugen/,54.0,Dresser,Wisconsin,54009,"[-92.60246, 45.351585]",4.9,2.5,1.5,0.9
+303,Alpine Valley Ohio,https://www.skiresort.info/ski-resort/alpine-valley-ohio/,45.0,Chesterland,Ohio,44026,"[-81.33683, 41.526301]",2.6,1.2,1.2,0.2
+304,Echo Mountain Park – Idaho Springs,https://www.skiresort.info/ski-resort/echo-mountain-park-idaho-springs/,65.0,Idaho Springs,Colorado,80452-9526,"[-105.56054, 39.737369]",3.0,2.0,1.0,0.0
+305,Hyland Hills,https://www.skiresort.info/ski-resort/hyland-hills/,35.34,Bloomington,Minnesota,55441,"[-93.42421, 45.001997]",1.2,0.6,0.4,0.2
+306,Elk Mountain,https://www.skiresort.info/ski-resort/elk-mountain/,69.0,Scranton,Pennsylvania,18470-9552,"[-75.5417, 41.722929]",15.0,3.0,8.0,4.0
+307,Willard Mountain – Greenwich,https://www.skiresort.info/ski-resort/willard-mountain-greenwich/,47.0,Greenwich,Capital-Saratoga Region,12834,"[-73.50177, 43.095447]",2.8,0.6,1.4,0.8
+308,Christmas Mountain,https://www.skiresort.info/ski-resort/christmas-mountain/,45.0,Wisconsin Dells,Wisconsin,53965,"[-89.78104, 43.645603]",2.0,1.3,0.5,0.2
+309,Campton Mountain,https://www.skiresort.info/ski-resort/campton-mountain/,22.0,Campton,New Hampshire,03223,"[-71.65161, 43.887682]",1.3,0.6,0.5,0.2
+310,Mt. Abram,https://www.skiresort.info/ski-resort/mt-abram/,49.0,,Maine,04255,"[-70.67231, 44.35976]",14.5,3.5,7.0,4.0
+311,Bald Mountain,https://www.skiresort.info/ski-resort/bald-mountain/,20.0,Lewiston,Idaho,83546,"[-115.82276, 46.525642]",9.0,3.0,4.0,2.0
+312,Snow Snake,https://www.skiresort.info/ski-resort/snow-snake/,35.0,Harrison,Michigan,48625,"[-84.83959, 44.052759]",3.0,1.0,1.5,0.5
+313,Tenney Mountain,https://www.skiresort.info/ski-resort/tenney-mountain/,59.0,Plymouth,New Hampshire,03264,"[-71.64503, 43.753837]",15.0,3.0,8.0,4.0
+314,Berkshire East,https://www.skiresort.info/ski-resort/berkshire-east/,72.0,Greenfield,Massachusetts,01339,"[-72.87939, 42.626858]",13.0,6.0,4.0,3.0
+315,Peek'n Peak,https://www.skiresort.info/ski-resort/peekn-peak/,63.0,Clymer,Chautauqua-Allegheny,14724,"[-79.66612, 42.066681]",15.0,4.0,8.0,3.0
+316,Heiliger Huegel – Hubertus,https://www.skiresort.info/ski-resort/heiliger-huegel-hubertus/,,Hubertus,Wisconsin,53033,"[-88.2396, 43.233282]",1.2,0.6,0.4,0.2
+317,Detroit Mountain,https://www.skiresort.info/ski-resort/detroit-mountain/,42.0,Detroit Lakes,Minnesota,56502,"[-95.678375, 46.933961]",2.0,1.0,1.0,0.0
+318,Campgaw Mountain,https://www.skiresort.info/ski-resort/campgaw-mountain/,45.0,Mahwah,New Jersey,07430,"[-74.16147, 41.077102]",1.3,1.0,0.3,0.0
+319,Bluewood,https://www.skiresort.info/ski-resort/bluewood/,47.0,Lewiston,Washington State,99328,"[-117.96887, 46.319087]",11.0,3.0,5.0,3.0
+320,Hermon Mountain,https://www.skiresort.info/ski-resort/hermon-mountain/,,Bangor,Maine,04401,"[-68.78952, 44.81777]",3.0,2.0,0.5,0.5
+321,The Balsams,https://www.skiresort.info/ski-resort/the-balsams/,,Colebrook,New Hampshire,03576,"[-71.44766, 44.893888]",12.6,3.4,4.0,5.2
+322,Val Bialas Ski Center – Utica,https://www.skiresort.info/ski-resort/val-bialas-ski-center-utica/,,Utica,Central New York,13502,"[-75.22284, 43.114519]",1.8,0.8,0.4,0.6
+323,Yawgoo Valley,https://www.skiresort.info/ski-resort/yawgoo-valley/,50.0,Kingston,Rhode Island,02822,"[-71.60547, 41.563937]",2.5,1.5,1.0,0.0
+324,Buffalo Ski Club,https://www.skiresort.info/ski-resort/buffalo-ski-club/,50.0,Buffalo,Greater Niagara,14127,"[-78.75294, 42.759917]",11.0,5.0,4.0,2.0
+325,Mount Ski Gull,https://www.skiresort.info/ski-resort/mount-ski-gull/,39.99,Nisswa,Minnesota,56468,"[-94.28917, 46.501623]",2.1,0.7,0.7,0.7
+326,Black Mountain – Jackson,https://www.skiresort.info/ski-resort/black-mountain-jackson/,59.0,Jackson,New Hampshire,03846,"[-71.18089, 44.166268]",12.0,6.0,4.0,2.0
+327,Big Tupper – Tupper Lake,https://www.skiresort.info/ski-resort/big-tupper-tupper-lake/,,Tupper Lake,The Adirondacks,12986,"[-74.46299, 44.220344]",12.0,5.0,5.0,2.0
+328,Buck Hill Ski Area,https://www.skiresort.info/ski-resort/buck-hill-ski-area/,47.0,Minneapolis,Minnesota,55306,"[-93.28909, 44.732569]",2.2,1.2,0.8,0.2
+329,Ward Hill – Shrewsbury,https://www.skiresort.info/ski-resort/ward-hill-shrewsbury/,55.0,Shrewsbury,Massachusetts,01545,"[-71.72502, 42.286643]",2.1,0.6,1.0,0.5
+330,Devil's Head,https://www.skiresort.info/ski-resort/devils-head/,65.0,Baraboo,Wisconsin,53561,"[-89.69418, 43.37262]",10.0,3.0,3.5,3.5
+331,Jack Frost Mountain,https://www.skiresort.info/ski-resort/jack-frost-mountain/,65.0,Blakeslee,Pennsylvania,18610,"[-75.53909, 41.057574]",12.0,6.0,5.5,0.5
+332,Canaan Valley,https://www.skiresort.info/ski-resort/canaan-valley/,78.0,Davis,West Virginia,26260,"[-79.43805, 39.101535]",10.0,3.0,4.0,3.0
+333,Magic Mountain Resort,https://www.skiresort.info/ski-resort/magic-mountain-resort/,33.0,Kimberly,Idaho,83301-7702,"[-114.47509, 42.530288]",10.5,3.5,3.0,4.0
+334,Porcupine Mountain,https://www.skiresort.info/ski-resort/porcupine-mountain/,43.0,Ontonagon,Michigan,49953,"[-89.35119, 46.846455]",9.7,3.2,3.5,3.0
+335,Woodbury  (temporarily closed),https://www.skiresort.info/ski-resort/woodbury/,,Woodbury,Connecticut,06798,"[-73.20539, 41.554112]",9.6,3.5,3.5,2.6
+336,Warner Canyon – Lakeview,https://www.skiresort.info/ski-resort/warner-canyon-lakeview/,35.0,Lakeview,Oregon,97630,"[-120.42459, 42.199446]",9.9,2.4,1.6,5.9
+337,The Whitecap Mountains,https://www.skiresort.info/ski-resort/the-whitecap-mountains/,60.0,Upson,Wisconsin,54565,"[-90.4354, 46.309371]",9.0,4.0,2.0,3.0
+338,Blackjack,https://www.skiresort.info/ski-resort/blackjack/,65.0,Ironwood,Michigan,49968,"[-89.91876, 46.466645]",10.0,2.0,4.0,4.0
+339,Snow Ridge,https://www.skiresort.info/ski-resort/snow-ridge/,48.0,Turin,The Adirondacks,13473,"[-75.43828, 43.654278]",10.0,2.0,3.0,5.0
+340,Indianhead Mountain,https://www.skiresort.info/ski-resort/indianhead-mountain/,65.0,Wakefield,Michigan,49968,"[-89.91876, 46.466645]",10.0,2.0,3.0,5.0
+341,Hidden Valley (PA),https://www.skiresort.info/ski-resort/hidden-valley-pa/,69.0,Somerset,Pennsylvania,15502,"[-79.258458, 40.046023]",9.0,4.0,3.0,2.0
+342,Cloudcroft,https://www.skiresort.info/ski-resort/cloudcroft/,45.0,Cloudcroft,New Mexico,88317,"[-105.68568, 32.943661]",10.0,4.0,2.0,4.0
+343,Sunrise Park,https://www.skiresort.info/ski-resort/sunrise-park/,74.0,Greer,Arizona,85927,"[-109.58336, 33.801744]",,,,
+344,Oglebay Resort,https://www.skiresort.info/ski-resort/oglebay-resort/,28.0,,West Virginia,26003,"[-80.6868, 40.071472]",1.0,1.0,0.0,0.0
+345,Bottineau Winter Park,https://www.skiresort.info/ski-resort/bottineau-winter-park/,38.0,Bottineau,North Dakota,58318,"[-100.41403, 48.864955]",1.2,0.5,0.5,0.2
+346,Denton Hill State Park  (temporarily closed),https://www.skiresort.info/ski-resort/denton-hill-state-park/,,Coudersport,Pennsylvania,16922,"[-77.68562, 41.678935]",8.0,4.0,2.0,2.0
+347,Woodward Park City,https://www.skiresort.info/ski-resort/woodward-park-city/,,Summit Park,Salt Lake City,84098,"[-111.53674, 40.726899]",0.5,0.3,0.2,0.0
+348,Hickory Ski Center  (temporarily closed),https://www.skiresort.info/ski-resort/hickory-ski-center/,,Warrensburg,The Adirondacks,12885,"[-73.80527, 43.538744]",8.0,3.0,3.0,2.0
+349,Toggenburg Ski Center,https://www.skiresort.info/ski-resort/toggenburg-ski-center/,55.0,Fabius,Finger Lakes,13063,"[-75.97818, 42.847248]",8.3,3.2,2.0,3.1
+350,Mt. Holly,https://www.skiresort.info/ski-resort/mt-holly/,45.0,Holly,Michigan,48442,"[-83.5968, 42.800191]",7.0,1.0,2.5,3.5
+351,Ausblick – Sussex,https://www.skiresort.info/ski-resort/ausblick-sussex/,30.0,Sussex,Wisconsin,53089,"[-88.22641, 43.14004]",1.4,0.8,0.6,0.0
+352,Sapphire Valley,https://www.skiresort.info/ski-resort/sapphire-valley/,40.0,Cashiers,North Carolina,28774,"[-83.01052, 35.115467]",0.5,0.5,0.0,0.0
+353,Villa Olivia – Bartlett,https://www.skiresort.info/ski-resort/villa-olivia-bartlett/,40.0,Bartlett,Illinois,60103,"[-88.17257, 41.977477]",1.4,0.2,0.6,0.6
+354,Silverton Mountain,https://www.skiresort.info/ski-resort/silverton-mountain/,79.0,Silverton,Colorado,81433,"[-107.62223, 37.868294]",,,,
+355,Utah Olympic Park,https://www.skiresort.info/ski-resort/utah-olympic-park/,,Park City,Salt Lake City,84098,"[-111.53674, 40.726899]",0.2,0.0,0.2,0.0
+356,Beartooth Basin,https://www.skiresort.info/ski-resort/beartooth-basin/,45.0,Red Lodge,Wyoming,59068,"[-109.32217, 45.241761]",5.0,0.0,2.0,3.0
+357,Big Snow American Dream (indoor ski area),https://www.skiresort.info/ski-resort/big-snow-american-dream/,,East Rutherford,New Jersey,07073,"[-74.09707, 40.830158]",0.5,0.3,0.2,0.0
+358,Welch Village,https://www.skiresort.info/ski-resort/welch-village/,60.0,Red Wing,Minnesota,55089,"[-92.70293, 44.586242]",6.0,2.0,2.0,2.0
+359,Titcomb Mountain,https://www.skiresort.info/ski-resort/titcomb-mountain/,24.0,Farmington,Maine,04992,"[-70.153049, 44.662822]",4.4,1.0,1.1,2.3
+360,Navarino Hills,https://www.skiresort.info/ski-resort/navarino-hills/,27.0,Navarino,Wisconsin,54170,"[-88.56461, 44.506022]",0.8,0.5,0.3,0.0
+361,Lonesome Pine Trails – Fort Kent,https://www.skiresort.info/ski-resort/lonesome-pine-trails-fort-kent/,25.0,Fort Kent,Maine,04743,"[-68.57238, 47.209541]",4.6,1.0,1.6,2.0
+362,Sundown,https://www.skiresort.info/ski-resort/sundown/,62.0,New Hartford,Connecticut,06057,"[-73.00492, 41.852712]",5.8,2.7,1.4,1.7
+363,Chestnut Mountain,https://www.skiresort.info/ski-resort/chestnut-mountain/,60.0,Dubuque,Illinois,61036,"[-90.39738, 42.400744]",6.0,2.0,3.0,1.0
+364,Appalachian Ski Mountain,https://www.skiresort.info/ski-resort/appalachian-ski-mountain/,64.0,Boone,North Carolina,28605,"[-81.68783, 36.133083]",5.0,2.0,2.5,0.5
+365,Blandford,https://www.skiresort.info/ski-resort/blandford/,45.0,Springfield,Massachusetts,01008,"[-72.94828, 42.174313]",5.0,2.0,2.0,1.0
+366,Christie Mountain,https://www.skiresort.info/ski-resort/christie-mountain/,38.0,Rice Lake,Wisconsin,54819,"[-91.29437, 45.45273]",5.6,2.8,1.5,1.3
+367,Ferguson Ridge,https://www.skiresort.info/ski-resort/ferguson-ridge/,20.0,Enterprise,Oregon,97846,"[-117.17791, 45.336407]",5.0,2.0,2.0,1.0
+368,Hurricane Ridge,https://www.skiresort.info/ski-resort/hurricane-ridge/,40.0,Port Angeles,Washington State,98362,"[-123.40628, 48.097144]",5.0,2.0,2.0,1.0
+369,Cuchara Mountain Park,https://www.skiresort.info/ski-resort/cuchara-mountain-park/,,,Colorado,81055,"[-105.02943, 37.499829]",6.0,2.0,3.0,1.0
+371,Rotarun,https://www.skiresort.info/ski-resort/rotarun/,,Hailey,Idaho,83333,"[-114.31153, 43.527659]",4.6,1.1,2.0,1.5
+373,Snowhaven,https://www.skiresort.info/ski-resort/snowhaven/,20.0,Grangeville,Idaho,83530,"[-116.13146, 45.923869]",3.0,1.5,1.5,0.0
+374,Bradford,https://www.skiresort.info/ski-resort/bradford/,55.0,Boston,Massachusetts,01835,"[-71.08518, 42.757767]",4.0,1.5,1.5,1.0
+375,Tyrol Basin – Mt Horeb,https://www.skiresort.info/ski-resort/tyrol-basin-mt-horeb/,48.0,Mount Horeb,Wisconsin,53572,"[-89.73647, 42.985255]",4.2,1.2,1.5,1.5
+376,Mulligan's Hollow Ski Bowl,https://www.skiresort.info/ski-resort/mulligans-hollow-ski-bowl/,20.0,Grand Haven,Michigan,49417,"[-86.19013, 43.04117]",3.0,1.0,1.0,1.0
+377,The Omni Homestead,https://www.skiresort.info/ski-resort/the-omni-homestead/,57.0,Hot Springs,Virginia,24445,"[-79.89283, 37.970734]",3.0,1.0,1.0,1.0
+378,Holiday Mountain (NY),https://www.skiresort.info/ski-resort/holiday-mountain-ny/,42.0,Rock Hill,The Catskills,12701,"[-74.69748, 41.653071]",4.0,1.0,2.0,1.0
+379,The Homestead Resort,https://www.skiresort.info/ski-resort/the-homestead-resort/,45.0,Glen Arbor,Michigan,49636,"[-85.98588, 44.884904]",4.0,1.0,2.0,1.0
+380,Cazenovia,https://www.skiresort.info/ski-resort/cazenovia/,,Cazenovia,Central New York,13035,"[-75.83037, 42.938816]",2.3,0.6,0.7,1.0
+381,Elk Ridge – Williams,https://www.skiresort.info/ski-resort/elk-ridge-williams/,40.0,Williams,Arizona,89131,"[-115.24685, 36.294596]",3.0,0.6,1.5,0.9
+382,Tussey Mountain,https://www.skiresort.info/ski-resort/tussey-mountain/,52.0,Boalsburg,Pennsylvania,16827,"[-77.78689, 40.78267]",3.0,1.5,1.2,0.3
+383,Blue Hills,https://www.skiresort.info/ski-resort/blue-hills/,45.0,Boston,Massachusetts,02021,"[-71.1343, 42.166776]",3.0,1.5,1.0,0.5
+384,Winter Park – Kewaunee County,https://www.skiresort.info/ski-resort/winter-park-kewaunee-county/,15.0,Birchwood,Wisconsin,54216,"[-87.54429, 44.456022]",1.1,0.5,0.5,0.1
+385,Thunder Ridge,https://www.skiresort.info/ski-resort/thunder-ridge/,57.0,Patterson,Hudson Valley,12563,"[-73.57293, 41.483689]",4.2,1.8,1.0,1.4
+386,Timber Ridge,https://www.skiresort.info/ski-resort/timber-ridge/,45.0,Gobles,Michigan,49055,"[-85.85725, 42.37346]",3.2,1.2,1.6,0.4
+387,Mont du Lac,https://www.skiresort.info/ski-resort/mont-du-lac/,39.99,Superior,Wisconsin,54880,"[-92.09474, 46.684273]",3.9,0.5,1.4,2.0
+388,Huff Hills,https://www.skiresort.info/ski-resort/huff-hills/,35.0,Mandan,North Dakota,58554,"[-100.90891, 46.812148]",3.0,1.8,0.8,0.4
+389,Woods Valley,https://www.skiresort.info/ski-resort/woods-valley/,43.0,Westernville,Central New York,13486,"[-75.35861, 43.338878]",4.0,2.0,1.5,0.5
+391,Skyline – Friendship,https://www.skiresort.info/ski-resort/skyline-friendship/,,Friendship,Wisconsin,53934,"[-89.85287, 43.967604]",1.7,1.0,0.4,0.3
+392,Sundown Mountain Resort,https://www.skiresort.info/ski-resort/sundown-mountain-resort/,46.0,Dubuque,Iowa,52002,"[-90.75329, 42.50963]",3.2,1.3,1.6,0.3
+393,Lyndon Outing Club,https://www.skiresort.info/ski-resort/lyndon-outing-club/,15.0,Lyndon,Vermont,05851,"[-72.02686, 44.541352]",2.6,1.5,1.0,0.1
+394,Andes Tower Hills,https://www.skiresort.info/ski-resort/andes-tower-hills/,45.0,Alexandria,Minnesota,56343-8176,"[-95.66742, 45.795887]",4.0,2.2,1.6,0.2
+395,Ascutney Mountain,https://www.skiresort.info/ski-resort/ascutney-mountain/,,,Vermont,05037,"[-72.48743, 43.461467999999996]",1.8,1.2,0.6,0.0
+396,Storrs Hill – Lebanon,https://www.skiresort.info/ski-resort/storrs-hill-lebanon/,15.0,Lebanon,New Hampshire,03766,"[-72.24403, 43.642945]",1.0,0.7,0.3,0.0
+397,Lake City Ski Hill,https://www.skiresort.info/ski-resort/lake-city-ski-hill/,15.0,Lake City,Colorado,81235,"[-107.29953, 37.961233]",1.0,0.7,0.3,0.0
+398,Whitetail Ridge – Fort McCoy,https://www.skiresort.info/ski-resort/whitetail-ridge-fort-mccoy/,27.0,Fort McCoy,Wisconsin,54656,"[-90.80796, 43.96977]",1.2,0.7,0.5,0.0
+399,Granlibakken,https://www.skiresort.info/ski-resort/granlibakken/,40.0,Granlibakken,Lake Tahoe,96145,"[-120.14607, 39.177383]",2.0,1.0,1.0,0.0
+400,Big Boulder,https://www.skiresort.info/ski-resort/big-boulder/,65.0,Allentown,Pennsylvania,18610,"[-75.53909, 41.057574]",4.0,3.0,1.0,0.0
+401,Bruce Mound,https://www.skiresort.info/ski-resort/bruce-mound/,31.0,Black River Falls,Wisconsin,54754,"[-90.79473, 44.434537]",2.0,1.0,0.5,0.5
+402,Boston Mills,https://www.skiresort.info/ski-resort/boston-mills/,44.0,Cleveland,Ohio,44264,"[-81.55114, 41.234388]",1.5,0.5,0.5,0.5
+403,Cannonsburg Ski Area,https://www.skiresort.info/ski-resort/cannonsburg-ski-area/,39.0,Grand Rapids,Michigan,49317,"[-85.480856, 43.071201]",2.0,0.5,1.0,0.5
+404,Echo Valley – Lake Chelan,https://www.skiresort.info/ski-resort/echo-valley-lake-chelan/,30.0,Chelan,Washington State,98816,"[-120.08379, 47.880774]",2.4,0.2,1.2,1.0
+405,Veterans Memorial – Franklin,https://www.skiresort.info/ski-resort/veterans-memorial-franklin/,,Franklin,New Hampshire,03235,"[-71.66034, 43.444456]",1.0,0.6,0.4,0.0
+406,Camp 10,https://www.skiresort.info/ski-resort/camp-10/,34.0,Rhinelander,Wisconsin,54501,"[-89.39408, 45.64672]",1.5,0.3,0.7,0.5
+407,Coffee Mill Ski Area,https://www.skiresort.info/ski-resort/coffee-mill-ski-area/,37.0,Wabasha,Minnesota,55981,"[-92.04204, 44.374261]",2.0,1.0,0.6,0.4
+408,Swiss Valley,https://www.skiresort.info/ski-resort/swiss-valley/,42.0,Jones,Michigan,49061,"[-85.81527, 41.878312]",1.8,0.4,1.1,0.3
+409,Buena Vista,https://www.skiresort.info/ski-resort/buena-vista/,44.0,Bemidji,Minnesota,56601,"[-94.87105, 47.504496]",1.7,0.4,0.8,0.5
+410,Crescent Hills,https://www.skiresort.info/ski-resort/crescent-hills/,39.0,Omaha,Iowa,51542,"[-95.84004, 41.427994]",2.0,0.8,0.8,0.4
+411,Grand Geneva,https://www.skiresort.info/ski-resort/grand-geneva/,55.0,Lake Geneva,Wisconsin,53147,"[-88.45828, 42.587613]",1.8,1.2,0.4,0.2
+412,Brandywine,https://www.skiresort.info/ski-resort/brandywine/,44.0,Cleveland,Ohio,44264,"[-81.55114, 41.234388]",2.0,1.0,0.7,0.3
+413,Beartown,https://www.skiresort.info/ski-resort/beartown/,22.0,West Chazy,The Adirondacks,12901,"[-73.46617, 44.693271]",0.8,0.5,0.3,0.0
+414,Spruce Mountain – Jay,https://www.skiresort.info/ski-resort/spruce-mountain-jay/,25.0,Livermore Falls,Maine,04239,"[-70.21933, 44.516475]",2.4,0.6,1.4,0.4
+415,Dry Hill,https://www.skiresort.info/ski-resort/dry-hill/,40.0,Watertown,Thousand Islands-Seaway,13601,"[-75.91199, 43.976735]",2.4,0.7,1.2,0.5
+416,Polar Peak,https://www.skiresort.info/ski-resort/polar-peak/,,Ancram,Hudson Valley,12502,"[-73.6642, 42.086628]",1.9,1.0,0.5,0.4
+417,The Ridge – Le Roy,https://www.skiresort.info/ski-resort/the-ridge-le-roy/,,,Greater Niagara,14482,"[-77.97053, 42.979887]",0.7,0.4,0.3,0.0
+418,Indian Lake,https://www.skiresort.info/ski-resort/indian-lake/,,Indian Lake,The Adirondacks,12842,"[-74.26631, 43.761451]",0.9,0.6,0.3,0.0
+419,Maple Ski Ridge,https://www.skiresort.info/ski-resort/maple-ski-ridge/,,Rotterdam,Capital-Saratoga Region,12306,"[-73.98942, 42.793326]",1.4,0.3,0.8,0.3
+420,Red Hill – Moultonborough,https://www.skiresort.info/ski-resort/red-hill-moultonborough/,,Moultonborough,New Hampshire,03254,"[-71.39299, 43.712184]",1.0,0.4,0.4,0.2
+421,Fox Hill,https://www.skiresort.info/ski-resort/fox-hill/,,West Bend,Wisconsin,53095,"[-88.18026, 43.40328]",1.0,0.5,0.3,0.2
+423,Buckhorn Ski and Snowboard Club,https://www.skiresort.info/ski-resort/buckhorn-ski-and-snowboard-club/,,La Cañada Flintridge,California,92626,"[-117.90863, 33.677224]",1.2,0.2,0.6,0.4
+424,Northeast Slopes – East Corinth,https://www.skiresort.info/ski-resort/northeast-slopes-east-corinth/,15.0,East Corinth,Vermont,05040,"[-72.21275, 44.070771]",2.2,1.2,1.0,0.0
+425,Little Ski Hill,https://www.skiresort.info/ski-resort/little-ski-hill/,15.0,McCall,Idaho,83638,"[-116.04991, 44.854428]",1.4,1.4,0.0,0.0
+426,Cochran Ski Area,https://www.skiresort.info/ski-resort/cochran-ski-area/,25.0,Burlington,Vermont,05477,"[-72.95936, 44.392443]",1.2,0.6,0.5,0.1
+427,Mt. Pisgah,https://www.skiresort.info/ski-resort/mt-pisgah/,25.0,Saranac Lake,The Adirondacks,12983,"[-74.16843, 44.324736]",1.0,1.0,0.0,0.0
+428,Missaukee Mountain,https://www.skiresort.info/ski-resort/missaukee-mountain/,,,Michigan,49651,"[-85.14305, 44.382889]",1.3,0.7,0.5,0.1
+429,Pinnacle Park – Pittsfield,https://www.skiresort.info/ski-resort/pinnacle-park-pittsfield/,,Pittsfield,Maine,04967,"[-69.40616, 44.774328]",0.7,0.3,0.2,0.2
+431,Quoggy Jo Ski Center – Presque Isle,https://www.skiresort.info/ski-resort/quoggy-jo-ski-center-presque-isle/,8.0,Presque Isle,Maine,04769,"[-68.00216, 46.679321]",0.8,0.8,0.0,0.0
+432,Badger Mountain,https://www.skiresort.info/ski-resort/badger-mountain/,10.0,Wenatchee,Washington State,98858,"[-119.90423, 47.63205]",2.5,2.0,0.5,0.0
+433,Brantling Ski Slopes,https://www.skiresort.info/ski-resort/brantling-ski-slopes/,32.0,Rochester,Finger Lakes,14551,"[-77.03599, 43.226024]",1.0,0.7,0.3,0.0
+434,Eaton Mountain,https://www.skiresort.info/ski-resort/eaton-mountain/,15.0,Skowhegan,Maine,04976,"[-69.69212, 44.782568]",2.0,1.5,0.5,0.0
+435,Pando Park  (temporarily closed),https://www.skiresort.info/ski-resort/pando-park/,22.0,Rockford,Michigan,49341,"[-85.5189, 43.117214]",1.3,1.0,0.3,0.0
+436,Hillberg Ski Area,https://www.skiresort.info/ski-resort/hillberg-ski-area/,20.0,Anchorage,Alaska,99506,"[-149.77461, 61.224384]",1.2,0.9,0.3,0.0
+437,Kettlebowl,https://www.skiresort.info/ski-resort/kettlebowl/,5.0,Bryant,Wisconsin,54418,"[-88.96427, 45.221567]",1.4,0.3,1.1,0.0
+438,Hanson Hills,https://www.skiresort.info/ski-resort/hanson-hills/,25.0,Grayling,Michigan,49738,"[-84.6253, 44.683274]",1.0,0.8,0.2,0.0
+439,Living Memorial Park – Brattleboro,https://www.skiresort.info/ski-resort/living-memorial-park-brattleboro/,5.0,Brattleboro,Vermont,05301,"[-72.62328, 42.849957]",0.5,0.5,0.0,0.0
+440,Alta Sierra – Shirley Meadows,https://www.skiresort.info/ski-resort/alta-sierra-shirley-meadows/,50.0,Bakersfield,California,93285,"[-118.48416, 35.714118]",1.5,1.3,0.2,0.0
+441,Meany Lodge,https://www.skiresort.info/ski-resort/meany-lodge/,,Easton,Washington State,98925,"[-121.24849, 47.3042]",2.0,1.0,1.0,0.0
+442,Sahalie Ski Club,https://www.skiresort.info/ski-resort/sahalie-ski-club/,,North Bend,Washington State,98068,"[-121.39603, 47.397811]",1.5,1.0,0.5,0.0
+443,Fort Wainwright/​Birch Hill – Fairbanks,https://www.skiresort.info/ski-resort/fort-wainwrightbirch-hill-fairbanks/,,Fairbanks,Alaska,99703,"[-147.6265, 64.827164]",1.8,1.5,0.3,0.0
+445,Mt. Eustis – Littleton  (temporarily closed),https://www.skiresort.info/ski-resort/mt-eustis-littleton/,,,New Hampshire,03561,"[-71.79751, 44.313606]",1.2,0.5,0.7,0.0
+446,Challenge Mountain – Walloon Lake,https://www.skiresort.info/ski-resort/challenge-mountain-walloon-lake/,,Walloon Lake,Michigan,49712,"[-85.00995, 45.215511]",1.2,0.9,0.3,0.0
+447,Mount Prospect – Lancaster,https://www.skiresort.info/ski-resort/mount-prospect-lancaster/,,Lancaster,New Hampshire,03584,"[-71.54999, 44.483756]",0.8,0.5,0.3,0.0
+448,Triangle Sports Area – Green Bay,https://www.skiresort.info/ski-resort/triangle-sports-area-green-bay/,,Green Bay,Wisconsin,54302,"[-87.97947, 44.505781999999996]",0.6,0.5,0.1,0.0
+449,Blackhawk Ski Club – Middleton,https://www.skiresort.info/ski-resort/blackhawk-ski-club-middleton/,,Middleton,Wisconsin,53562,"[-89.51106, 43.103711]",0.8,0.6,0.2,0.0
+450,Powers Bluff,https://www.skiresort.info/ski-resort/powers-bluff/,10.0,Arpin,Wisconsin,54410,"[-90.04317, 44.536298]",1.0,1.0,0.0,0.0
+451,Boyce Park,https://www.skiresort.info/ski-resort/boyce-park/,28.0,Pittsburgh,Pennsylvania,15239,"[-79.74278, 40.482655]",1.0,1.0,0.0,0.0
+452,Four Lakes,https://www.skiresort.info/ski-resort/four-lakes/,28.0,Lisle,Illinois,60532,"[-88.08536, 41.789079]",1.0,1.0,0.0,0.0
+453,The Rock Snow Park,https://www.skiresort.info/ski-resort/the-rock-snow-park/,40.0,Milwaukee,Wisconsin,53132,"[-88.00891, 42.896145]",1.0,1.0,0.0,0.0
+454,Leavenworth Ski Hill,https://www.skiresort.info/ski-resort/leavenworth-ski-hill/,19.0,Leavenworth,Washington State,98826,"[-120.73874, 47.728186]",1.0,1.0,0.0,0.0
+455,Villa Roma,https://www.skiresort.info/ski-resort/villa-roma/,,Callicoon,The Catskills,12723,"[-75.02808, 41.769427]",1.7,1.7,0.0,0.0
+456,Big Creek Ski Area,https://www.skiresort.info/ski-resort/big-creek-ski-area/,,Cleveland,Ohio,44024,"[-81.19473, 41.574171]",1.0,1.0,0.0,0.0
+457,Standing Rocks,https://www.skiresort.info/ski-resort/standing-rocks/,16.0,Stevens Point,Wisconsin,54481,"[-89.55621, 44.524054]",0.9,0.9,0.0,0.0
+458,Four Seasons,https://www.skiresort.info/ski-resort/four-seasons/,24.0,Fayetteville,Finger Lakes,13066-9619,"[-76.00876, 43.028516]",0.5,0.4,0.1,0.0
+459,Cloudmont Ski Resort,https://www.skiresort.info/ski-resort/cloudmont-ski-resort/,40.0,Fort Payne,Alabama,35984,"[-85.5751, 34.557735]",0.6,0.6,0.0,0.0
+460,Adventure Mountain – Greenland,https://www.skiresort.info/ski-resort/adventure-mountain-greenland/,,Greenland,Michigan,49929,"[-89.09762, 46.780926]",0.5,0.2,0.3,0.0
+461,Gladstone Sports Park,https://www.skiresort.info/ski-resort/gladstone-sports-park/,,Gladstone,Michigan,49837,"[-87.04529, 45.847136]",0.5,0.4,0.1,0.0
+464,Ruby Mountain,https://www.skiresort.info/ski-resort/ruby-mountain/,,Lamoille,,89828,"[-115.44828, 40.79727]",,,,
+465,North Cascade Heliskiing – Mazama,https://www.skiresort.info/ski-resort/north-cascade-heliskiing-mazama/,,Mazama,,98833,"[-120.47681, 48.634796]",,,,
+466,Powderhouse Hill – South Berwick,https://www.skiresort.info/ski-resort/powderhouse-hill-south-berwick/,5.0,South Berwick,Maine,03908,"[-70.77876, 43.234782]",0.5,0.5,0.0,0.0
+467,Keyes Peak – Florence,https://www.skiresort.info/ski-resort/keyes-peak-florence/,12.0,Florence,Wisconsin,54121-8907,"[-88.27342, 45.873589]",0.5,0.5,0.0,0.0
+468,Salmonberry – Valdez,https://www.skiresort.info/ski-resort/salmonberry-valdez/,,Valdez,Alaska,99686,"[-146.2357, 61.128176]",0.4,0.4,0.0,0.0
+469,Rocking Horse Ranch,https://www.skiresort.info/ski-resort/rocking-horse-ranch/,,Highland,The Catskills,12528,"[-73.9965, 41.713682]",0.3,0.3,0.0,0.0
+470,Great Northern Powder Guides,https://www.skiresort.info/ski-resort/great-northern-powder-guides/,,Whitefish, read more,59927,"[-114.70843, 48.595224]",,,,
+471,Cascade Powder Guides,https://www.skiresort.info/ski-resort/cascade-powder-guides/,,,,98826,"[-120.73874, 47.728186]",,,,
+472,Petoskey Winter Sports Park,https://www.skiresort.info/ski-resort/petoskey-winter-sports-park/,,Petoskey,Michigan,49770,"[-84.93774, 45.360111]",0.2,0.2,0.0,0.0
+473,Cottonwood Butte,https://www.skiresort.info/ski-resort/cottonwood-butte/,20.0,Cottonwood,Idaho,83522,"[-116.38568, 46.041157]",,,,
+474,Nutt Hill – Plymouth,https://www.skiresort.info/ski-resort/nutt-hill-plymouth/,,Plymouth,Wisconsin,53073,"[-87.98005, 43.758674]",0.2,0.2,0.0,0.0
+475,Winterplace,https://www.skiresort.info/ski-resort/winterplace/,54.0,Ghent,West Virginia,25843,"[-81.10724, 37.618115]",,,,
+476,Texas Ski Ranch – New Braunfels (dry slopes),https://www.skiresort.info/ski-resort/texas-ski-ranch-new-braunfels/,27.0,New Braunfels,Texas,78130,"[-98.10754, 29.699844]",0.1,0.1,0.0,0.0
+477,Dynamite Hill – Chestertown,https://www.skiresort.info/ski-resort/dynamite-hill-chestertown/,,Chestertown,The Adirondacks,12817,"[-73.81782, 43.638919]",0.2,0.2,0.0,0.0
+478,Cockaigne Resort,https://www.skiresort.info/ski-resort/cockaigne-resort/,38.0,,Chautauqua-Allegheny,14723,"[-79.1364, 42.316386]",,,,
+479,Bittersweet,https://www.skiresort.info/ski-resort/bittersweet/,48.0,Kalamazoo,Michigan,49078,"[-85.71069, 42.459989]",,,,
+480,Eagle Rock,https://www.skiresort.info/ski-resort/eagle-rock/,,Hazleton,Pennsylvania,18202,"[-75.990392, 40.969691]",,,,
+481,Snöbahn – Centennial,https://www.skiresort.info/ski-resort/snoebahn-centennial/,,Centennial,Colorado,80122,"[-104.95834, 39.582604]",0.1,0.1,0.0,0.0
+483,Sky Tavern,https://www.skiresort.info/ski-resort/sky-tavern/,,Reno,Nevada,89511,"[-119.7606, 39.403178]",,,,
+486,Mt. Bailey,https://www.skiresort.info/ski-resort/mt-bailey/,385.0,,,97731,"[-121.88616, 43.189824]",,,,
+487,Inside Ski Training Center – Leesburg (dry slopes),https://www.skiresort.info/ski-resort/inside-ski-training-center-leesburg/,,Leesburg,Virginia,20175,"[-77.58025, 39.080037]",0.1,0.1,0.0,0.0
+488,Eagle Island Park,https://www.skiresort.info/ski-resort/eagle-island-park/,,Eagle,Idaho,83616,"[-116.36346, 43.705551]",0.1,0.1,0.0,0.0
+489,WinterClub Indoor Ski & Snowboard – Winter Park (dry slopes),https://www.skiresort.info/ski-resort/winterclub-indoor-ski-snowboard-winter-park/,,Winter Park,Florida,32792,"[-81.30606, 28.607077]",0.1,0.1,0.0,0.0
+490,Sand Master Park – Florence (sand ski area),https://www.skiresort.info/ski-resort/sand-master-park-florence/,,Florence,,97439,"[-124.08307, 44.009099]",0.1,0.0,0.0,0.1
+491,Diamond Peaks,https://www.skiresort.info/ski-resort/diamond-peaks/,,Huntsville (Utah),,84317,"[-111.70449, 41.288679]",,,,
+492,Valdez Heli-Ski Guides,https://www.skiresort.info/ski-resort/valdez-heli-ski-guides/,,,,99686,"[-146.2357, 61.128176]",,,,
+494,H2O Guides,https://www.skiresort.info/ski-resort/h2o-guides/,,,,99686,"[-146.2357, 61.128176]",,,,
+495,Points North Heli Adventures,https://www.skiresort.info/ski-resort/points-north-heli-adventures/,,,,99574,"[-145.40256, 60.474512]",,,,
+498,Jerry's Heliski Alaska,https://www.skiresort.info/ski-resort/jerrys-heliski-alaska/,,,,59715,"[-110.9878, 45.707153]",,,,
+499,Powderbird,https://www.skiresort.info/ski-resort/powderbird/,,,,84092,"[-111.80902, 40.558748]",,,,
+506,Seacoast Snow Park,https://www.skiresort.info/ski-resort/seacoast-snow-park/,,,info@skiresort-service.com,04062,"[-70.41697, 43.810673]",,,,
+509,Potawatomi Park,https://www.skiresort.info/ski-resort/potawatomi-park/,,,info@skiresort-service.com,54235,"[-87.38044, 44.844133]",,,,
+511,Quadna Mountain,https://www.skiresort.info/ski-resort/quadna-mountain/,,,info@skiresort-service.com,55748,"[-93.60042, 46.956138]",,,,
+516,North Bicentennial Park,https://www.skiresort.info/ski-resort/north-bicentennial-park/,,,info@skiresort-service.com,99516,"[-149.77311, 61.101142]",,,,
