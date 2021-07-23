@@ -25,7 +25,8 @@ def home():
 
 @app.route("/states", methods=['GET'])
 def states():
-    # return unique states with snow resorts
+    # function return unique states with snow resorts
+
     states = []   
     stateName = 12 # field 12 contain the name of a state
 
@@ -37,6 +38,28 @@ def states():
     states.sort()
 
     return jsonify(states)
+
+@app.route("/getAllResorts", methods=['GET'])
+def getAllResorts():
+    # Function return list of dictionary with data about snow resorts
+
+    data = getData()
+
+    resorts_list = []
+    for i in range(len(data)):
+        coordinates = data[i][7].replace("[", "").replace("]", "").split(",")
+        numericCoord = [float(coordinates[0]), float(coordinates[1])]
+
+        resorts_list.append({"name": data[i][1]
+                            ,"price": data[i][3]
+                            , "closest_town": data[i][4]
+                            , "coordinates": numericCoord
+                            , "total_length": data[i][8]
+                            , "easy_length": data[i][9]
+                            , "intermidiate_length": data[i][10]
+                            , "difficult_length": data[i][11]
+                            , "state": data[i][12]}) 
+    return jsonify(resorts_list)
 
 if __name__ == "__main__":
     app.run(debug=True)
