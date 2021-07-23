@@ -9,27 +9,58 @@ let streetMap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
         accessToken: API_KEY
       }).addTo(myMap);
 
-// Create a drop down menu with states
-let statesDropDown = L.control({position: 'topright'});
 
-statesDropDown.onAdd = function() {
-    let div = L.DomUtil.create('div', 'dropdown menu');
-    let stateString = '<option>All State</option>';
+// create a drop down menu on the map
 
-    fetch('/states').then(function(resp) {
-        return resp.json();
-    }).then(function(text) {
-      text.forEach(function(state) {
-          stateString += `<option>${state}</option>`;  
-                  
-      });
-      console.log(stateString);
-      div.innerHTML = `<select id='stateMenu'>${stateString}</select>`;
-    });
+const dropDownMenu = L.control({position: 'topright'});
 
-    return div;
-};
+dropDownMenu.onAdd = function () {
+  const newDiv = L.DomUtil.create('div', 'state list');
+  let select = document.createElement('select');
+  select.setAttribute('id', 'statesDropDown');
 
-statesDropDown.addTo(myMap);
+  // add first option 'All States' to select
+  let opt = document.createElement('option');
+  opt.setAttribute('value', "All States");
+  let firstNode = document.createTextNode("All States");
+  console.log(firstNode);
+  opt.appendChild(firstNode);
+  select.appendChild(opt);
 
+  // add  all states to select
+  fetch('/states').then(function(resp) {   
+    return resp.json();
+  })
+  .then(function(txt) {  
+    txt.forEach(stName => {
+      let option = document.createElement('option');
+      option.setAttribute('value', stName);
+      let nod = document.createTextNode(stName);
+      option.appendChild(nod);
+      document.getElementById("statesDropDown").appendChild(option);
+                
+    });   
+  
+  });
+  newDiv.appendChild(select);
+  return newDiv;
+  
+}
 
+dropDownMenu.addTo(myMap);
+
+// get state from dropdown
+
+document.getElementById("statesDropDown").addEventListener("change", updateMapMarkers);
+
+function updateMapMarkers() {
+  let sel = document.getElementById("statesDropDown");
+  let opt = sel.options[sel.selectedIndex].text;
+
+  console.log("value", opt);
+}
+
+  
+  
+
+  

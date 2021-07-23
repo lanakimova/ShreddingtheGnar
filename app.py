@@ -72,11 +72,7 @@ def getAllResorts():
                             , resorts_fields[14]: resorts_rows[i][14]}) 
     return jsonify(resorts_list)
 
-@app.route('/isResortInState')
-def isResortInState(resort_name):
-    resortInState = False
 
-    return resortInState
 
 @app.route('/averagePrice/<state>')
 def averagePrice(state='All States'):
