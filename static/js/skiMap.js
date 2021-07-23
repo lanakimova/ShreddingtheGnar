@@ -12,23 +12,18 @@ let streetMap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
 showAllResorts();
 
 function showAllResorts() {
-    d3.csv("/static/data/complete_resorts_info.csv").then(function(data) {
+    fetch('/getAllResorts').then(function(resp) {
+        return resp.json();
+      }).then(function(data) {
         data.forEach(resort => {
-                
-            if (resort.lon) {
-                let lon = Number(resort.lon),
-                    lat = Number(resort.lat),
-                    resortName = resort.name,
-                    totalSlopeLen = resort.total_len,
-                    closestTown = resort.closestTown,
-                    liftTicket = resort.price;
-    
-                let popupContent = "<b style='font-size: 16px'>" + resortName + "</b><br><b>Total Slope Lenght:</b> " + totalSlopeLen
-                                     + "<br><b> Lift Price:</b> $" + liftTicket + "<br><b> Closest Town:</b> " + closestTown;
-                let marker = L.marker([lon, lat]).bindPopup(popupContent).addTo(myMap);      
-            }
-        });
-    });
+          lat = resort.coordinates[0];
+          lng = resort.coordinates[1];
+      
+          let popupContent = "<b style='font-size: 16px'>" + resort.name + "</b><br><b>Total Slope Lenght:</b> " + resort.total_length
+                                           + "<br><b> Lift Price:</b> $" + resort.price + "<br><b> Closest Town:</b> " + resort.closest_town;
+          L.marker([lng, lat]).bindPopup(popupContent).addTo(myMap); 
+        })
+      })
 };
 
 // Create a drop down menu with states
