@@ -46,10 +46,10 @@ dropDownMenu.onAdd = function () {
 
 dropDownMenu.addTo(myMap);
 
-// call func to viz resort on the map
+// call func to viz all resort on the map
 showAllResorts();
 
-//  event listener for swlected option
+//  event listener for selected option
 document.getElementById('statesDropDown').addEventListener('change', updateMap);
 
 function showAllResorts() {
@@ -116,8 +116,6 @@ function updateMap(){
     else { 
         showAllResorts();
         myMap.setView([39.8283, -98.5795], 4);
-        document.getElementById('priceChart').remove();
-        document.getElementById('slopeChart').remove();
     }
       
 }
