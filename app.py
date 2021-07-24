@@ -61,6 +61,30 @@ def getAllResorts():
                             , "state": data[i][12]}) 
     return jsonify(resorts_list)
 
+
+@app.route("/getStateResorts/<state>", methods=['GET'])
+def getStateResorts(state):
+    data = getData()
+
+    state_resorts_list = []
+
+    for i in range(len(data)):
+        if data[i][12] == state:
+            coordinates = data[i][7].replace("[", "").replace("]", "").split(",")
+            numericCoord = [float(coordinates[0]), float(coordinates[1])]
+
+            state_resorts_list.append({"name": data[i][1]
+                                ,"price": data[i][3]
+                                , "closest_town": data[i][4]
+                                , "coordinates": numericCoord
+                                , "total_length": data[i][8]
+                                , "easy_length": data[i][9]
+                                , "intermidiate_length": data[i][10]
+                                , "difficult_length": data[i][11]
+                                , "state": data[i][12]}) 
+
+    return jsonify(state_resorts_list)
+
 if __name__ == "__main__":
     app.run(debug=True)
 
